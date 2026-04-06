@@ -102,15 +102,15 @@ export default function CrmComparison() {
           ))}
         </div>
 
-        <Reveal>
-          <div className="mt-12 text-[#555] text-lg max-w-3xl mx-auto text-center leading-relaxed">
+        <Reveal className="flex justify-center">
+          <div className="mt-12 text-[#555] text-lg max-w-3xl text-center leading-relaxed">
             Same deals. Completely different stories, and completely different
             word-of-mouth after the deal. One version helps you. The other
             doesn&apos;t.
           </div>
         </Reveal>
-        <Reveal>
-          <p className="mt-4 text-lg text-black/45 max-w-3xl mx-auto text-center leading-relaxed">
+        <Reveal className="flex justify-center">
+          <p className="mt-4 text-lg text-black/45 max-w-3xl text-center leading-relaxed">
             If you&apos;ve considered win/loss analysis, you&apos;ve already identified
             the problem. This goes further.
           </p>

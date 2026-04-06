@@ -72,9 +72,9 @@ function Side({
           ].join(" ")}
         />
       </div>
-      <ul className="mt-6 space-y-3 text-sm sm:text-[0.9375rem] leading-relaxed text-[#555]">
+      <ul className="mt-6 list-none space-y-3 pl-0 text-sm sm:text-[0.9375rem] leading-relaxed text-[#555]">
         {items.map((line) => (
-          <li key={line} className="flex gap-2">
+          <li key={line} className="flex gap-2 list-none">
             <span className="text-black/30 shrink-0 select-none" aria-hidden>
               &bull;
             </span>

@@ -18,7 +18,25 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Buyer Perception",
+  metadataBase: new URL("https://buyerperception.com"),
+  title:
+    "Buyer Perception — Find out what your buyers really think about you",
+  description:
+    "We anonymously interview your lost prospects and churned customers and bring back the truth about how your market perceives you. Not what your CRM says. What buyers are saying about you now.",
+  openGraph: {
+    title:
+      "Buyer Perception — Find out what your buyers really think about you",
+    description:
+      "We anonymously interview your lost prospects and churned customers and bring back the truth about how your market perceives you.",
+    url: "https://buyerperception.com",
+    siteName: "Buyer Perception",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Buyer Perception",
+    description: "Find out what your buyers really think about you.",
+  },
 };
 
 export default function RootLayout({

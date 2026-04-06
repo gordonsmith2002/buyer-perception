@@ -11,10 +11,10 @@ function FeatureCard({
   index: number;
 }) {
   return (
-    <Reveal delayMs={index * 100}>
+    <Reveal delayMs={index * 100} className="h-full min-h-0">
       <div
         className={[
-          "rounded-2xl border border-black/10 p-6 h-full min-h-[320px] flex flex-col",
+          "rounded-2xl border border-black/10 p-6 h-full flex flex-col",
           "bg-creamCard shadow-[0_1px_3px_rgba(0,0,0,0.06)]",
           "transition-all duration-300 ease-out",
           "md:hover:scale-[1.02] md:hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]",
@@ -41,7 +41,7 @@ export default function FourCards() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-4 lg:items-stretch">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-4 items-stretch">
           <FeatureCard
             index={0}
             title="The conversations that matter most still need a human"

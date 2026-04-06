@@ -50,7 +50,7 @@ export default function AboutSection() {
               <p className="text-white/90">If that gap matters to you, let&apos;s talk.</p>
             </Reveal>
             <Reveal>
-              <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
                 <a
                   href="mailto:gordon@buyerperception.com"
                   className="text-white/80 hover:text-white text-base underline-offset-4 hover:underline"
