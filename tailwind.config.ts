@@ -12,7 +12,13 @@ const config: Config = {
       },
       fontFamily: {
         serif: [
-          "var(--font-dm-serif)",
+          "var(--font-display)",
+          "ui-serif",
+          "Georgia",
+          "serif",
+        ],
+        display: [
+          "var(--font-display)",
           "ui-serif",
           "Georgia",
           "serif",
