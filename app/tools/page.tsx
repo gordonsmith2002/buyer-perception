@@ -30,7 +30,7 @@ const assets = [
   {
     name: "Buyer Perception Exercise",
     route: "/exercise",
-    note: "If this route is external, replace this link.",
+    note: "Leadership prediction workshop and gap baseline.",
   },
   {
     name: "Lead Magnet (Blind Spot Test)",
