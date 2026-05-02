@@ -15,15 +15,18 @@ export default function Hero() {
 
           <Reveal>
             <p className="mt-6 text-white/80 text-lg sm:text-xl leading-relaxed">
-              We anonymously interview your lost prospects and churned customers,
-              and bring back the truth about how your market perceives you.
+              We anonymously interview your lost prospects and churned customers
+              &mdash; and bring back the truth about how your market perceives you.
             </p>
           </Reveal>
 
           <Reveal>
-            <p className="mt-5 text-white font-semibold text-xl sm:text-2xl leading-snug tracking-tight">
-              Not what your CRM says. Not what your team tells you. What buyers
-              are saying about you now.
+            <p className="mt-5 max-w-2xl border-l border-accent/70 pl-4 font-serif italic text-white/90 text-lg sm:text-xl leading-relaxed">
+              You coach your team not to have happy ears. Then you check your G2
+              reviews, read your NPS scores, and believe them. The 60&ndash;70% who
+              went elsewhere or left quietly aren&apos;t in that data. They&apos;re
+              having conversations about you right now &mdash; and you have no idea
+              what they&apos;re saying.
             </p>
           </Reveal>
 
@@ -40,7 +43,8 @@ export default function Hero() {
 
           <Reveal>
             <p className="mt-6 text-sm text-white/45 max-w-md">
-              Built on 10+ years of B2B revenue leadership.
+              Built on 10+ years of B2B revenue leadership at LinkedIn, Hired &
+              Hubble.
             </p>
           </Reveal>
         </div>
