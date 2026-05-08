@@ -9,21 +9,21 @@ export default function Hero() {
         <div className="max-w-3xl">
           <Reveal>
             <h1 className="font-serif text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">
-              Find out what your buyers really think about you.
+              Find out what your buyers really think about you
             </h1>
           </Reveal>
 
           <Reveal>
-            <p className="mt-6 text-white/80 text-lg sm:text-xl leading-relaxed">
-              We anonymously interview your lost prospects and churned customers,
-              and bring back the truth about how your market perceives you.
-            </p>
-          </Reveal>
-
-          <Reveal>
-            <p className="mt-5 text-white font-semibold text-xl sm:text-2xl leading-snug tracking-tight">
-              Not what your CRM says. Not what your team tells you. What buyers
-              are saying about you now.
+            <p className="mt-7 max-w-3xl border-l border-accent/70 pl-4 font-serif text-xl sm:text-2xl leading-relaxed text-white/90">
+              Your CRM data reflects{" "}
+              <span className="italic text-white">your perception</span>. Your
+              call recordings reflect{" "}
+              <span className="italic text-white">your perception</span>. Your
+              rep debriefs, your G2 reviews, your NPS scores &mdash; they all
+              reflect <span className="italic text-white">your perception</span>.{" "}
+              <span className="font-semibold text-accent">
+                We go and get your buyer&apos;s.
+              </span>
             </p>
           </Reveal>
 
@@ -37,12 +37,6 @@ export default function Hero() {
               </div>
             </Reveal>
           </div>
-
-          <Reveal>
-            <p className="mt-6 text-sm text-white/45 max-w-md">
-              Built on 10+ years of B2B revenue leadership.
-            </p>
-          </Reveal>
         </div>
       </div>
     </section>

@@ -44,13 +44,15 @@ export default function FourCards() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-4 items-stretch">
           <FeatureCard
             index={0}
-            title="The conversations that matter most still need a human"
+            title="If the human matters most in sales, they matter most in feedback too"
           >
             <p>
-              In a world where everything is being automated, the conversations
-              that matter most - the ones where someone tells you what they
-              really think - still require a human who knows how to listen.
-              Not a survey. Not an AI chatbot. A conversation.
+              Everyone agrees &mdash; the salesperson has never been more
+              important. They&apos;re the human in the loop in every deal. So why
+              would you automate the one conversation that tells you how that
+              human experience actually landed? The conversations that reveal
+              what buyers really think still need a real person who knows how to
+              listen.
             </p>
           </FeatureCard>
 

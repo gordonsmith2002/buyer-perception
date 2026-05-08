@@ -6,13 +6,13 @@ const STEPS = [
     n: "01",
     title: "You share a contact list",
     detail:
-      "We work with you to build the right list, focusing on the contacts most likely to deliver the highest-quality insight. Takes about ten minutes of your time.",
+      "We work with you to build the right list, focusing on the contacts most likely to deliver the highest-quality insight.",
   },
   {
     n: "02",
     title: "We run anonymous interviews",
     detail:
-      "Structured, honest conversations with your buyers, completely independent of your team. No surveys. No forms. Real conversations with a real person.",
+      "Structured, honest conversations with your buyers, completely independent of your team. We ask the uncomfortable questions your sales team can't — and get honest answers because buyers know nothing goes back to your reps. No surveys. No forms. Real conversations with a real person.",
   },
   {
     n: "03",
@@ -36,7 +36,7 @@ const REPORT_ITEMS = [
     desc: "How many of your lost prospects would recommend you to a peer, and how many are actively steering people away.",
   },
   {
-    title: "What they'd tell a colleague",
+    title: "What they'd tell peers",
     desc: "In their own words. The conversations happening about you that you've never been part of.",
   },
   {
@@ -45,7 +45,7 @@ const REPORT_ITEMS = [
   },
   {
     title: "What to fix first",
-    desc: "Prioritised actions ranked by impact. Monday morning changes, not six-month projects.",
+    desc: "Prioritised actions ranked by impact. Monday morning changes, not six-month projects. Every recommendation is prioritised by revenue impact — the gaps most likely to improve your win rate, reduce churn, and protect the pipeline you've already built.",
   },
 ];
 
