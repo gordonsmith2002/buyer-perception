@@ -101,8 +101,9 @@ export default function DataGap() {
         </Reveal>
         <Reveal>
           <h2 className="mt-4 max-w-4xl font-serif text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-[#1a1a1a]">
-            Four tools. Four confident conclusions. None of them captured what
-            happened after the buyer hung up.
+            You&apos;ve invested in great technology, built a sales methodology,
+            and coached your team. You still don&apos;t know what your buyers
+            really think about you.
           </h2>
         </Reveal>
 
@@ -163,9 +164,8 @@ export default function DataGap() {
 
         <Reveal className="flex justify-center">
           <p className="mt-12 max-w-4xl text-center font-serif text-xl sm:text-2xl leading-snug text-[#1a1a1a]">
-            You invested in the stack. You trained the team. You ran the
-            framework. And you still don&apos;t know what the buyer told their
-            colleague after they hung up.
+            Four data sources. Four versions of your perception. None of them
+            captured the buyer&apos;s.
           </p>
         </Reveal>
       </div>
