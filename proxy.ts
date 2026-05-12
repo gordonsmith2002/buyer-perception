@@ -21,7 +21,7 @@ function notFound() {
   });
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const username = process.env.REPORT_BASIC_AUTH_USER;
   const password = process.env.REPORT_BASIC_AUTH_PASSWORD;
 
