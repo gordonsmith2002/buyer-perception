@@ -1,6 +1,8 @@
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./report.css";
 
+export const dynamic = "force-dynamic";
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
