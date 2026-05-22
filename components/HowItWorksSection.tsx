@@ -4,48 +4,54 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     n: "01",
-    title: "You share a contact list",
+    title: "Buyer Perception Exercise",
     detail:
-      "We work with you to build the right list, focusing on the contacts most likely to deliver the highest-quality insight. Takes about ten minutes of your time.",
+      "A 60-minute session where your leadership team predicts how buyers perceive you across five dimensions. We select contacts together. The contract is signed after this session.",
   },
   {
     n: "02",
-    title: "We run anonymous interviews",
+    title: "Buyer Interviews",
     detail:
-      "Structured, honest conversations with your buyers, completely independent of your team. No surveys. No forms. Real conversations with a real person.",
+      "Over two to three weeks, we speak with your lost prospects and churned customers through anonymous conversations, completely independent of your team.",
   },
   {
     n: "03",
-    title: "You get the unfiltered truth",
+    title: "Perception Gap Readout",
     detail:
-      "A Buyer Perception Report with your score across five dimensions, an advocate-to-critic ratio, competitive intelligence, and prioritised actions, delivered in a strategic debrief with your leadership team.",
+      "A live session where we reveal your predictions against buyer reality, one dimension at a time.",
+  },
+  {
+    n: "04",
+    title: "Action Workshop",
+    detail:
+      "A half-day facilitated session turning findings into 3 to 5 specific commitments, each with an owner and a timeline.",
   },
 ];
 
 const REPORT_ITEMS = [
   {
     title: "Your Buyer Perception Score",
-    desc: "A single number showing how your market actually perceives you, scored across five dimensions.",
+    desc: "Revealed dimension by dimension: a single number showing how your market actually perceives you, scored across five dimensions.",
   },
   {
     title: "Where the experience breaks down",
-    desc: "Stage-by-stage scoring from first impression to final decision. See exactly where you're losing goodwill.",
+    desc: "Stage-by-stage scoring from first impression to final decision, walked through live so you see exactly where you're losing goodwill.",
   },
   {
     title: "Your advocate-to-critic ratio",
-    desc: "How many of your lost prospects would recommend you to a peer, and how many are actively steering people away.",
+    desc: "How many of your lost prospects would recommend you to a peer, and how many are actively steering people away. The split made visible in the room.",
   },
   {
-    title: "What they'd tell a colleague",
-    desc: "In their own words. The conversations happening about you that you've never been part of.",
+    title: "What they'd tell peers",
+    desc: "In their own words. The conversations happening about you that you've never been part of, surfaced during the readout.",
   },
   {
     title: "How your competitors showed up",
-    desc: "Direct, experiential comparison from people who evaluated you side by side.",
+    desc: "Direct, experiential comparison from people who evaluated you side by side, revealed against what your team assumed.",
   },
   {
     title: "What to fix first",
-    desc: "Prioritised actions ranked by impact. Monday morning changes, not six-month projects.",
+    desc: "Prioritised actions ranked by impact, discussed live before you leave the room. Monday morning changes, not six-month projects. Every recommendation is prioritised by revenue impact: the gaps most likely to improve your win rate, reduce churn, and protect the pipeline you've already built.",
   },
 ];
 
@@ -62,7 +68,7 @@ export default function HowItWorksSection() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-8">
           {STEPS.map((step, i) => (
             <Reveal key={step.n} delayMs={i * 80}>
               <div className="flex flex-col h-full border-t border-white/10 pt-8 md:pt-10">
@@ -85,6 +91,14 @@ export default function HowItWorksSection() {
             <h3 className="font-serif text-2xl sm:text-3xl text-white text-center">
               What your report reveals
             </h3>
+          </Reveal>
+          <Reveal>
+            <p className="mt-6 mx-auto max-w-3xl text-center text-sm sm:text-base leading-relaxed text-[#aaaaaa]">
+              Your leadership team&apos;s predictions are revealed against buyer
+              reality in a live session, one dimension at a time. The gaps
+              between what you believed and what your buyers actually said
+              become immediately visible.
+            </p>
           </Reveal>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {REPORT_ITEMS.map((item, i) => (

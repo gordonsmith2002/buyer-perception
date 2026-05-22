@@ -107,7 +107,7 @@ export default function ReportPage() {
           </li>
           <li>
             Leadership predicted pricing was your weakest dimension. Buyers say
-            it&apos;s responsiveness — by a significant margin.
+            it&apos;s responsiveness, by a significant margin.
           </li>
           <li>
             5 of your 10 lost prospects are actively warning peers away from
@@ -249,7 +249,7 @@ export default function ReportPage() {
           </div>
         </div>
         <blockquote>
-          The largest perception gap is responsiveness — leadership estimated
+          The largest perception gap is responsiveness: leadership estimated
           7.0, buyers scored 3.9.
         </blockquote>
       </PageContainer>
@@ -275,16 +275,16 @@ export default function ReportPage() {
         <h2>2 Advocates : 3 Neutral : 5 Critics</h2>
         <div className="bp-map-grid">
           {[
-            ["LD-1", "Advocate", "Would actively recommend. Praised technical depth.", "Yes — told 2 peers"],
+            ["LD-1", "Advocate", "Would actively recommend. Praised technical depth.", "Yes, told 2 peers"],
             ["LD-2", "Advocate", "Positive overall. Recommend with caveats about speed.", "No"],
             ["LD-3", "Neutral", "No strong feeling. Forgettable experience.", "No"],
             ["LD-4", "Neutral", "Positive on people, negative on process.", "No"],
             ["LD-5", "Neutral", "Wouldn't go out of their way.", "No"],
-            ["LD-6", "Critic", "Frustrated by responsiveness. Told colleague elsewhere.", "Yes — 1 peer"],
-            ["LD-7", "Critic", "Proposal showed lack of interest.", "Yes — 2 peers"],
-            ["LD-8", "Critic", "Described experience as wasted time.", "Yes — 2 peers"],
-            ["LD-9", "Critic", "Warned peers at a conference.", "Yes — 3 peers"],
-            ["LD-10", "Critic", "Went dark after poor first interaction.", "Yes — 2 peers"],
+            ["LD-6", "Critic", "Frustrated by responsiveness. Told colleague elsewhere.", "Yes, 1 peer"],
+            ["LD-7", "Critic", "Proposal showed lack of interest.", "Yes, 2 peers"],
+            ["LD-8", "Critic", "Described experience as wasted time.", "Yes, 2 peers"],
+            ["LD-9", "Critic", "Warned peers at a conference.", "Yes, 3 peers"],
+            ["LD-10", "Critic", "Went dark after poor first interaction.", "Yes, 2 peers"],
           ].map(([id, type, descriptor, active]) => (
             <article
               key={id}
@@ -333,7 +333,7 @@ export default function ReportPage() {
         <blockquote>
           &quot;Your product was actually our first choice on paper. But the way
           we were treated during the evaluation made us feel like you didn&apos;t
-          want our business.&quot; — LD-7
+          want our business.&quot; (LD-7
         </blockquote>
       </PageContainer>
 
@@ -342,47 +342,47 @@ export default function ReportPage() {
         <h2>Dimension-by-Dimension Journey</h2>
         <div className="bp-breakdown">
           <article>
-            <h3>Responsiveness (3.9) — Δ-2.9</h3>
+            <h3>Responsiveness (3.9), Δ-2.9</h3>
             <p className="bp-quote">
               &quot;I filled in their contact form on a Monday. Didn&apos;t hear
-              back until Thursday.&quot; — LD-6
+              back until Thursday.&quot; (LD-6
             </p>
             <p className="bp-quote">
-              &quot;Their competitor called me back within two hours.&quot; —
+              &quot;Their competitor called me back within two hours.&quot; (LD-
               LD-9
             </p>
           </article>
           <article>
-            <h3>People (6.2) — Δ+2.3</h3>
+            <h3>People (6.2), Δ+2.3</h3>
             <p className="bp-quote">
               &quot;The engineer clearly knew their stuff. But the account
-              manager spent too long on slides.&quot; — LD-4
+              manager spent too long on slides.&quot; (LD-4
             </p>
             <p>Strength: Engineering credibility. Deploy earlier in process.</p>
           </article>
           <article>
-            <h3>Proposal (4.6) — Δ-1.6</h3>
+            <h3>Proposal (4.6), Δ-1.6</h3>
             <p className="bp-quote">
               &quot;It felt like they&apos;d done a find-and-replace with our
-              company name.&quot; — LD-8
+              company name.&quot; (LD-8
             </p>
             <p className="bp-quote">
-              &quot;The price was fine — but I couldn&apos;t tell what I was
-              getting for it.&quot; — LD-3
+              &quot;The price was fine, but I couldn&apos;t tell what I was
+              getting for it.&quot; (LD-3
             </p>
           </article>
           <article>
-            <h3>Pricing (5.4) — Δ+0.8</h3>
+            <h3>Pricing (5.4), Δ+0.8</h3>
             <p className="bp-quote">
               &quot;I had to ask three times for a breakdown. That
-              shouldn&apos;t be difficult.&quot; — LD-5
+              shouldn&apos;t be difficult.&quot; (LD-5
             </p>
           </article>
           <article>
-            <h3>Product (5.4) — Δ+0.0</h3>
+            <h3>Product (5.4), Δ+0.0</h3>
             <p className="bp-quote">
               &quot;The product was fine. It wasn&apos;t the product that lost
-              them the deal — it was everything around it.&quot; — LD-2
+              them the deal; it was everything around it.&quot; (LD-2
             </p>
           </article>
         </div>
@@ -429,18 +429,18 @@ export default function ReportPage() {
         <h2>Where You Rank in the Buying Experience</h2>
         <ol className="bp-ranking">
           <li>
-            <strong>Vanguard Tech</strong> — Fast, tailored, made us feel like a
+            <strong>Vanguard Tech</strong>: Fast, tailored, made us feel like a
             priority
           </li>
           <li>
-            <strong>Apex Systems</strong> — Known quantity, safe choice
+            <strong>Apex Systems</strong>: Known quantity, safe choice
           </li>
           <li>
-            <strong>Meridian Solutions</strong> — Best technical team, but
+            <strong>Meridian Solutions</strong>: Best technical team, but
             hardest to buy from
           </li>
           <li>
-            <strong>Others</strong> — Inconsistent and less credible
+            <strong>Others</strong>: Inconsistent and less credible
           </li>
         </ol>
         <blockquote>
@@ -466,7 +466,7 @@ export default function ReportPage() {
         </p>
         <blockquote>
           &quot;I could recommend, but I couldn&apos;t sign off. They needed to
-          be speaking to my VP about six weeks earlier.&quot; — LD-4
+          be speaking to my VP about six weeks earlier.&quot; (LD-4
         </blockquote>
         <p>
           Coaching verdict: lead with questions, bring engineers earlier, and
@@ -544,7 +544,7 @@ export default function ReportPage() {
         </ol>
         <blockquote>
           &quot;The product was fine. It wasn&apos;t the product that lost them
-          the deal — it was everything around it.&quot; — LD-2
+          the deal; it was everything around it.&quot; (LD-2
         </blockquote>
       </PageContainer>
 

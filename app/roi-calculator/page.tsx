@@ -216,7 +216,7 @@ export default function RoiCalculatorPage() {
         items.push({
           key,
           data: parsed,
-          label: `${parsed.scenarioName || "Scenario"} — ${
+          label: `${parsed.scenarioName || "Scenario"} | ${
             parsed.companyName || "Unknown company"
           } (${shortDate(parsed.date)})`,
         });
@@ -324,7 +324,7 @@ export default function RoiCalculatorPage() {
 
 Win rate impact: A ${winScenario}% improvement in win rate would generate approximately ${currency(
     winRateCalc.additionalAnnualRevenue,
-  )} in additional annual revenue — ${oneDecimal(
+  )} in additional annual revenue, ${oneDecimal(
     winRateCalc.additionalWinsYear,
   )} additional deals at ${currency(inputs.dealValue)} each.
 

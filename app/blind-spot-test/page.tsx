@@ -28,7 +28,7 @@ type Question = {
 const questions: Question[] = [
   {
     prompt:
-      "Do you know — with certainty — what your last 10 lost prospects told their peers about you after the decision?",
+      "Do you know, with certainty, what your last 10 lost prospects told their peers about you after the decision?",
     yes: "Yes, we have visibility on this",
     no: "No, we have no idea",
   },
@@ -52,7 +52,7 @@ const questions: Question[] = [
   },
   {
     prompt:
-      "Do you know which competitor your buyers rank you against — not who you think you compete with, but who they actually compared you to?",
+      "Do you know which competitor your buyers rank you against, not who you think you compete with, but who they actually compared you to?",
     yes: "Yes, from buyer conversations",
     no: "Only from what our reps tell us",
   },
@@ -165,23 +165,23 @@ export default function BlindSpotTestPage() {
                   </h2>
                   <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#a3a3ad] sm:text-lg">
                     Most leadership teams do. The difference is whether you find
-                    out from us — or from your pipeline slowly disappearing.
+                    out from us, or from your pipeline slowly disappearing.
                   </p>
                   <div className="mx-auto mt-10 max-w-2xl rounded-md border border-white/10 bg-white/[0.02] p-6">
                     <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#d1d5db]">
                       Here&apos;s what you don&apos;t know:
                     </p>
                     <p className="mt-4 text-sm leading-relaxed text-[#b8bbc4] sm:text-base">
-                      — What your lost prospects are telling their peers about
+                      What your lost prospects are telling their peers about
                       you right now
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-[#b8bbc4] sm:text-base">
-                      — Whether your CRM loss reasons match what buyers actually
+                      Whether your CRM loss reasons match what buyers actually
                       think
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-[#b8bbc4] sm:text-base">
-                      — How many of your &apos;lost&apos; deals are actually
-                      generating referrals — and how many are destroying future
+                      How many of your &apos;lost&apos; deals are actually
+                      generating referrals, and how many are destroying future
                       pipeline
                     </p>
                   </div>
@@ -195,7 +195,7 @@ export default function BlindSpotTestPage() {
                     Even companies with strong buyer visibility find a 1.5 to 2
                     point gap between what leadership predicts and what buyers
                     actually report. The question isn&apos;t whether the gap
-                    exists — it&apos;s how big it is and where it&apos;s costing
+                    exists; it&apos;s how big it is and where it&apos;s costing
                     you revenue.
                   </p>
                 </>

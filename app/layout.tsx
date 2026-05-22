@@ -18,14 +18,14 @@ const dmSerif = DM_Serif_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://buyerperception.com"),
   title:
-    "Buyer Perception — Find out what your buyers really think about you",
+    "Buyer Perception | Find out what your buyers really think about you",
   description:
-    "We anonymously interview your lost prospects and churned customers and bring back the truth about how your market perceives you. Not what your CRM says. What buyers are saying about you now.",
+    "Find out what your lost prospects and churned customers really think, through anonymous interviews that reveal how your market actually perceives you. Not what your CRM says. What buyers are saying about you now.",
   openGraph: {
     title:
-      "Buyer Perception — Find out what your buyers really think about you",
+      "Buyer Perception | Find out what your buyers really think about you",
     description:
-      "We anonymously interview your lost prospects and churned customers and bring back the truth about how your market perceives you.",
+      "Find out what your lost prospects and churned customers really think, through anonymous interviews that reveal how your market actually perceives you.",
     url: "https://buyerperception.com",
     siteName: "Buyer Perception",
     type: "website",
@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sans.className} ${dmSerif.variable} antialiased`}>
+      <body className={`${sans.className} ${dmSerif.variable} antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>

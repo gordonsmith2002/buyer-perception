@@ -3,7 +3,7 @@
 import { DM_Sans, Playfair_Display } from "next/font/google";
 
 /*
- * BUYER PERCEPTION — PROPOSAL TEMPLATE
+ * BUYER PERCEPTION | PROPOSAL TEMPLATE
  *
  * To create a new proposal:
  * 1. Duplicate this project folder
@@ -12,7 +12,7 @@ import { DM_Sans, Playfair_Display } from "next/font/google";
  * 4. Deploy to Vercel: vercel --prod
  * 5. Custom domain: proposals.buyerperception.com/[client-name]
  *
- * ROI numbers come from the ROI Calculator tool — run it first with client inputs.
+ * ROI numbers come from the ROI Calculator tool. Run it first with client inputs.
  * Situation text comes from your discovery call notes.
  * Timeline adjusts based on engagement scope.
  */
@@ -41,7 +41,7 @@ const PROPOSAL_DATA = {
   validUntil: "30 April 2026",
   situation: [
     "You're running approximately 40 competitive deals per quarter at an average deal value of £85,000.",
-    "Your current win rate is around 25%, and your CRM attributes most losses to pricing — but you've expressed uncertainty about whether that's the real picture.",
+    "Your current win rate is around 25%, and your CRM attributes most losses to pricing, but you've expressed uncertainty about whether that's the real picture.",
     "Your team has grown from 4 to 12 AEs in the past 18 months, and you suspect the buying experience hasn't scaled with the team.",
   ],
   scope: {
@@ -109,7 +109,7 @@ const outcomes = [
   {
     title: "The Perception Gap",
     detail:
-      "Where your leadership team's predictions match buyer reality — and where they don't.",
+      "Where your leadership team's predictions match buyer reality, and where they don't.",
   },
   {
     title: "Your Advocate-to-Critic Ratio",
@@ -124,7 +124,7 @@ const outcomes = [
   {
     title: "Team Perception",
     detail:
-      "How buyers perceived the people they dealt with — trusted advisor or salesperson?",
+      "How buyers perceived the people they dealt with: trusted advisor or salesperson?",
   },
   {
     title: "Prioritised Actions",
@@ -205,7 +205,7 @@ export default function ProposalTemplatePage() {
             <p key={line}>{line}</p>
           ))}
           <p className="pt-4 font-medium italic text-[#3b3b3b]">
-            The question is whether your CRM is telling you the real story — or a
+            The question is whether your CRM is telling you the real story, or a
             convenient one.
           </p>
         </div>
@@ -228,7 +228,7 @@ export default function ProposalTemplatePage() {
               {PROPOSAL_DATA.scope.cohorts.join(", ")} cohort.
             </p>
             <p>
-              Conducted by an independent researcher — completely separate from
+              Conducted by an independent researcher, completely separate from
               your team.
             </p>
             <p>
@@ -294,7 +294,7 @@ export default function ProposalTemplatePage() {
             </p>
             <p className="mt-3 text-xs text-[#888]">
               Moving from {PROPOSAL_DATA.roi.winRate.current}% to{" "}
-              {PROPOSAL_DATA.roi.winRate.improved}% — a modest, achievable shift.
+              {PROPOSAL_DATA.roi.winRate.improved}%, a modest, achievable shift.
             </p>
           </article>
 
@@ -332,8 +332,8 @@ export default function ProposalTemplatePage() {
             </p>
           </div>
           <p className="mt-3 text-sm text-[#666]">
-            Even the most conservative scenario — a 5% win rate improvement alone
-            — pays for this engagement multiple times over.
+            Even the most conservative scenario, a 5% win rate improvement alone,
+            pays for this engagement multiple times over.
           </p>
         </div>
       </Section>
@@ -359,7 +359,7 @@ export default function ProposalTemplatePage() {
           <div className="rounded-md border border-[#34d399]/50 bg-[#34d399]/10 p-4 text-sm leading-relaxed text-[#1f513f]">
             If your buyers don&apos;t engage, you don&apos;t pay. We share
             registration data within 72 hours of outreach. If participation falls
-            below threshold, we pause — no charge.
+            below threshold, we pause with no charge.
           </div>
 
           <p className="text-sm text-[#777]">
@@ -396,7 +396,7 @@ export default function ProposalTemplatePage() {
           <p>
             I spent a decade in B2B revenue leadership, running sales teams at
             LinkedIn, Hired, and Hubble. I know how companies make decisions
-            about their pipeline, their positioning, and their competition — and I
+            about their pipeline, their positioning, and their competition, and I
             know how much of that is guesswork dressed up as data.
           </p>
           <p>
@@ -413,7 +413,7 @@ export default function ProposalTemplatePage() {
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
             To proceed, confirm by {PROPOSAL_DATA.validUntil} and we&apos;ll
-            schedule your Buyer Perception Exercise — a 30-60 minute session
+            schedule your Buyer Perception Exercise, a 30-60 minute session
             where your leadership team predicts how buyers would score you, before
             we go and find out.
           </p>

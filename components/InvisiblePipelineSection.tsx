@@ -143,7 +143,7 @@ export default function InvisiblePipelineSection() {
               items={[
                 "Recommended you to a peer",
                 "Mentioned you in a Slack group",
-                "Introduced a colleague",
+                "Introduced you to peers",
               ]}
               footLine="New pipeline → (you'll never attribute this)"
               quant="Each advocate ≈ £50K to £150K in invisible pipeline per year"

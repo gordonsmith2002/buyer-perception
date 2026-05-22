@@ -1,5 +1,5 @@
 import Hero from "../../components/Hero";
-import CrmComparison from "../../components/CrmComparison";
+import DataGap from "../../components/DataGap";
 import Provocation from "../../components/Provocation";
 import FourCards from "../../components/FourCards";
 import InvisiblePipelineSection from "../../components/InvisiblePipelineSection";
@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <CrmComparison />
+      <DataGap />
       <Provocation />
       <FourCards />
       <InvisiblePipelineSection />

@@ -44,7 +44,8 @@ export default function Provocation() {
                 </p>
                 <p>
                   That&apos;s a highlight reel from self-selected people who knew
-                  they were being watched.
+                  they were being watched. False positives: not wrong, not
+                  fabricated, just self-selected and unrepresentative.
                 </p>
                 <p>
                   The 60 to 70% who went elsewhere or left quietly aren&apos;t in
