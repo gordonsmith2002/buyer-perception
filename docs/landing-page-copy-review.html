@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buyer Perception | Landing Page Copy Review</title>
+  <style>
+    :root {
+      --text: #111;
+      --muted: #444;
+      --rule: #ccc;
+      --notes-bg: #f7f7f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 2rem 2.5rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 11pt;
+      line-height: 1.55;
+      color: var(--text);
+      background: #fff;
+      max-width: 8.5in;
+    }
+
+    h1 {
+      font-size: 20pt;
+      font-weight: normal;
+      margin: 0 0 0.25rem;
+      line-height: 1.2;
+    }
+
+    .doc-meta {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9pt;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--text);
+    }
+
+    section {
+      margin-bottom: 2rem;
+      page-break-inside: avoid;
+    }
+
+    .section-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8pt;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.35rem;
+    }
+
+    h2 {
+      font-size: 14pt;
+      font-weight: normal;
+      margin: 0 0 0.75rem;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 11.5pt;
+      font-weight: bold;
+      margin: 1rem 0 0.35rem;
+    }
+
+    h4 {
+      font-size: 10.5pt;
+      font-weight: bold;
+      margin: 0.75rem 0 0.25rem;
+    }
+
+    p { margin: 0 0 0.65rem; }
+
+    ul { margin: 0.25rem 0 0.65rem; padding-left: 1.25rem; }
+    li { margin-bottom: 0.25rem; }
+
+    .eyebrow { font-style: italic; }
+
+    .emphasis { font-weight: bold; }
+
+    .table-block {
+      border: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      margin: 0.75rem 0;
+      background: #fafafa;
+    }
+
+    .table-block + .table-block { margin-top: 1rem; }
+
+    .row-source {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8pt;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .data-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0.5rem 0 0.15rem;
+    }
+
+    .mono {
+      font-family: "Courier New", monospace;
+      font-size: 9.5pt;
+      background: #fff;
+      border: 1px solid var(--rule);
+      padding: 0.35rem 0.5rem;
+      display: inline-block;
+    }
+
+    .card {
+      border-left: 3px solid var(--rule);
+      padding-left: 0.75rem;
+      margin: 0.75rem 0;
+    }
+
+    .step-num {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18pt;
+      color: #999;
+      margin-bottom: 0.15rem;
+    }
+
+    .notes {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: var(--notes-bg);
+      border: 1px dashed var(--rule);
+      min-height: 3.5rem;
+    }
+
+    .notes-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8pt;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .notes-lines {
+      border-bottom: 1px solid #ddd;
+      height: 1.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .appendix {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    @media print {
+      body {
+        padding: 0.5in 0.65in;
+        font-size: 10.5pt;
+      }
+
+      section {
+        page-break-inside: avoid;
+      }
+
+      .notes {
+        min-height: 2.75rem;
+      }
+
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Buyer Perception</h1>
+  <p class="doc-meta">
+    Landing page copy review &nbsp;|&nbsp; Branch: feature/next-asset-2 &nbsp;|&nbsp;
+    Print this document and annotate by section.
+  </p>
+
+  <!-- NAVIGATION -->
+  <section>
+    <p class="section-label">Navigation</p>
+    <h2>Site chrome</h2>
+    <p><strong>Logo:</strong> Buyer Perception</p>
+    <p><strong>Nav links:</strong> The Problem &nbsp;·&nbsp; How It Works &nbsp;·&nbsp; About</p>
+    <p><strong>Button:</strong> Book a Call</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <section>
+    <p class="section-label">Section 1 | Hero</p>
+    <h2>Find out what your buyers really think about you</h2>
+    <p>
+      Your CRM data reflects <span class="eyebrow">your perception</span>. Your
+      call recordings reflect <span class="eyebrow">your perception</span>. Your
+      rep debriefs, your G2 reviews, your NPS scores: they all reflect
+      <span class="eyebrow">your perception</span>.
+      <span class="emphasis">We go and get your buyer's.</span>
+    </p>
+    <p><strong>Button:</strong> Book a Call</p>
+    <p><strong>Guarantee:</strong> If your buyers don't engage, you don't pay.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- DATA GAP -->
+  <section>
+    <p class="section-label">Section 2 | The Data Gap</p>
+    <h2>You've invested in great technology, built a sales methodology, and coached your team. You still don't know what your buyers really think about you.</h2>
+
+    <p><strong>Table columns:</strong> What Your Data Says &nbsp;|&nbsp; What the Buyer Actually Said &nbsp;|&nbsp; What's Happening Right Now</p>
+
+    <div class="table-block">
+      <div class="row-source">CRM</div>
+      <div class="data-label">Your data says</div>
+      <div class="mono">Closed Lost: Pricing</div>
+      <div class="data-label">What actually happened</div>
+      <p>Pricing was fine. Their CFO overruled the champion, and nobody on your team ever spoke to the CFO.</p>
+      <div class="data-label">Right now</div>
+      <p>That champion still rates you highly. She's told two peers to put you on their shortlist. You have no idea she's generating pipeline for you, or how to replicate it.</p>
+    </div>
+
+    <div class="table-block">
+      <div class="row-source">Call Recording</div>
+      <div class="data-label">Your data says</div>
+      <div class="mono">Discovery call scored 92% on methodology</div>
+      <div class="data-label">What actually happened</div>
+      <p>The buyer felt interrogated, not understood. Your rep asked great questions but didn't listen to the answers.</p>
+      <div class="data-label">Right now</div>
+      <p>The buyer told their Head of Ops not to bother taking your call. That's a deal you'll never see in your pipeline.</p>
+    </div>
+
+    <div class="table-block">
+      <div class="row-source">Rep Debrief</div>
+      <div class="data-label">Your data says</div>
+      <div class="mono">Lost to competitor on features</div>
+      <div class="data-label">What actually happened</div>
+      <p>Your product was fine. The competitor's implementation story made the transition feel painless. Yours felt risky.</p>
+      <div class="data-label">Right now</div>
+      <p>That buyer now sits on your competitor's customer advisory board. They're shaping the product roadmap you'll be competing against next year.</p>
+    </div>
+
+    <div class="table-block">
+      <div class="row-source">Sales Framework</div>
+      <div class="data-label">Your data says</div>
+      <div class="mono">Economic buyer identified. Decision criteria mapped. Process validated.</div>
+      <div class="data-label">What actually happened</div>
+      <p>"Honestly, they were wasting their time with me. My CFO was never going to approve this."</p>
+      <div class="data-label">Right now</div>
+      <p>The actual decision-maker thinks your team doesn't understand how their organisation buys. They've told procurement to remove you from the vendor list.</p>
+    </div>
+
+    <p><strong>Tagline:</strong> Four data sources. Four versions of your perception. None of them captured the buyer's.</p>
+    <p><strong>Supporting:</strong> Each row records what your organisation believes happened. Not fabricated, not useless, just your side of the deal. The buyer's version never entered the system.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section>
+    <p class="section-label">Section 3 | The Problem</p>
+
+    <h3>Card A</h3>
+    <h2>Your team tells you what you want to hear. Your buyers won't.</h2>
+    <p><strong>Subhead:</strong> It's easier for them to ghost you or be polite.</p>
+    <p>GTM leaders coach their reps not to have happy ears on deals. Then at company level, they end up in an echo chamber of positive G2 reviews, NPS scores, and testimonials.</p>
+    <p>That's a highlight reel from self-selected people who knew they were being watched. False positives: not wrong, not fabricated, just self-selected and unrepresentative.</p>
+    <p>The 60 to 70% who went elsewhere or left quietly aren't in that data. They're having conversations about you right now. And you have no idea what they're saying.</p>
+    <p><strong>Close:</strong> We find out.</p>
+
+    <h3>Card B</h3>
+    <h2>Buyers don't choose your competitor because they're objectively better.</h2>
+    <p><strong>Subhead:</strong> They choose them because they perceived them as better.</p>
+    <p>Perception isn't a soft metric. It's the mechanism by which every buying decision gets made. The gap between how you think your market sees you and how they actually see you is where lost deals live, where churn starts, and where pipeline disappears without a trace.</p>
+    <p><strong>Close:</strong> We close that gap.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- WHY YOU CAN'T SOLVE INTERNALLY -->
+  <section>
+    <p class="section-label">Section 4 | Why You Can't Solve This Internally</p>
+
+    <div class="card">
+      <h3>If the human matters most in sales, they matter most in feedback too</h3>
+      <p>Everyone agrees: the salesperson has never been more important. They're the human in the loop in every deal. So why would you automate the one conversation that tells you how that human experience actually landed? The conversations that reveal what buyers really think still need a real person who knows how to listen.</p>
+    </div>
+
+    <div class="card">
+      <h3>Your CRM captures the seller's workflow, not the buyer's verdict</h3>
+      <p>CRM loss reasons are chosen by the person who lost the deal. Research shows 85% of closed-lost data doesn't match what buyers actually report. You're making strategic decisions on data that's structurally unreliable.</p>
+    </div>
+
+    <div class="card">
+      <h3>Your tech stack has a blind spot</h3>
+      <p>You've invested in Gong, Salesforce, Clari, the full stack. They capture what happened when the buyer was in the room. None of them capture what happened after they left. The ghost - the prospect who stops replying - is invisible to every tool you own.</p>
+    </div>
+
+    <div class="card">
+      <h3>Your buyers won't tell your sales team the truth</h3>
+      <p>When a prospect ghosts you or gives a polite 'we went another direction,' they're not being honest - they're being efficient. Anything they share with your team will be used to sell to them. They know this. So they say nothing useful.</p>
+    </div>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- INVISIBLE PIPELINE -->
+  <section>
+    <p class="section-label">Section 5 | The Invisible Pipeline</p>
+    <h2>Every lost deal and every churned customer has an afterlife.</h2>
+    <p>The moment a deal closes, won or lost, the buyer doesn't disappear. They go back to their network and share what the experience was like. Some become advocates: generating referrals, recommendations, and pipeline you'll never attribute. Others become critics: warning peers, steering people toward competitors, and compounding damage you'll never see.</p>
+    <p>This is the invisible pipeline. It's operating right now inside your market. The only question is which direction it's flowing.</p>
+
+    <h3>Advocates creating pipeline</h3>
+    <ul>
+      <li>Recommended you to a peer</li>
+      <li>Mentioned you in a Slack group</li>
+      <li>Introduced you to peers</li>
+    </ul>
+    <p><strong>Foot:</strong> New pipeline → (you'll never attribute this)</p>
+    <p><strong>Quant:</strong> Each advocate ≈ £50K to £150K in invisible pipeline per year</p>
+    <p><strong>Footnote:</strong> Based on 2 to 3 peer recommendations per year at average B2B deal values.</p>
+
+    <h3>Critics destroying pipeline</h3>
+    <ul>
+      <li>Warned a peer to avoid you</li>
+      <li>Told their network not to bother</li>
+      <li>Recommended your competitor instead</li>
+    </ul>
+    <p><strong>Foot:</strong> ← Lost pipeline (you'll never see this)</p>
+    <p><strong>Quant:</strong> Each critic ≈ £50K to £150K in invisible pipeline damage per year</p>
+    <p><strong>Footnote:</strong> Based on 2 to 3 negative conversations per year at average B2B deal values.</p>
+
+    <p><strong>Close:</strong> Right now you don't know the ratio. We find out.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <p class="section-label">Section 6 | How It Works</p>
+
+    <div class="card">
+      <div class="step-num">01</div>
+      <h3>Buyer Perception Exercise</h3>
+      <p>A 60-minute session where your leadership team predicts how buyers perceive you across five dimensions. We select contacts together. The contract is signed after this session.</p>
+    </div>
+
+    <div class="card">
+      <div class="step-num">02</div>
+      <h3>Buyer Interviews</h3>
+      <p>Over two to three weeks, we speak with your lost prospects and churned customers through anonymous conversations, completely independent of your team.</p>
+    </div>
+
+    <div class="card">
+      <div class="step-num">03</div>
+      <h3>Perception Gap Readout</h3>
+      <p>A live session where we reveal your predictions against buyer reality, one dimension at a time.</p>
+    </div>
+
+    <div class="card">
+      <div class="step-num">04</div>
+      <h3>Action Workshop</h3>
+      <p>A half-day facilitated session turning findings into 3 to 5 specific commitments, each with an owner and a timeline.</p>
+    </div>
+
+    <h2 style="margin-top: 1.5rem;">What your report reveals</h2>
+    <p>Your leadership team's predictions are revealed against buyer reality in a live session, one dimension at a time. The gaps between what you believed and what your buyers actually said become immediately visible.</p>
+
+    <h4>Your Buyer Perception Score</h4>
+    <p>Revealed dimension by dimension: a single number showing how your market actually perceives you, scored across five dimensions.</p>
+
+    <h4>Where the experience breaks down</h4>
+    <p>Stage-by-stage scoring from first impression to final decision, walked through live so you see exactly where you're losing goodwill.</p>
+
+    <h4>Your advocate-to-critic ratio</h4>
+    <p>How many of your lost prospects would recommend you to a peer, and how many are actively steering people away. The split made visible in the room.</p>
+
+    <h4>What they'd tell peers</h4>
+    <p>In their own words. The conversations happening about you that you've never been part of, surfaced during the readout.</p>
+
+    <h4>How your competitors showed up</h4>
+    <p>Direct, experiential comparison from people who evaluated you side by side, revealed against what your team assumed.</p>
+
+    <h4>What to fix first</h4>
+    <p>Prioritised actions ranked by impact, discussed live before you leave the room. Monday morning changes, not six-month projects. Every recommendation is prioritised by revenue impact: the gaps most likely to improve your win rate, reduce churn, and protect the pipeline you've already built.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section>
+    <p class="section-label">Section 7 | Who This Is For</p>
+
+    <h3>Sales Leaders</h3>
+    <p>Your reps say it was pricing. Your CRM says it was timing. Neither tells you what actually happened in the room, or what's being said about you now.</p>
+
+    <h3>CEOs &amp; Founders</h3>
+    <p>You're making strategic decisions based on internal data and self-selected feedback. We bring you the external truth your team can't access.</p>
+
+    <h3>Revenue Operations</h3>
+    <p>Your CRM captures the seller's workflow. We capture the buyer's verdict. The gap between the two is where your pipeline is leaking.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <p class="section-label">Section 8 | About</p>
+    <h2>Gordon</h2>
+    <p>I spent a decade in B2B revenue leadership, running sales teams, sitting in deal reviews, and watching the same CRM data everyone else watches. I know how companies make decisions about their pipeline, their positioning, and their competition. And I know how much of that is guesswork dressed up as data.</p>
+    <p>Buyer Perception exists because every company deserves to hear what their market actually thinks: not the filtered version that makes it through internal reporting. I started this business to close the gap between what leadership believes and what buyers experience.</p>
+    <p>If that gap matters to you, let's talk.</p>
+    <p><strong>Email:</strong> gordon@buyerperception.com</p>
+    <p><strong>Button:</strong> Book a Call</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section>
+    <p class="section-label">Section 9 | Closing CTA</p>
+    <h2>Your buyers are having conversations about you right now. You just don't know what they're saying.</h2>
+    <p>We find out. Anonymously. Honestly. In about two weeks.</p>
+    <p><strong>Button:</strong> Book a Call</p>
+    <p><strong>Guarantee:</strong> If your buyers don't engage, you don't pay.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section>
+    <p class="section-label">Footer</p>
+    <p><strong>Buyer Perception</strong></p>
+    <p>© 2026 Buyer Perception Ltd</p>
+    <p>gordon@buyerperception.com &nbsp;·&nbsp; Book a Call</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section class="appendix">
+    <p class="section-label">Appendix | Meta / SEO (not visible on page)</p>
+    <p><strong>Page title:</strong> Buyer Perception | Find out what your buyers really think about you</p>
+    <p><strong>Meta description:</strong> Find out what your lost prospects and churned customers really think, through anonymous interviews that reveal how your market actually perceives you. Not what your CRM says. What buyers are saying about you now.</p>
+    <p><strong>Open Graph description:</strong> Find out what your lost prospects and churned customers really think, through anonymous interviews that reveal how your market actually perceives you.</p>
+    <p><strong>Twitter description:</strong> Find out what your buyers really think about you.</p>
+    <div class="notes">
+      <div class="notes-label">Notes</div>
+      <div class="notes-lines"></div>
+      <div class="notes-lines"></div>
+    </div>
+  </section>
+
+</body>
+</html>
