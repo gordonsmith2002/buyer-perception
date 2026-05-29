@@ -394,7 +394,7 @@ export default function ProposalTemplatePage() {
       <Section label="ABOUT">
         <div className="max-w-[680px] space-y-5 text-base leading-[1.85] text-[#555] sm:text-lg">
           <p>
-            I spent a decade in B2B revenue leadership, running sales teams at
+            I spent twenty years in B2B revenue leadership, running sales teams at
             LinkedIn, Hired, and Hubble. I know how companies make decisions
             about their pipeline, their positioning, and their competition, and I
             know how much of that is guesswork dressed up as data.

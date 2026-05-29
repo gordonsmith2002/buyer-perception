@@ -30,55 +30,50 @@ export default function Provocation() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           <ProblemCard>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-[2.35rem] leading-tight text-white">
-              Your team tells you what you want to hear. Your buyers won&apos;t.
+              Your data is a mirror, not a window.
             </h2>
-            <p className="mt-4 font-serif text-lg sm:text-xl leading-snug text-white/85 font-semibold">
-              It&apos;s easier for them to ghost you or be polite.
-            </p>
             <div className="mt-6 sm:mt-8 flex-1 flex flex-col min-h-0">
               <div className="space-y-5 text-base sm:text-lg leading-[1.65] text-[#aaaaaa]">
                 <p>
-                  GTM leaders coach their reps not to have happy ears on deals.
-                  Then at company level, they end up in an echo chamber of
-                  positive G2 reviews, NPS scores, and testimonials.
+                  Your CRM data was entered by the rep who lost the deal. Your
+                  call recordings capture a conversation the rep directed. Your
+                  debriefs are the rep&apos;s version of what happened. Your
+                  sales frameworks were designed to help the rep qualify and
+                  close. Every internal data source reflects your own
+                  organisation&apos;s perception back at itself. The
+                  buyer&apos;s voice isn&apos;t in there.
                 </p>
-                <p>
-                  That&apos;s a highlight reel from self-selected people who knew
-                  they were being watched. False positives: not wrong, not
-                  fabricated, just self-selected and unrepresentative.
-                </p>
-                <p>
-                  The 60 to 70% who went elsewhere or left quietly aren&apos;t in
-                  that data. They&apos;re having conversations about you right
-                  now. And you have no idea what they&apos;re saying.
-                </p>
-                <p className="text-white font-medium pt-0.5">We find out.</p>
               </div>
             </div>
           </ProblemCard>
 
           <ProblemCard delayMs={80}>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-[2.35rem] leading-tight text-white">
-              Buyers don&apos;t choose your competitor because they&apos;re
-              objectively better.
+              Your external feedback is a highlight reel.
             </h2>
-            <p className="mt-4 font-serif text-lg sm:text-xl leading-snug text-white/85 font-semibold">
-              They choose them because they perceived them as better.
-            </p>
             <div className="mt-6 sm:mt-8 flex-1 flex flex-col min-h-0">
               <div className="space-y-5 text-base sm:text-lg leading-[1.65] text-[#aaaaaa]">
                 <p>
-                  Perception isn&apos;t a soft metric. It&apos;s the mechanism by
-                  which every buying decision gets made. The gap between how you
-                  think your market sees you and how they actually see you is
-                  where lost deals live, where churn starts, and where pipeline
-                  disappears without a trace.
+                  G2 reviews, NPS surveys, testimonials — these are real buyer
+                  voices. But they come from a self-selected minority: the
+                  warmest relationships, often incentivised, always aware their
+                  name is attached. GTM leaders coach their reps not to have
+                  happy ears on deals. Then at company level, they do exactly
+                  the same thing — building strategy on positive reviews from
+                  people who were never going to say anything negative.
                 </p>
-                <p className="text-white font-medium pt-0.5">We close that gap.</p>
               </div>
             </div>
           </ProblemCard>
         </div>
+
+        <Reveal className="flex justify-center">
+          <p className="mt-10 max-w-4xl text-center font-serif text-xl sm:text-2xl font-bold leading-snug text-white">
+            The 60–70% who went elsewhere or left quietly aren&apos;t in either
+            data set. They&apos;re having conversations about you right now. And
+            you have no idea what they&apos;re saying.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

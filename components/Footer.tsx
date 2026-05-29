@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="text-brandLight">
             <div className="font-semibold text-white">Buyer Perception</div>
             <div className="text-white/50 text-sm mt-1">
-              © 2026 Buyer Perception Ltd
+              © 2026 Buyer Perception
             </div>
           </div>
 

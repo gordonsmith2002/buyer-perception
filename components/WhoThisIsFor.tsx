@@ -3,16 +3,16 @@ import Reveal from "./Reveal";
 
 const CARDS = [
   {
-    title: "Sales Leaders",
-    body: "Your reps say it was pricing. Your CRM says it was timing. Neither tells you what actually happened in the room, or what's being said about you now.",
+    title: "VP Sales / CRO",
+    body: "You suspect the reasons in your CRM don't tell the full story. You want independent evidence to shape how your team sells — not opinions, not frameworks, not what your reps told you happened.",
   },
   {
-    title: "CEOs & Founders",
-    body: "You're making strategic decisions based on internal data and self-selected feedback. We bring you the external truth your team can't access.",
+    title: "CEO / Founder",
+    body: "Your VP Sales says you lose on pricing. Your buyers say you lose on responsiveness. You need the truth before you invest in the wrong fix.",
   },
   {
-    title: "Revenue Operations",
-    body: "Your CRM captures the seller's workflow. We capture the buyer's verdict. The gap between the two is where your pipeline is leaking.",
+    title: "Post-Sales / CS Leader",
+    body: "You're seeing churn you can't explain. NPS says healthy. QBRs say on track. But the senior buyer who signed the deal hasn't engaged in months — and nobody's measuring that.",
   },
 ];
 

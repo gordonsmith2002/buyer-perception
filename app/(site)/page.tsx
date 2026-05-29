@@ -1,7 +1,6 @@
 import Hero from "../../components/Hero";
 import DataGap from "../../components/DataGap";
 import Provocation from "../../components/Provocation";
-import FourCards from "../../components/FourCards";
 import InvisiblePipelineSection from "../../components/InvisiblePipelineSection";
 import HowItWorksSection from "../../components/HowItWorksSection";
 import WhoThisIsFor from "../../components/WhoThisIsFor";
@@ -14,7 +13,6 @@ export default function HomePage() {
       <Hero />
       <DataGap />
       <Provocation />
-      <FourCards />
       <InvisiblePipelineSection />
       <HowItWorksSection />
       <WhoThisIsFor />

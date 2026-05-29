@@ -30,20 +30,20 @@ export default function AboutSection() {
             </Reveal>
             <Reveal>
               <p>
-                I spent a decade in B2B revenue leadership, running sales
-                teams, sitting in deal reviews, and watching the same CRM data
-                everyone else watches. I know how companies make decisions
-                about their pipeline, their positioning, and their competition.
-                And I know how much of that is guesswork dressed up as data.
+                I spent twenty years in B2B revenue leadership — running sales
+                teams at LinkedIn, Hired.com, and a series of scaling SaaS
+                businesses. I know how companies make decisions about their
+                pipeline, their positioning, and their competition. And I know
+                how much of that is guesswork dressed up as data.
               </p>
             </Reveal>
             <Reveal>
               <p>
-                Buyer Perception exists because every company deserves to hear
-                what their market actually thinks: not the filtered version
-                that makes it through internal reporting. I started this
-                business to close the gap between what leadership believes and
-                what buyers experience.
+                Buyer Perception exists because I kept seeing the same pattern:
+                leadership teams making strategic decisions based on internal
+                data and self-selected feedback, while the buyers who could
+                actually help them were having conversations nobody was
+                listening to.
               </p>
             </Reveal>
             <Reveal>

@@ -9,21 +9,16 @@ export default function Hero() {
         <div className="max-w-3xl">
           <Reveal>
             <h1 className="font-serif text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">
-              Find out what your buyers really think about you
+              Win-loss analysis tells you why you lost the deal. We tell you
+              what that buyer is saying about you right now.
             </h1>
           </Reveal>
 
           <Reveal>
             <p className="mt-7 max-w-3xl border-l border-accent/70 pl-4 font-serif text-xl sm:text-2xl leading-relaxed text-white/90">
-              Your CRM data reflects{" "}
-              <span className="italic text-white">your perception</span>. Your
-              call recordings reflect{" "}
-              <span className="italic text-white">your perception</span>. Your
-              rep debriefs, your G2 reviews, your NPS scores: they all
-              reflect <span className="italic text-white">your perception</span>.{" "}
-              <span className="font-semibold text-accent">
-                We go and get your buyer&apos;s.
-              </span>
+              We anonymously interview your lost prospects and churned
+              customers — and bring back the truth about how your market
+              perceives you.
             </p>
           </Reveal>
 

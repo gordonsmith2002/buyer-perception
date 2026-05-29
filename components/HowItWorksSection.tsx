@@ -4,27 +4,21 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     n: "01",
-    title: "Buyer Perception Exercise",
+    title: "The Lost Revenue Assessment",
     detail:
-      "A 60-minute session where your leadership team predicts how buyers perceive you across five dimensions. We select contacts together. The contract is signed after this session.",
+      "A 60-minute working session with your leadership team. We quantify the financial exposure from deals you could have won and customers you didn't need to lose — using your own data. Your team makes predictions across five dimensions of buyer experience. Those predictions become one of the most powerful elements of the final report.",
   },
   {
     n: "02",
-    title: "Buyer Interviews",
+    title: "The Buyer Perception Report",
     detail:
-      "Over two to three weeks, we speak with your lost prospects and churned customers through anonymous conversations, completely independent of your team.",
+      "Anonymous interviews with 8-12 of your lost prospects or churned customers, synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and a pipeline impact analysis. Findings are delivered live — your predictions shown first, then buyer reality revealed one dimension at a time.",
   },
   {
     n: "03",
-    title: "Perception Gap Readout",
+    title: "The Action Workshop (optional)",
     detail:
-      "A live session where we reveal your predictions against buyer reality, one dimension at a time.",
-  },
-  {
-    n: "04",
-    title: "Action Workshop",
-    detail:
-      "A half-day facilitated session turning findings into 3 to 5 specific commitments, each with an owner and a timeline.",
+      "A half-day facilitated session where your leadership team turns findings into commitments. Specific changes, with owners, timelines, and measurable outcomes. The benchmark for a follow-up engagement six months later.",
   },
 ];
 
@@ -67,8 +61,15 @@ export default function HowItWorksSection() {
             HOW IT WORKS
           </div>
         </Reveal>
+        <Reveal>
+          <p className="mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-[#aaaaaa]">
+            This isn&apos;t market research. It isn&apos;t a survey. It&apos;s a
+            structured, independent, human conversation — with the depth to turn
+            what buyers say into insight you can act on.
+          </p>
+        </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-8">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {STEPS.map((step, i) => (
             <Reveal key={step.n} delayMs={i * 80}>
               <div className="flex flex-col h-full border-t border-white/10 pt-8 md:pt-10">

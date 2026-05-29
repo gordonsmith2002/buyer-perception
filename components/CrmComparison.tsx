@@ -18,12 +18,12 @@ const ROWS: Row[] = [
     tone: "advocate",
   },
   {
-    crm: "Closed Lost: Pricing",
+    crm: "Closed Lost: No Decision",
     quote:
-      "Pricing was fine. Your proposal felt like a find-and-replace template. Their competitor laid out exactly what our first 90 days would look like.",
+      "We wanted to move forward. I just couldn't get my CFO to prioritise it. If your team had helped me build the internal case — shown me how to quantify the cost of doing nothing — I think we'd have got there.",
     impact:
-      "Warned three people at a conference to go with your competitor. That's the story they tell about you now.",
-    tone: "critic",
+      "Still rates you highly. Would re-engage if approached. But nobody followed up.",
+    tone: "advocate",
   },
   {
     crm: "Closed Lost: Went with Competitor",
@@ -104,9 +104,9 @@ export default function CrmComparison() {
 
         <Reveal className="flex justify-center">
           <div className="mt-12 text-[#555] text-lg max-w-3xl text-center leading-relaxed">
-            Same deals. Completely different stories, and completely different
-            word-of-mouth after the deal. One version helps you. The other
-            doesn&apos;t.
+            Same CRM field. Completely different realities. One buyer is
+            building your pipeline. Another is destroying it. The third is
+            waiting to hear from you. Your data doesn&apos;t know the difference.
           </div>
         </Reveal>
         <Reveal className="flex justify-center">
