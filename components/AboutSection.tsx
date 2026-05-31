@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import BookButton from "./BookButton";
 import Reveal from "./Reveal";
 
@@ -17,8 +18,14 @@ export default function AboutSection() {
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           <Reveal className="lg:col-span-4">
-            <div className="aspect-square max-w-sm mx-auto lg:mx-0 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center">
-              <span className="text-sm text-white/35">Photo</span>
+            <div className="relative aspect-square max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-white/10">
+              <Image
+                src="/images/gordon-headshot.png"
+                alt="Gordon, founder of Buyer Perception"
+                fill
+                className="object-cover object-[center_15%]"
+                sizes="(max-width: 1024px) 100vw, 384px"
+              />
             </div>
           </Reveal>
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-/** Brief: placeholder `#contact`; replace with Calendly when ready */
-const BOOK_HREF = "#contact";
+export const BOOK_CALL_URL =
+  "https://calendly.com/gordon-buyerperception/30min";
 
 export default function BookButton({
   children = "Book a Call",
@@ -12,7 +12,9 @@ export default function BookButton({
 }) {
   return (
     <a
-      href={BOOK_HREF}
+      href={BOOK_CALL_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className={[
         "inline-flex items-center justify-center rounded-md border border-accent bg-accent px-5 py-3",
         "text-white font-semibold tracking-tight hover:bg-[#b83228] hover:border-[#b83228] transition-colors",

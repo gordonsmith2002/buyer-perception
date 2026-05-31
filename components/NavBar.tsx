@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import { BOOK_CALL_URL } from "./BookButton";
 
 const LINKS = [
   { href: "#problem", label: "The Problem" },
@@ -35,7 +36,9 @@ export default function NavBar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={BOOK_CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-2 inline-flex items-center justify-center rounded-md px-4 py-2 bg-accent text-white text-sm font-semibold tracking-tight border border-accent hover:bg-[#b83228] hover:border-[#b83228] transition-colors"
             >
               Book a Call
@@ -44,7 +47,9 @@ export default function NavBar() {
 
           <div className="flex md:hidden items-center gap-2">
             <a
-              href="#contact"
+              href={BOOK_CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex rounded-md bg-accent text-white text-xs font-semibold px-3 py-2 border border-accent"
             >
               Book a Call
@@ -85,7 +90,9 @@ export default function NavBar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={BOOK_CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 mx-3 text-center rounded-md bg-accent text-white text-sm font-semibold py-3 border border-accent"
               onClick={() => setOpen(false)}
             >

@@ -58,7 +58,7 @@ const questions: Question[] = [
   },
 ];
 
-const CALENDLY_URL = "https://calendly.com/admin-buyerperception/30min";
+const CALENDLY_URL = "https://calendly.com/gordon-buyerperception/30min";
 
 export default function BlindSpotTestPage() {
   const [screen, setScreen] = useState(0);

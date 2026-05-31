@@ -1,4 +1,5 @@
 import React from "react";
+import { BOOK_CALL_URL } from "./BookButton";
 
 export default function Footer() {
   return (
@@ -22,7 +23,12 @@ export default function Footer() {
               </a>
             </div>
             <div>
-              <a href="#contact" className="hover:text-white">
+              <a
+                href={BOOK_CALL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
                 Book a Call
               </a>
             </div>
