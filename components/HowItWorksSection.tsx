@@ -12,40 +12,40 @@ const STEPS = [
     n: "02",
     title: "The Buyer Perception Report",
     detail:
-      "Anonymous interviews with 8-12 of your lost prospects or churned customers, synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and a pipeline impact analysis. Findings are delivered live: your predictions shown first, then buyer reality revealed one dimension at a time.",
+      "Anonymous interviews with your lost prospects or churned customers, synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and a pipeline impact analysis. Findings are delivered live: your predictions shown first, then buyer reality revealed one dimension at a time.",
   },
   {
     n: "03",
     title: "The Action Workshop (optional)",
     detail:
-      "A half-day facilitated session where your leadership team turns findings into commitments. Specific changes, with owners, timelines, and measurable outcomes. The benchmark for a follow-up engagement six months later.",
+      "A half-day facilitated session where we partner with your leadership team to turn findings into specific commitments. Specific changes, with owners, timelines, and measurable outcomes.",
   },
 ];
 
 const REPORT_ITEMS = [
   {
     title: "Your Buyer Perception Score",
-    desc: "Revealed dimension by dimension: a single number showing how your market actually perceives you, scored across five dimensions.",
+    desc: "A single number showing how your market actually perceives you, revealed dimension by dimension across five areas of buyer experience.",
   },
   {
     title: "Where the experience breaks down",
-    desc: "Stage-by-stage scoring from first impression to final decision, walked through live so you see exactly where you're losing goodwill.",
+    desc: "Stage-by-stage scoring from first impression to final decision, showing exactly where you are losing goodwill and why.",
   },
   {
     title: "Your advocate-to-critic ratio",
-    desc: "How many of your lost prospects would recommend you to a peer, and how many are actively steering people away. The split made visible in the room.",
+    desc: "How many of your lost prospects would recommend you to a peer, and how many are actively steering people away.",
   },
   {
-    title: "What they'd tell peers",
-    desc: "In their own words. The conversations happening about you that you've never been part of, surfaced during the readout.",
+    title: "What they would tell peers",
+    desc: "In their own words. The conversations happening about you that you have never been part of.",
   },
   {
     title: "How your competitors showed up",
-    desc: "Direct, experiential comparison from people who evaluated you side by side, revealed against what your team assumed.",
+    desc: "Direct, experiential comparison from people who evaluated you side by side, against what your team assumed.",
   },
   {
     title: "What to fix first",
-    desc: "Prioritised actions ranked by impact, discussed live before you leave the room. Monday morning changes, not six-month projects. Every recommendation is prioritised by revenue impact: the gaps most likely to improve your win rate, reduce churn, and protect the pipeline you've already built.",
+    desc: "Prioritised actions ranked by revenue impact: the gaps most likely to improve your win rate, reduce churn, and protect the pipeline you have already built.",
   },
 ];
 

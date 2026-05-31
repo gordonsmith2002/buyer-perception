@@ -25,7 +25,7 @@ const ROWS: CrmRow[] = [
   {
     crmField: "Closed Lost: No decision",
     buyerTruth:
-      "We were ready to buy. I wanted to move forward, but I could not get it prioritised internally, and nobody on your side helped me build the business case.",
+      "We were ready to buy, but I could not get it prioritised internally, and nobody on your side helped me build the business case, so we moved on to a new project.",
     currentReality:
       "They still rate you highly and would re-engage if approached. Nobody followed up.",
   },

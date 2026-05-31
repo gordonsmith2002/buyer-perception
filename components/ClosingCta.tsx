@@ -16,8 +16,7 @@ export default function ClosingCta() {
         </Reveal>
         <Reveal>
           <p className="mt-8 text-lg text-[#555] max-w-2xl mx-auto leading-relaxed">
-            One conversation. No commitment. Find out what your buyers say about
-            you when you are not in the room.
+            Find out what your buyers say about you when you are not in the room.
           </p>
         </Reveal>
         <div className="mt-10 flex justify-center">
@@ -27,8 +26,8 @@ export default function ClosingCta() {
         </div>
         <Reveal>
           <p className="mt-8 text-sm text-black/45 max-w-xl mx-auto leading-relaxed">
-            If your buyers don&apos;t engage, you don&apos;t pay. No platform,
-            no annual contract, just the truth when you need it.
+            If your buyers do not engage, you do not pay. No platform, no annual
+            contract, just the truth when you need it.
           </p>
         </Reveal>
       </div>

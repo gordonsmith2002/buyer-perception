@@ -1,5 +1,6 @@
 import React from "react";
 import Reveal from "./Reveal";
+import EditorialStatCallout from "./EditorialStatCallout";
 
 type StackItem = {
   label: string;
@@ -79,23 +80,22 @@ export default function StackBlindSpot() {
           ))}
         </div>
 
-        <Reveal>
-          <div className="mt-12 max-w-4xl mx-auto rounded-2xl border border-black/10 bg-[#f7f3ed] px-6 py-6 sm:px-8 sm:py-8 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-            <p className="font-serif text-lg sm:text-xl leading-relaxed text-[#1a1a1a]">
-              Gartner predicts that by 2030, 75% of B2B buyers will prefer sales
-              experiences that prioritise human interaction over AI. In a world
-              where everything is being automated, the experience of buying from
-              you is going to matter more than ever. Most companies have no way
-              to measure it.
+        <div className="mt-16 sm:mt-20 max-w-4xl mx-auto">
+          <EditorialStatCallout
+            percentage="75%"
+            headline="Gartner predicts that by 2030, 75% of B2B buyers will prefer sales experiences that prioritise human interaction over AI."
+            source="Source: Gartner, August 2025."
+          >
+            <p>
+              In a world where everything is being automated, the experience of
+              buying from you is going to matter more than ever. Most companies
+              have no way to measure it.
             </p>
-            <p className="mt-4 text-xs sm:text-sm text-black/45">
-              Source: Gartner, August 2025.
-            </p>
-          </div>
-        </Reveal>
+          </EditorialStatCallout>
+        </div>
 
         <Reveal className="flex justify-center">
-          <p className="mt-10 max-w-4xl text-center font-serif text-xl sm:text-2xl leading-snug text-[#1a1a1a]">
+          <p className="mt-12 sm:mt-16 max-w-4xl text-center font-serif text-xl sm:text-2xl leading-snug text-[#1a1a1a]">
             AI can read the transcript. It cannot have the one conversation that
             matters, the one that only happens when no one is selling. None of
             your tools can, because none of them are human.
