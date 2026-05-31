@@ -20,7 +20,7 @@ const ROWS: Row[] = [
   {
     crm: "Closed Lost: No Decision",
     quote:
-      "We wanted to move forward. I just couldn't get my CFO to prioritise it. If your team had helped me build the internal case — shown me how to quantify the cost of doing nothing — I think we'd have got there.",
+      "We wanted to move forward. I just couldn't get my CFO to prioritise it. If your team had helped me build the internal case (shown me how to quantify the cost of doing nothing) I think we'd have got there.",
     impact:
       "Still rates you highly. Would re-engage if approached. But nobody followed up.",
     tone: "advocate",

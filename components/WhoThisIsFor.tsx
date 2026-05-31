@@ -3,16 +3,12 @@ import Reveal from "./Reveal";
 
 const CARDS = [
   {
-    title: "VP Sales / CRO",
-    body: "You suspect the reasons in your CRM don't tell the full story. You want independent evidence to shape how your team sells — not opinions, not frameworks, not what your reps told you happened.",
+    title: "Revenue Leaders",
+    body: "You suspect the reasons in your CRM don't tell the full story, on the deals you lose and the customers you quietly lose after the sale. You want independent evidence to shape how your team sells and retains, not opinions, not frameworks, not what your reps told you happened.",
   },
   {
-    title: "CEO / Founder",
+    title: "Founders and CEOs",
     body: "Your VP Sales says you lose on pricing. Your buyers say you lose on responsiveness. You need the truth before you invest in the wrong fix.",
-  },
-  {
-    title: "Post-Sales / CS Leader",
-    body: "You're seeing churn you can't explain. NPS says healthy. QBRs say on track. But the senior buyer who signed the deal hasn't engaged in months — and nobody's measuring that.",
   },
 ];
 
@@ -28,7 +24,7 @@ export default function WhoThisIsFor() {
             WHO THIS IS FOR
           </div>
         </Reveal>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl">
           {CARDS.map((card, i) => (
             <Reveal key={card.title} delayMs={i * 100}>
               <div className="rounded-2xl border border-black/10 bg-creamCard p-6 sm:p-8 h-full shadow-[0_1px_3px_rgba(0,0,0,0.06)]">

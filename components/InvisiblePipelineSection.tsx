@@ -5,11 +5,15 @@ function ScenarioCard({
   variant,
   title,
   body,
+  quant,
+  quantFootnote,
   delayMs = 0,
 }: {
   variant: "advocate" | "critic";
   title: string;
   body: string;
+  quant: string;
+  quantFootnote: string;
   delayMs?: number;
 }) {
   const isAdv = variant === "advocate";
@@ -34,23 +38,19 @@ function ScenarioCard({
         <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#555]">
           {body}
         </p>
+        <p
+          className={[
+            "mt-5 text-sm font-semibold",
+            isAdv ? "text-emerald-800" : "text-slate-800",
+          ].join(" ")}
+        >
+          {quant}
+        </p>
+        <p className="mt-2 text-xs text-black/45 leading-snug">
+          {quantFootnote}
+        </p>
       </div>
     </Reveal>
-  );
-}
-
-function Stat({ value, source }: { value: string; source?: string }) {
-  return (
-    <div className="flex h-full flex-col rounded-2xl border border-black/10 bg-creamCard p-6 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-      <p className="flex-1 font-serif text-lg sm:text-xl leading-snug text-[#1a1a1a]">
-        {value}
-      </p>
-      {source ? (
-        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.15em] text-black/45">
-          {source}
-        </p>
-      ) : null}
-    </div>
   );
 }
 
@@ -66,25 +66,46 @@ export default function InvisiblePipelineSection() {
             THE INVISIBLE PIPELINE
           </div>
         </Reveal>
+
         <Reveal>
-          <h2 className="font-serif text-3xl sm:text-4xl mt-4 leading-tight max-w-3xl text-[#1a1a1a]">
-            Every lost deal and every churned customer has an afterlife.
+          <p className="mt-8 max-w-4xl font-serif text-xl sm:text-2xl font-bold leading-snug text-[#1a1a1a]">
+            This is not a you problem. Every revenue team is flying on the same
+            instruments, and they all have the same blind spot.
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <h2 className="font-serif text-3xl sm:text-4xl mt-8 leading-tight max-w-3xl text-[#1a1a1a]">
+            Every deal you lose has an afterlife. So does every customer who
+            leaves.
           </h2>
         </Reveal>
         <Reveal>
-          <div className="mt-8 space-y-5 text-base sm:text-lg text-[#555] leading-relaxed max-w-3xl">
-            <p>
-              The moment a deal closes, won or lost, the buyer doesn&apos;t
-              disappear. They go back to their network and share what the
-              experience was like. Some become advocates: generating referrals,
-              recommendations, and pipeline you&apos;ll never attribute. Others
-              become critics: warning peers, steering people toward competitors,
-              and compounding damage you&apos;ll never see.
+          <p className="mt-8 max-w-3xl text-base sm:text-lg text-[#555] leading-relaxed">
+            The moment a deal closes, won or lost, the buyer does not disappear.
+            They go back to their network and tell people what dealing with you
+            was actually like. Some become advocates, sending you referrals and
+            recommendations you will never trace back to them. Others become
+            critics, steering peers toward your competitors. This is your
+            invisible pipeline. It is running right now, and the only question is
+            which way it is flowing.
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-10 max-w-3xl rounded-2xl border border-black/10 bg-creamCard px-6 py-6 sm:px-8 sm:py-8 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+            <p className="font-serif text-xl sm:text-2xl leading-snug text-[#1a1a1a]">
+              73% of B2B buyers say peer recommendations are the number one
+              factor in choosing a vendor.
             </p>
-            <p>
-              This is the invisible pipeline. It&apos;s operating right now
-              inside your market. The only question is which direction it&apos;s
-              flowing.
+            <p className="mt-3 text-xs sm:text-sm text-black/45">
+              Source: Wynter, 2024.
+            </p>
+            <p className="mt-6 text-base sm:text-lg text-[#555] leading-relaxed">
+              If recommendations are the single biggest factor in how your buyers
+              choose, then every experience you create, good or bad, is shaping
+              pipeline you will never see. The question is whether you are
+              creating advocates or critics.
             </p>
           </div>
         </Reveal>
@@ -93,13 +114,17 @@ export default function InvisiblePipelineSection() {
           <ScenarioCard
             variant="advocate"
             title="You lose the deal. You gain an advocate."
-            body="The buyer needed a feature you didn't have — that was never going to change. But your team was responsive, honest, and made the process easy. When a peer asks next quarter who else to look at, your name comes first. That closed-lost is generating pipeline you'll never attribute."
+            body="The buyer needed a feature you didn't have, and that was never going to change. But your team was responsive, honest, and made the process easy. When a peer asks next quarter who else to look at, your name comes first. That closed-lost is generating pipeline you'll never attribute."
+            quant="Each advocate ≈ £50K to £150K in invisible pipeline per year"
+            quantFootnote="Based on 2-3 peer recommendations per year at average B2B deal values."
           />
           <ScenarioCard
             variant="critic"
             delayMs={80}
             title="You win the deal. You create a critic."
             body="You got the signature. Then you botched the handoff, ghosted them after onboarding, and treated the close as the finish line. They churn inside a year. When peers ask, they say don't bother. That closed-won is destroying deals you'll never see."
+            quant="Each critic ≈ £50K to £150K in invisible pipeline damage per year"
+            quantFootnote="Based on 2-3 negative conversations per year at average B2B deal values."
           />
         </div>
 
@@ -110,23 +135,19 @@ export default function InvisiblePipelineSection() {
           </p>
         </Reveal>
 
-        <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Reveal>
-            <Stat
-              value="73% of B2B buyers say peer recommendations are the #1 factor in choosing a vendor."
-              source="Wynter, 2024"
-            />
-          </Reveal>
-          <Reveal delayMs={80}>
-            <Stat
-              value="Dissatisfied customers tell 15+ people. Satisfied customers tell 6."
-              source="American Express"
-            />
-          </Reveal>
-          <Reveal delayMs={160}>
-            <Stat value="Most unhappy buyers never complain to the brand. They just leave and tell everyone else." />
-          </Reveal>
-        </div>
+        <Reveal>
+          <div className="mt-10 max-w-3xl mx-auto rounded-2xl border border-black/10 bg-[#f7f3ed] px-6 py-6 sm:px-8 sm:py-8 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+            <p className="font-serif text-lg sm:text-xl leading-relaxed text-[#1a1a1a]">
+              You lose ~100 deals a year. If even 20 of those buyers walked away
+              as critics, that&apos;s 40-60 conversations steering peers away
+              from you, at your average deal size. Now run the same maths on the
+              advocates you&apos;re not creating.
+            </p>
+            <p className="mt-4 text-sm text-black/50 italic">
+              Illustrative. Your real ratio is the thing we measure.
+            </p>
+          </div>
+        </Reveal>
 
         <Reveal>
           <p className="mt-14 sm:mt-16 text-center font-semibold text-[#1a1a1a] text-lg sm:text-xl">

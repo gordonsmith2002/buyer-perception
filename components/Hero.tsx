@@ -17,8 +17,8 @@ export default function Hero() {
           <Reveal>
             <p className="mt-7 max-w-3xl border-l border-accent/70 pl-4 font-serif text-xl sm:text-2xl leading-relaxed text-white/90">
               We anonymously interview your lost prospects and churned
-              customers — and bring back the truth about how your market
-              perceives you.
+              customers to find out what you could have done differently, what
+              they are saying about you now, and what to fix first.
             </p>
           </Reveal>
 

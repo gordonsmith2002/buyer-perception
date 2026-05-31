@@ -30,7 +30,7 @@ export default function AboutSection() {
             </Reveal>
             <Reveal>
               <p>
-                I spent twenty years in B2B revenue leadership — running sales
+                I spent twenty years in B2B revenue leadership, running sales
                 teams at LinkedIn, Hired.com, and a series of scaling SaaS
                 businesses. I know how companies make decisions about their
                 pipeline, their positioning, and their competition. And I know

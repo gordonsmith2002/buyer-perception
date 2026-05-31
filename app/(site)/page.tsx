@@ -1,6 +1,7 @@
 import Hero from "../../components/Hero";
 import DataGap from "../../components/DataGap";
-import Provocation from "../../components/Provocation";
+import StackBlindSpot from "../../components/StackBlindSpot";
+import NpsReviewsSection from "../../components/NpsReviewsSection";
 import InvisiblePipelineSection from "../../components/InvisiblePipelineSection";
 import HowItWorksSection from "../../components/HowItWorksSection";
 import WhoThisIsFor from "../../components/WhoThisIsFor";
@@ -12,7 +13,8 @@ export default function HomePage() {
     <>
       <Hero />
       <DataGap />
-      <Provocation />
+      <StackBlindSpot />
+      <NpsReviewsSection />
       <InvisiblePipelineSection />
       <HowItWorksSection />
       <WhoThisIsFor />

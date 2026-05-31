@@ -3,9 +3,11 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "bash scripts/dev.sh",
+    "dev:turbo": "env -u MallocStackLogging -u MallocStackLoggingNoCompact next dev",
+    "preview": "bash scripts/preview.sh",
+    "build": "env -u MallocStackLogging -u MallocStackLoggingNoCompact next build",
+    "start": "env -u MallocStackLogging -u MallocStackLoggingNoCompact next start -H 127.0.0.1 -p 3000",
     "lint": "next lint"
   },
   "dependencies": {

@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   title:
     "Buyer Perception | Find out what your buyers really think about you",
   description:
-    "Find out what your lost prospects and churned customers really think, through anonymous interviews that reveal how your market actually perceives you. Not what your CRM says. What buyers are saying about you now.",
+    "Win-loss analysis tells you why you lost. We anonymously interview your lost prospects and churned customers to show you the pipeline they're creating or destroying right now, not what your CRM says.",
   openGraph: {
     title:
       "Buyer Perception | Find out what your buyers really think about you",
     description:
-      "Find out what your lost prospects and churned customers really think, through anonymous interviews that reveal how your market actually perceives you.",
+      "Win-loss analysis tells you why you lost. We anonymously interview your lost prospects and churned customers to show you the pipeline they're creating or destroying right now, not what your CRM says.",
     url: "https://buyerperception.com",
     siteName: "Buyer Perception",
     type: "website",

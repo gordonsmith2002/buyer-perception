@@ -6,13 +6,13 @@ const STEPS = [
     n: "01",
     title: "The Lost Revenue Assessment",
     detail:
-      "A 60-minute working session with your leadership team. We quantify the financial exposure from deals you could have won and customers you didn't need to lose — using your own data. Your team makes predictions across five dimensions of buyer experience. Those predictions become one of the most powerful elements of the final report.",
+      "A 60-minute working session with your leadership team. We quantify the financial exposure from deals you could have won and customers you didn't need to lose, using your own data. Your team makes predictions across five dimensions of buyer experience. Those predictions become one of the most powerful elements of the final report.",
   },
   {
     n: "02",
     title: "The Buyer Perception Report",
     detail:
-      "Anonymous interviews with 8-12 of your lost prospects or churned customers, synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and a pipeline impact analysis. Findings are delivered live — your predictions shown first, then buyer reality revealed one dimension at a time.",
+      "Anonymous interviews with 8-12 of your lost prospects or churned customers, synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and a pipeline impact analysis. Findings are delivered live: your predictions shown first, then buyer reality revealed one dimension at a time.",
   },
   {
     n: "03",
@@ -64,7 +64,7 @@ export default function HowItWorksSection() {
         <Reveal>
           <p className="mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-[#aaaaaa]">
             This isn&apos;t market research. It isn&apos;t a survey. It&apos;s a
-            structured, independent, human conversation — with the depth to turn
+            structured, independent, human conversation, with the depth to turn
             what buyers say into insight you can act on.
           </p>
         </Reveal>

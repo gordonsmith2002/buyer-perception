@@ -1,82 +1,66 @@
 import React from "react";
 import Reveal from "./Reveal";
 
-type DataGapRow = {
-  source: string;
-  officialData: string;
+type CrmRow = {
+  crmField: string;
   buyerTruth: string;
   currentReality: string;
 };
 
-const ROWS: DataGapRow[] = [
+const ROWS: CrmRow[] = [
   {
-    source: "CRM",
-    officialData: "Closed Lost: Pricing",
+    crmField: "Closed Lost: Pricing",
     buyerTruth:
-      "Pricing was fine. Their CFO overruled the champion, and nobody on your team ever spoke to the CFO.",
+      "Pricing was never the issue. My CFO overruled me, and nobody on their team ever spoke to my CFO.",
     currentReality:
-      "That champion still rates you highly. She's told two peers to put you on their shortlist. You have no idea she's generating pipeline for you, or how to replicate it.",
+      "That champion still rates you. She has told two peers to put you on their shortlist.",
   },
   {
-    source: "Call Recording",
-    officialData: "Discovery call scored 92% on methodology",
+    crmField: "Closed Lost: Went with competitor",
     buyerTruth:
-      "The buyer felt interrogated, not understood. Your rep asked great questions but didn't listen to the answers.",
+      "Your product was honestly fine. Their implementation story just made switching feel safe. Yours felt like a risk I could not sell internally.",
     currentReality:
-      "The buyer told their Head of Ops not to bother taking your call. That's a deal you'll never see in your pipeline.",
+      "That buyer now sits on your competitor's customer advisory board, shaping the roadmap you will be up against next year.",
   },
   {
-    source: "Rep Debrief",
-    officialData: "Lost to competitor on features",
+    crmField: "Closed Lost: No decision",
     buyerTruth:
-      "Your product was fine. The competitor's implementation story made the transition feel painless. Yours felt risky.",
+      "We were ready to buy. I wanted to move forward, but I could not get it prioritised internally, and nobody on your side helped me build the business case.",
     currentReality:
-      "That buyer now sits on your competitor's customer advisory board. They're shaping the product roadmap you'll be competing against next year.",
+      "They still rate you highly and would re-engage if approached. Nobody followed up.",
   },
   {
-    source: "Sales Framework",
-    officialData: "Economic buyer identified. Decision criteria mapped. Process validated.",
+    crmField: "Churned: Non-renewal",
     buyerTruth:
-      '"Honestly, they were wasting their time with me. My CFO was never going to approve this."',
+      "The product did what it said. We just went quiet on each other after onboarding. I have not heard from anyone in months.",
     currentReality:
-      "The actual decision-maker thinks your team doesn't understand how their organisation buys. They've told procurement to remove you from the vendor list.",
+      "They recently attended an industry event and told three separate people not to consider you in a selection process.",
   },
 ];
 
-const LABELS = {
-  officialData: "Your data says:",
-  buyerTruth: "What actually happened:",
-  currentReality: "Right now:",
-};
-
-function MobileRow({ row }: { row: DataGapRow }) {
+function MobileRow({ row }: { row: CrmRow }) {
   return (
     <div className="rounded-2xl border border-black/10 bg-creamCard shadow-[0_1px_3px_rgba(0,0,0,0.06)] overflow-hidden">
-      <div className="border-b border-black/10 bg-white/55 px-4 py-3">
-        <p className="text-[10px] tracking-[0.2em] uppercase text-black/45 font-semibold">
-          {row.source}
-        </p>
-      </div>
       <div className="divide-y divide-black/10">
         <div className="p-4">
           <p className="text-[10px] tracking-[0.18em] uppercase text-black/45 font-semibold">
-            {LABELS.officialData}
+            What your CRM says
           </p>
           <p className="mt-2 inline-flex rounded-md border border-black/15 bg-white px-3 py-2 font-mono text-sm leading-snug text-black/75">
-            {row.officialData}
+            {row.crmField}
           </p>
         </div>
         <div className="p-4">
           <p className="text-[10px] tracking-[0.18em] uppercase text-black/45 font-semibold">
-            {LABELS.buyerTruth}
+            What the buyer actually said
           </p>
-          <p className="mt-2 font-serif text-lg leading-relaxed text-[#1a1a1a]">
-            {row.buyerTruth}
+          <p className="mt-2 font-serif text-lg leading-relaxed text-[#1a1a1a] italic">
+            &ldquo;{row.buyerTruth}&rdquo;
           </p>
         </div>
         <div className="border-l-[3px] border-l-emerald-700/45 bg-[#eef5ef]/75 p-4">
           <p className="text-[10px] tracking-[0.18em] uppercase text-emerald-900/55 font-semibold">
-            {LABELS.currentReality}
+            What&apos;s happening right now
           </p>
           <p className="mt-2 text-sm font-semibold leading-relaxed text-emerald-950/90">
             {row.currentReality}
@@ -96,20 +80,33 @@ export default function DataGap() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
           <div className="text-xs tracking-[0.2em] uppercase text-black/55 font-semibold">
-            THE DATA GAP
+            THE RECORD VS THE REALITY
           </div>
         </Reveal>
         <Reveal>
           <h2 className="mt-4 max-w-4xl font-serif text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-[#1a1a1a]">
-            You&apos;ve invested in great technology, built a sales methodology,
-            and coached your team. You still don&apos;t know what your buyers
-            really think about you.
+            85% of closed-lost data in your CRM is either completely wrong or
+            missing vital information.
           </h2>
+        </Reveal>
+        <Reveal>
+          <p className="mt-5 max-w-3xl text-base sm:text-lg text-[#555] leading-relaxed">
+            Reps do not lie intentionally. But they enter a loss reason at the
+            moment they are least motivated to reflect on it. What goes into the
+            system is whatever the buyer politely told them on the way out,
+            which in most cases is not the real reason.
+          </p>
+        </Reveal>
+        <Reveal>
+          <p className="mt-3 text-xs sm:text-sm text-black/45">
+            Source: independent win-loss research across 1,000+ closed-lost
+            opportunities.
+          </p>
         </Reveal>
 
         <div className="mt-12 space-y-4 md:hidden">
           {ROWS.map((row, index) => (
-            <Reveal key={row.source} delayMs={index * 80}>
+            <Reveal key={row.crmField} delayMs={index * 80}>
               <MobileRow row={row} />
             </Reveal>
           ))}
@@ -119,7 +116,7 @@ export default function DataGap() {
           <div className="grid grid-cols-12 border-b border-black/10 bg-white/60">
             <div className="col-span-3 px-5 py-5">
               <h3 className="font-serif text-lg lg:text-xl leading-tight text-[#1a1a1a]">
-                What Your Data Says
+                What Your CRM Says
               </h3>
             </div>
             <div className="col-span-5 border-l border-black/10 px-5 py-5">
@@ -136,19 +133,16 @@ export default function DataGap() {
 
           <div className="divide-y divide-black/10">
             {ROWS.map((row, index) => (
-              <Reveal key={row.source} delayMs={index * 80}>
+              <Reveal key={row.crmField} delayMs={index * 80}>
                 <div className="grid grid-cols-12">
                   <div className="col-span-3 bg-white/45 px-5 py-6 min-w-0">
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-black/45 font-semibold">
-                      {row.source}
-                    </p>
-                    <p className="mt-3 inline-flex max-w-full rounded-md border border-black/15 bg-white px-3 py-2 font-mono text-sm lg:text-[0.9375rem] leading-snug text-black/75 break-words">
-                      {row.officialData}
+                    <p className="inline-flex max-w-full rounded-md border border-black/15 bg-white px-3 py-2 font-mono text-sm lg:text-[0.9375rem] leading-snug text-black/75 break-words">
+                      {row.crmField}
                     </p>
                   </div>
                   <div className="col-span-5 border-l border-black/10 px-5 py-6 min-w-0">
-                    <p className="font-serif text-xl lg:text-[1.35rem] leading-relaxed text-[#1a1a1a]">
-                      {row.buyerTruth}
+                    <p className="font-serif text-xl lg:text-[1.35rem] leading-relaxed text-[#1a1a1a] italic">
+                      &ldquo;{row.buyerTruth}&rdquo;
                     </p>
                   </div>
                   <div className="col-span-4 border-l-[3px] border-l-emerald-700/45 bg-[#eef5ef]/70 px-5 py-6 min-w-0">
@@ -163,17 +157,11 @@ export default function DataGap() {
         </div>
 
         <Reveal className="flex justify-center">
-          <div className="mt-12 max-w-4xl text-center">
-            <p className="font-serif text-xl sm:text-2xl leading-snug text-[#1a1a1a]">
-              Four data sources. Four versions of your perception. None of them
-              captured the buyer&apos;s.
-            </p>
-            <p className="mt-5 text-base sm:text-lg text-[#555] leading-relaxed">
-              Each row records what your organisation believes happened. Not
-              fabricated, not useless, just your side of the deal. The
-              buyer&apos;s version never entered the system.
-            </p>
-          </div>
+          <p className="mt-12 max-w-4xl text-center text-base sm:text-lg text-[#555] leading-relaxed">
+            Every line in your CRM is your side of the deal. Not fabricated, not
+            useless, just the seller&apos;s version. The buyer&apos;s version
+            never entered the system.
+          </p>
         </Reveal>
       </div>
     </section>
