@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 import "./globals.css";
 
 const sans = DM_Sans({
@@ -45,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sans.className} ${dmSerif.variable} antialiased overflow-x-hidden`}>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
