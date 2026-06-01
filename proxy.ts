@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-
-const AUTH_COOKIE = "bp_tools_auth";
+import {
+  AUTH_COOKIE,
+  getInternalAuthSecret,
+  isValidInternalAuthToken,
+} from "./lib/internal-auth";
 
 const PROTECTED_PATH_PREFIXES = [
   "/tools",
@@ -18,7 +21,7 @@ function isProtectedPath(pathname: string) {
   );
 }
 
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   if (!isProtectedPath(pathname)) {
@@ -26,7 +29,7 @@ export function proxy(request: NextRequest) {
   }
 
   const authCookie = request.cookies.get(AUTH_COOKIE)?.value;
-  if (authCookie === "1") {
+  if (await isValidInternalAuthToken(authCookie, getInternalAuthSecret())) {
     return NextResponse.next();
   }
 

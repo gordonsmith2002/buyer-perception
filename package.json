@@ -8,7 +8,8 @@
     "preview": "bash scripts/preview.sh",
     "build": "env -u MallocStackLogging -u MallocStackLoggingNoCompact next build",
     "start": "env -u MallocStackLogging -u MallocStackLoggingNoCompact next start -H 127.0.0.1 -p 3000",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --import tsx --test \"lib/**/*.test.ts\""
   },
   "dependencies": {
     "next": "^16.2.0",
@@ -16,14 +17,15 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@types/node": "^20.0.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.2.0",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.19",
+    "tsx": "^4.22.4",
     "typescript": "^5.6.3"
   }
 }

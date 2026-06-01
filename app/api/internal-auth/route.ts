@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
-
-const AUTH_COOKIE = "bp_tools_auth";
-const COOKIE_MAX_AGE_SECONDS = 60 * 60 * 12;
-
-function getExpectedPassword() {
-  return process.env.TOOLS_PASSWORD || "change-me";
-}
+import {
+  AUTH_COOKIE,
+  COOKIE_MAX_AGE_SECONDS,
+  createInternalAuthToken,
+  getInternalAuthSecret,
+} from "../../../lib/internal-auth";
 
 export async function POST(request: Request) {
   const contentType = request.headers.get("content-type") || "";
@@ -26,16 +25,25 @@ export async function POST(request: Request) {
     nextPath = String(formData.get("next") || "/tools");
   }
 
-  if (password !== getExpectedPassword()) {
+  const authSecret = getInternalAuthSecret();
+  if (!authSecret) {
+    return NextResponse.json(
+      { ok: false, message: "Internal auth is not configured" },
+      { status: 500 },
+    );
+  }
+
+  if (password !== authSecret) {
     return NextResponse.json(
       { ok: false, message: "Incorrect password" },
       { status: 401 },
     );
   }
 
-  const safeNext = nextPath.startsWith("/") ? nextPath : "/tools";
+  const safeNext =
+    nextPath.startsWith("/") && !nextPath.startsWith("//") ? nextPath : "/tools";
   const response = NextResponse.json({ ok: true, next: safeNext });
-  response.cookies.set(AUTH_COOKIE, "1", {
+  response.cookies.set(AUTH_COOKIE, await createInternalAuthToken(authSecret), {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
