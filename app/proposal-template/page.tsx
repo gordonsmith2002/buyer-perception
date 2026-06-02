@@ -1,4 +1,5 @@
 import { DM_Sans, Playfair_Display } from "next/font/google";
+import "./proposal-print.css";
 
 /*
  * BUYER PERCEPTION | PROPOSAL TEMPLATE
@@ -442,23 +443,6 @@ export default function ProposalTemplatePage() {
         </div>
       </section>
 
-      <style jsx global>{`
-        @media print {
-          html,
-          body {
-            background: #fafaf8 !important;
-          }
-
-          a {
-            text-decoration: none !important;
-          }
-
-          section {
-            break-inside: avoid-page;
-            page-break-inside: avoid;
-          }
-        }
-      `}</style>
     </main>
   );
 }
