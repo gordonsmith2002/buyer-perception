@@ -15,6 +15,8 @@ const dmSans = DM_Sans({
   variable: "--bp-font-sans",
 });
 
+export const dynamic = "force-dynamic";
+
 const dimensions = [
   { name: "Responsiveness", score: 3.9, low: 2.0, high: 6.0, predicted: 7.0 },
   { name: "People", score: 6.2, low: 5.0, high: 8.0, predicted: 7.5 },

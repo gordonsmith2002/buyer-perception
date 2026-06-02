@@ -1,5 +1,3 @@
-"use client";
-
 import { DM_Sans, Playfair_Display } from "next/font/google";
 
 /*
@@ -30,6 +28,8 @@ const dmSans = DM_Sans({
   display: "swap",
   variable: "--bp-proposal-sans",
 });
+
+export const dynamic = "force-dynamic";
 
 const PROPOSAL_DATA = {
   clientName: "Meridian Solutions",
