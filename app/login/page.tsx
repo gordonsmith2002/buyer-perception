@@ -4,6 +4,14 @@ import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 
+function getSafeNextPath(nextPath: string | null) {
+  if (!nextPath || !nextPath.startsWith("/") || nextPath.startsWith("//")) {
+    return "/tools";
+  }
+
+  return nextPath;
+}
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -28,10 +36,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const requested = params.get("next");
-    if (requested && requested.startsWith("/")) {
-      setNextPath(requested);
-    }
+    setNextPath(getSafeNextPath(params.get("next")));
   }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
