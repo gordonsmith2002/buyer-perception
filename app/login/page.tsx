@@ -47,6 +47,12 @@ export default function LoginPage() {
       });
 
       if (!response.ok) {
+        if (response.status === 503) {
+          setError("Internal access is not configured.");
+          setLoading(false);
+          return;
+        }
+
         setError("Incorrect password.");
         setLoading(false);
         return;

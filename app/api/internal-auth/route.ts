@@ -4,7 +4,12 @@ const AUTH_COOKIE = "bp_tools_auth";
 const COOKIE_MAX_AGE_SECONDS = 60 * 60 * 12;
 
 function getExpectedPassword() {
-  return process.env.TOOLS_PASSWORD || "change-me";
+  const configuredPassword = process.env.TOOLS_PASSWORD;
+  if (configuredPassword) {
+    return configuredPassword;
+  }
+
+  return process.env.NODE_ENV === "production" ? null : "change-me";
 }
 
 export async function POST(request: Request) {
@@ -26,7 +31,15 @@ export async function POST(request: Request) {
     nextPath = String(formData.get("next") || "/tools");
   }
 
-  if (password !== getExpectedPassword()) {
+  const expectedPassword = getExpectedPassword();
+  if (!expectedPassword) {
+    return NextResponse.json(
+      { ok: false, message: "Tools password is not configured" },
+      { status: 503 },
+    );
+  }
+
+  if (password !== expectedPassword) {
     return NextResponse.json(
       { ok: false, message: "Incorrect password" },
       { status: 401 },
