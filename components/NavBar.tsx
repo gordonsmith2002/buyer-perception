@@ -5,7 +5,8 @@ import React, { useState } from "react";
 import { BOOK_CALL_URL } from "./BookButton";
 
 const LINKS = [
-  { href: "#problem", label: "The Problem" },
+  { href: "#problem", label: "Your Data Gap" },
+  { href: "#invisible-pipeline", label: "Invisible Pipeline" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#about", label: "About" },
 ];
@@ -41,7 +42,7 @@ export default function NavBar() {
               rel="noopener noreferrer"
               className="ml-2 inline-flex items-center justify-center rounded-md px-4 py-2 bg-accent text-white text-sm font-semibold tracking-tight border border-accent hover:bg-[#b83228] hover:border-[#b83228] transition-colors"
             >
-              Book a Call
+              Book a Conversation
             </a>
           </nav>
 
@@ -52,7 +53,7 @@ export default function NavBar() {
               rel="noopener noreferrer"
               className="inline-flex rounded-md bg-accent text-white text-xs font-semibold px-3 py-2 border border-accent"
             >
-              Book a Call
+              Book a Conversation
             </a>
             <button
               type="button"
@@ -96,7 +97,7 @@ export default function NavBar() {
               className="mt-2 mx-3 text-center rounded-md bg-accent text-white text-sm font-semibold py-3 border border-accent"
               onClick={() => setOpen(false)}
             >
-              Book a Call
+              Book a Conversation
             </a>
           </div>
         ) : null}

@@ -87,8 +87,6 @@ type PanelProps = {
   nodeLabel: string;
   outcomes: [string, string, string];
   secondaryLabel: string;
-  pipelineValue: string;
-  footnote: string;
   delayMs?: number;
 };
 
@@ -123,8 +121,6 @@ function RipplePanel({
   nodeLabel,
   outcomes,
   secondaryLabel,
-  pipelineValue,
-  footnote,
   delayMs = 0,
 }: PanelProps) {
   const isAdv = variant === "advocate";
@@ -194,12 +190,6 @@ function RipplePanel({
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-black/10">
-          <p className="font-serif text-base sm:text-lg leading-snug text-[#1a1a1a]">
-            {pipelineValue}
-          </p>
-          <p className="mt-2 text-xs text-black/45 leading-relaxed">{footnote}</p>
-        </div>
       </div>
     </Reveal>
   );
@@ -210,7 +200,7 @@ export default function RippleVisualization() {
     <div className="mt-14 sm:mt-16 flex flex-col lg:flex-row gap-6 lg:gap-8 lg:items-stretch">
       <RipplePanel
         variant="advocate"
-        title="Advocates creating pipeline"
+        title="Building pipeline you'll never attribute"
         nodeLabel="One advocate"
         outcomes={[
           "Put you on their shortlist for Q3.",
@@ -218,13 +208,11 @@ export default function RippleVisualization() {
           "Mentioned you in a buying group discussion.",
         ]}
         secondaryLabel="Second-degree referral you will never trace back."
-        pipelineValue="Each advocate: approximately £50K to £150K in invisible pipeline per year."
-        footnote="Based on 2 to 3 peer recommendations per year at average B2B deal values."
       />
       <RipplePanel
         variant="critic"
         delayMs={80}
-        title="Critics destroying pipeline"
+        title="Destroying deals before they reach your pipeline"
         nodeLabel="One critic"
         outcomes={[
           "Told a peer not to bother with you.",
@@ -232,8 +220,6 @@ export default function RippleVisualization() {
           "Removed you from a shortlist before you knew you were on it.",
         ]}
         secondaryLabel="A deal you will never know you lost."
-        pipelineValue="Each critic: approximately £50K to £150K in invisible pipeline damage per year."
-        footnote="Based on 2 to 3 negative conversations per year at average B2B deal values."
       />
     </div>
   );

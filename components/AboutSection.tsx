@@ -37,26 +37,33 @@ export default function AboutSection() {
             </Reveal>
             <Reveal>
               <p>
-                I spent twenty years in B2B sales and have been VP Sales at
-                three VC-backed SaaS companies, running sales and customer
-                success teams in fast-paced, imperfect companies. I know how
-                companies make decisions about their pipeline, their
-                positioning, and their competition. And I know how much of it is
-                based on their own version of events.
+                As VP Sales and Customer Success at three VC-backed companies,
+                I&apos;ve led teams through significant periods of growth,
+                retention challenges, GTM resets, and multiple acquisitions.
               </p>
             </Reveal>
             <Reveal>
               <p>
-                Buyer Perception exists because I kept seeing the same pattern:
-                buyers being marked as closed-won or closed-lost in the CRM and
-                never heard from again, while leadership teams built strategy on
-                internal data and feedback from the customers who were always
-                going to say nice things. The buyers who could actually help
-                them improve were the ones nobody was talking to.
+                I kept seeing the same pattern at every company: buyers being
+                marked as closed-lost in the CRM and never heard from again.
+                Leadership teams building strategy on internal data and feedback
+                from customers who were only ever going to say positive things.
+                The buyers who could actually help us improve were the ones
+                nobody was talking to.
               </p>
             </Reveal>
             <Reveal>
-              <p className="text-white/90">If that gap matters to you, let&apos;s talk.</p>
+              <p>
+                That&apos;s why I built Buyer Perception: to have the
+                conversations that nobody else is having, with the people who
+                actually made the decision, and bring back the truth. Even when
+                it might not always be comfortable to hear.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className="text-white/90">
+                If that truth matters to you, let&apos;s talk.
+              </p>
             </Reveal>
             <Reveal>
               <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">

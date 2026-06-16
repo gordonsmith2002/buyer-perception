@@ -22,13 +22,25 @@ export default function Hero() {
             </p>
           </Reveal>
 
-          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+          <Reveal>
+            <p className="mt-8 max-w-3xl font-serif text-2xl sm:text-[1.85rem] leading-snug text-white">
+              Not what your CRM says. Not what your team tells you. What buyers
+              are saying about you now.
+            </p>
+          </Reveal>
+
+          <div className="mt-10 flex flex-col items-start gap-3">
             <Reveal>
               <BookButton />
             </Reveal>
             <Reveal>
               <div className="text-white/70 text-sm">
                 If your buyers don&apos;t engage, you don&apos;t pay.
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="text-white/50 text-xs sm:text-sm">
+                Built on 20 years of B2B revenue leadership
               </div>
             </Reveal>
           </div>

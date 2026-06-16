@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 const CARDS = [
   {
     title: "Revenue Leaders",
-    body: "You suspect the reasons in your CRM don't tell the full story, on the deals you lose and the customers you quietly lose after the sale. You want independent evidence to shape how your team sells and retains, not opinions, not frameworks, not what your reps told you happened.",
+    body: "You've just seen the gap. You want independent evidence to close it: not opinions, not frameworks, not what your reps told you happened. You want to know why you are really winning and losing, what your buyers would tell their peers about you, and what to change first to protect the pipeline you have already built.",
   },
   {
     title: "Founders and CEOs",

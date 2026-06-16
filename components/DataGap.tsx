@@ -11,16 +11,9 @@ const ROWS: CrmRow[] = [
   {
     crmField: "Closed Lost: Pricing",
     buyerTruth:
-      "Pricing was never the issue. My CFO overruled me, and nobody on their team ever spoke to my CFO.",
+      "Pricing was never the issue. My CFO overruled me, and nobody on your team ever spoke to my CFO.",
     currentReality:
       "That champion still rates you. She has told two peers to put you on their shortlist.",
-  },
-  {
-    crmField: "Closed Lost: Went with competitor",
-    buyerTruth:
-      "Your product was honestly fine. Their implementation story just made switching feel safe. Yours felt like a risk I could not sell internally.",
-    currentReality:
-      "That buyer now sits on your competitor's customer advisory board, shaping the roadmap you will be up against next year.",
   },
   {
     crmField: "Closed Lost: No decision",
@@ -80,7 +73,7 @@ export default function DataGap() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
           <div className="text-xs tracking-[0.2em] uppercase text-black/55 font-semibold">
-            THE RECORD VS THE REALITY
+            YOUR DATA GAP
           </div>
         </Reveal>
         <Reveal>

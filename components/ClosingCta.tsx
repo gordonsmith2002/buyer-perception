@@ -11,7 +11,10 @@ export default function ClosingCta() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28 lg:py-32 text-center">
         <Reveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] leading-tight text-[#1a1a1a] max-w-4xl mx-auto">
-            Stop losing deals you don&apos;t need to lose.
+            <span>Stop letting your competitors win deals you should have won.</span>
+            <span className="block mt-5">
+              Stop losing customers you didn&apos;t need to lose.
+            </span>
           </h2>
         </Reveal>
         <Reveal>
@@ -24,12 +27,6 @@ export default function ClosingCta() {
             <BookButton />
           </Reveal>
         </div>
-        <Reveal>
-          <p className="mt-8 text-sm text-black/45 max-w-xl mx-auto leading-relaxed">
-            If your buyers do not engage, you do not pay. No platform, no annual
-            contract, just the truth when you need it.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

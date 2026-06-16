@@ -62,15 +62,16 @@ export default function StackBlindSpot() {
         </Reveal>
         <Reveal>
           <h2 className="mt-4 max-w-4xl font-serif text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-[#1a1a1a]">
-            You have got the best tools and frameworks revenue teams have ever
-            had. None of them can tell you how the buyer felt.
+            You are measuring more effectively than any revenue team in history.
+            There is one thing none of your tools can measure.
           </h2>
         </Reveal>
         <Reveal>
           <p className="mt-6 max-w-3xl text-base sm:text-lg text-[#555] leading-relaxed">
             AI has helped revenue leaders be more efficient and automate at a
             level that was not possible five years ago. These tools are genuinely
-            powerful. They all share the same blind spot.
+            powerful. None of them can tell you what your buyers really think
+            about you.
           </p>
         </Reveal>
 
@@ -85,20 +86,20 @@ export default function StackBlindSpot() {
             percentage="75%"
             headline="Gartner predicts that by 2030, 75% of B2B buyers will prefer sales experiences that prioritise human interaction over AI."
             source="Source: Gartner, August 2025."
-          >
-            <p>
-              In a world where everything is being automated, the experience of
-              buying from you is going to matter more than ever. Most companies
-              have no way to measure it.
-            </p>
-          </EditorialStatCallout>
+          />
         </div>
 
         <Reveal className="flex justify-center">
           <p className="mt-12 sm:mt-16 max-w-4xl text-center font-serif text-xl sm:text-2xl leading-snug text-[#1a1a1a]">
             AI can read the transcript. It cannot have the one conversation that
-            matters, the one that only happens when no one is selling. None of
-            your tools can, because none of them are human.
+            matters, the one that only happens when no one is selling.
+          </p>
+        </Reveal>
+        <Reveal className="flex justify-center">
+          <p className="mt-8 max-w-4xl text-center text-base sm:text-lg leading-relaxed text-[#555]">
+            Buyer perception remains the one thing you cannot measure. The
+            company that closes this gap first gains an advantage that
+            compounds.
           </p>
         </Reveal>
       </div>

@@ -4,28 +4,28 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     n: "01",
-    title: "The Lost Revenue Assessment",
+    title: "Lost Revenue Assessment",
     detail:
-      "A 60-minute working session with your leadership team. We quantify the financial exposure from deals you could have won and customers you didn't need to lose, using your own data. Your team makes predictions across five dimensions of buyer experience. Those predictions become one of the most powerful elements of the final report.",
+      "A 45-minute working session with your leadership team. We quantify the financial exposure from deals you could have won and customers you didn't need to lose, using your own data. Your team makes predictions across five dimensions of buyer experience. Those predictions become one of the most powerful elements of the final report.",
   },
   {
     n: "02",
-    title: "The Buyer Perception Report",
+    title: "Buyer Perception Report",
     detail:
       "Anonymous interviews with your lost prospects or churned customers, synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and a pipeline impact analysis. Findings are delivered live: your predictions shown first, then buyer reality revealed one dimension at a time.",
   },
   {
     n: "03",
-    title: "The Action Workshop (optional)",
+    title: "Action Workshop (optional)",
     detail:
-      "A half-day facilitated session where we partner with your leadership team to turn findings into specific commitments. Specific changes, with owners, timelines, and measurable outcomes.",
+      "A half-day facilitated session where we partner with your leadership team to turn findings into specific commitments. Specific changes, with owners, timelines, and measurable outcomes. No fluff, no AI slop, no long reports.",
   },
 ];
 
 const REPORT_ITEMS = [
   {
     title: "Your Buyer Perception Score",
-    desc: "A single number showing how your market actually perceives you, revealed dimension by dimension across five areas of buyer experience.",
+    desc: "A single number showing how your market actually perceives you, revealed dimension by dimension across five areas of buyer experience. Tracked over time, it becomes the leading indicator your NPS was supposed to be.",
   },
   {
     title: "Where the experience breaks down",
@@ -95,10 +95,11 @@ export default function HowItWorksSection() {
           </Reveal>
           <Reveal>
             <p className="mt-6 mx-auto max-w-3xl text-center text-sm sm:text-base leading-relaxed text-[#aaaaaa]">
-              Your leadership team&apos;s predictions are revealed against buyer
-              reality in a live session, one dimension at a time. The gaps
-              between what you believed and what your buyers actually said
-              become immediately visible.
+              For the first time, buyer perception becomes measurable,
+              comparable, and actionable. Your leadership team&apos;s predictions
+              are revealed against buyer reality in a live session, one
+              dimension at a time. The gaps between what you believed and what
+              your buyers actually said become immediately visible.
             </p>
           </Reveal>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

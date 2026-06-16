@@ -4,7 +4,7 @@ export const BOOK_CALL_URL =
   "https://calendly.com/gordon-buyerperception/30min";
 
 export default function BookButton({
-  children = "Book a Call",
+  children = "Book a Conversation",
   className,
 }: {
   children?: React.ReactNode;

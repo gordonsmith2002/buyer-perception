@@ -29,7 +29,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-white"
               >
-                Book a Call
+                Book a Conversation
               </a>
             </div>
           </div>
