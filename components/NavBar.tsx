@@ -6,8 +6,8 @@ import { BOOK_CALL_URL } from "./BookButton";
 
 const LINKS = [
   { href: "#problem", label: "Your Data Gap" },
-  { href: "#invisible-pipeline", label: "Invisible Pipeline" },
   { href: "#how-it-works", label: "How It Works" },
+  { href: "#invisible-pipeline", label: "Invisible Pipeline" },
   { href: "#about", label: "About" },
 ];
 

@@ -16,16 +16,10 @@ export default function Hero() {
 
           <Reveal>
             <p className="mt-7 max-w-3xl border-l border-accent/70 pl-4 font-serif text-xl sm:text-2xl leading-relaxed text-white/90">
-              We anonymously interview your lost prospects and churned
-              customers to find out what you could have done differently, what
-              they are saying about you now, and what to fix first.
-            </p>
-          </Reveal>
-
-          <Reveal>
-            <p className="mt-8 max-w-3xl font-serif text-2xl sm:text-[1.85rem] leading-snug text-white">
-              Not what your CRM says. Not what your team tells you. What buyers
-              are saying about you now.
+              Not what your CRM says. Not what your team tells you. Anonymous
+              interviews with your lost prospects and churned customers to find
+              out what you did well, what you could have done differently, and
+              what to fix first.
             </p>
           </Reveal>
 

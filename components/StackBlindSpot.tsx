@@ -63,15 +63,15 @@ export default function StackBlindSpot() {
         <Reveal>
           <h2 className="mt-4 max-w-4xl font-serif text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-[#1a1a1a]">
             You are measuring more effectively than any revenue team in history.
-            There is one thing none of your tools can measure.
+            There is one thing none of your tools can measure: buyer perception.
           </h2>
         </Reveal>
         <Reveal>
           <p className="mt-6 max-w-3xl text-base sm:text-lg text-[#555] leading-relaxed">
-            AI has helped revenue leaders be more efficient and automate at a
-            level that was not possible five years ago. These tools are genuinely
-            powerful. None of them can tell you what your buyers really think
-            about you.
+            AI and sales frameworks have helped revenue leaders be more
+            efficient and automate at a level that was not possible five years
+            ago. These tools are genuinely powerful. None of them can tell you
+            what your buyers really think about you.
           </p>
         </Reveal>
 
