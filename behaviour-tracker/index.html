@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0f1419">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Behaviour">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <title>Behaviour</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: '#0f1419',
+            card: '#1a1f26',
+            border: '#2a3139',
+            muted: '#6b7280',
+            accent: '#166534',
+            'accent-bright': '#22c55e',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    html { background: #0f1419; }
+    body { overscroll-behavior: none; }
+    .toggle-btn { transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease; }
+    .toggle-btn:active { transform: scale(0.97); }
+    .toggle-btn.on { border-color: #22c55e; background: rgba(34, 197, 94, 0.12); }
+    .toggle-check { transition: opacity 0.2s ease, transform 0.2s ease; }
+    .toggle-btn.on .toggle-check { opacity: 1; transform: scale(1); }
+    .toggle-btn:not(.on) .toggle-check { opacity: 0; transform: scale(0.6); }
+    .heat-cell { width: 11px; height: 11px; border-radius: 2px; }
+    @media (min-width: 380px) { .heat-cell { width: 13px; height: 13px; } }
+    .view { display: none; }
+    .view.active { display: block; }
+    .nav-btn.active { color: #22c55e; }
+    .anchor-input:focus { box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25); }
+    .safe-top { padding-top: env(safe-area-inset-top); }
+    .safe-bottom { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+    .nav-bar { padding-bottom: env(safe-area-inset-bottom); }
+  </style>
+</head>
+<body class="bg-surface text-gray-100 font-sans antialiased min-h-screen">
+
+  <header class="safe-top fixed top-0 inset-x-0 z-20 bg-surface/95 backdrop-blur-sm border-b border-border/50 px-4">
+    <p class="text-[11px] leading-relaxed text-muted py-3 max-w-lg mx-auto">
+      I trust my own judgement. I use daily discipline to give me the focus I need to find the right path.
+    </p>
+  </header>
+
+  <main id="app" class="pt-[4.5rem] safe-bottom max-w-lg mx-auto px-4"></main>
+
+  <nav class="nav-bar fixed bottom-0 inset-x-0 z-20 bg-card/95 backdrop-blur-sm border-t border-border">
+    <div class="max-w-lg mx-auto flex">
+      <button data-nav="today" class="nav-btn active flex-1 py-3 text-sm text-muted transition-colors">Today</button>
+      <button data-nav="audit" class="nav-btn flex-1 py-3 text-sm text-muted transition-colors">Audit</button>
+      <button data-nav="history" class="nav-btn flex-1 py-3 text-sm text-muted transition-colors">History</button>
+    </div>
+  </nav>
+
+  <script>
+    const STORAGE_KEY = 'behaviour-tracker-v1';
+
+    const IDENTITY = 'I trust my own judgement. I use daily discipline to give me the focus I need to find the right path.';
+
+    const BEHAVIOURS = [
+      { id: 'morningPractice', label: 'Morning practice', sub: '10 min — belief rep + execution anchor' },
+      { id: 'bdBlock', label: 'BD block 9:00–10:30', sub: 'Protected, no exceptions' },
+      { id: 'financialCheck', label: 'Financial check', sub: 'Daily monitoring' },
+      { id: 'physicalTraining', label: 'Physical training / movement', sub: '' },
+      { id: 'eveningShutdown', label: 'Evening shutdown', sub: 'Phone down, fully present with family' },
+    ];
+
+    const AUDIT_PROMPTS = [
+      { id: 'boundary', label: 'Where did the boundary nearly break this week?' },
+      { id: 'engine', label: 'Where did the engine fire, and how fast did it lose?' },
+      { id: 'identity', label: 'What did the identity line do this week?' },
+    ];
+
+    let state = loadData();
+    let currentView = 'today';
+
+    /* ── Storage ── */
+
+    function defaultData() {
+      return { meta: { lastVisit: null, version: 1 }, days: {}, weeks: {}, audits: {} };
+    }
+
+    function loadData() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? { ...defaultData(), ...JSON.parse(raw) } : defaultData();
+      } catch {
+        return defaultData();
+      }
+    }
+
+    function saveData() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    /* ── Date helpers ── */
+
+    function dateKey(d = new Date()) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    function weekKey(d = new Date()) {
+      const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+      const day = date.getUTCDay() || 7;
+      date.setUTCDate(date.getUTCDate() + 4 - day);
+      const year = date.getUTCFullYear();
+      const jan1 = new Date(Date.UTC(year, 0, 1));
+      const week = Math.ceil(((date - jan1) / 86400000 + 1) / 7);
+      return `${year}-W${String(week).padStart(2, '0')}`;
+    }
+
+    function formatDisplayDate(d = new Date()) {
+      return d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+    }
+
+    function isSunday(d = new Date()) {
+      return d.getDay() === 0;
+    }
+
+    function addDays(d, n) {
+      const r = new Date(d);
+      r.setDate(r.getDate() + n);
+      return r;
+    }
+
+    /* ── Day rollover ── */
+
+    function handleRollover() {
+      const today = dateKey();
+      if (state.meta.lastVisit && state.meta.lastVisit !== today) {
+        // Previous day's execution anchor is already stored under that day's key.
+        // New day starts fresh via getDayRecord().
+      }
+      state.meta.lastVisit = today;
+      saveData();
+    }
+
+    /* ── Records ── */
+
+    function getDayRecord(key = dateKey()) {
+      if (!state.days[key]) {
+        state.days[key] = {
+          executionAnchor: '',
+          behaviours: Object.fromEntries(BEHAVIOURS.map((b) => [b.id, false])),
+        };
+      }
+      return state.days[key];
+    }
+
+    function getWeekRecord(key = weekKey()) {
+      if (!state.weeks[key]) {
+        state.weeks[key] = { peerConnection: false, sundayAudit: false };
+      }
+      return state.weeks[key];
+    }
+
+    function getAuditRecord(key = weekKey()) {
+      if (!state.audits[key]) {
+        state.audits[key] = { boundary: '', engine: '', identity: '' };
+      }
+      return state.audits[key];
+    }
+
+    /* ── Stats ── */
+
+    function dayCompletion(day) {
+      if (!day?.behaviours) return 0;
+      const done = BEHAVIOURS.filter((b) => day.behaviours[b.id]).length;
+      return done / BEHAVIOURS.length;
+    }
+
+    function getStreak(upToToday = true) {
+      let streak = 0;
+      const today = new Date();
+      let offset = 0;
+      if (upToToday && !getDayRecord(dateKey(today)).behaviours.morningPractice) {
+        offset = 1;
+      }
+      for (let i = offset; ; i++) {
+        const d = addDays(today, -i);
+        const rec = state.days[dateKey(d)];
+        if (rec?.behaviours?.morningPractice) streak++;
+        else break;
+      }
+      return streak;
+    }
+
+    function getLongestStreak() {
+      const keys = Object.keys(state.days).sort();
+      if (!keys.length) return 0;
+      let longest = 0;
+      let current = 0;
+      const start = new Date(keys[0]);
+      const end = new Date();
+      for (let d = new Date(start); d <= end; d = addDays(d, 1)) {
+        const rec = state.days[dateKey(d)];
+        if (rec?.behaviours?.morningPractice) {
+          current++;
+          longest = Math.max(longest, current);
+        } else {
+          current = 0;
+        }
+      }
+      return longest;
+    }
+
+    function behaviourRate(id, days = 30) {
+      let done = 0;
+      const today = new Date();
+      for (let i = 0; i < days; i++) {
+        const rec = state.days[dateKey(addDays(today, -i))];
+        if (rec?.behaviours[id]) done++;
+      }
+      return Math.round((done / days) * 100);
+    }
+
+    function heatLevel(pct) {
+      if (pct === 0) return 'bg-[#1a1f26]';
+      if (pct <= 0.25) return 'bg-accent/30';
+      if (pct <= 0.5) return 'bg-accent/50';
+      if (pct <= 0.75) return 'bg-accent/70';
+      return 'bg-accent-bright/80';
+    }
+
+    /* ── Render ── */
+
+    function render() {
+      const app = document.getElementById('app');
+      if (currentView === 'today') app.innerHTML = renderToday();
+      else if (currentView === 'audit') app.innerHTML = renderAudit();
+      else app.innerHTML = renderHistory();
+      bindEvents();
+    }
+
+    function renderToday() {
+      const today = new Date();
+      const day = getDayRecord();
+      const week = getWeekRecord();
+      const sunday = isSunday(today);
+      const streak = getStreak();
+      const hasData = Object.keys(state.days).length > 0 || day.executionAnchor;
+
+      return `
+        <section class="view active space-y-6 pb-4">
+          <div class="flex items-baseline justify-between">
+            <h1 class="text-lg font-medium text-gray-200">${formatDisplayDate(today)}</h1>
+            <span class="text-sm text-muted">${streak > 0 ? streak + ' day streak' : 'No streak'}</span>
+          </div>
+
+          ${!hasData ? `<p class="text-sm text-muted">Set your execution anchor. Toggle behaviours as you complete them.</p>` : ''}
+
+          <div>
+            <label for="anchor" class="block text-xs uppercase tracking-wider text-muted mb-2">Execution anchor</label>
+            <input
+              id="anchor"
+              type="text"
+              class="anchor-input w-full bg-card border border-border rounded-xl px-4 py-4 text-base text-gray-100 placeholder-gray-600 outline-none transition-shadow"
+              placeholder="What does the person who's already there do today?"
+              value="${esc(day.executionAnchor)}"
+              autocomplete="off"
+              enterkeyhint="done"
+            />
+          </div>
+
+          <div>
+            <h2 class="text-xs uppercase tracking-wider text-muted mb-3">Daily behaviours</h2>
+            <div class="space-y-2">
+              ${BEHAVIOURS.map((b) => toggleHTML('day', b.id, b.label, b.sub, day.behaviours[b.id])).join('')}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-xs uppercase tracking-wider text-muted mb-3">This week</h2>
+            <div class="space-y-2">
+              ${toggleHTML('week', 'peerConnection', 'One peer connection touchpoint', 'Message, call, or meet', week.peerConnection)}
+              ${sunday ? toggleHTML('week', 'sundayAudit', 'Sunday audit', 'Weekly reflection complete', week.sundayAudit) : ''}
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function toggleHTML(scope, id, label, sub, on) {
+      return `
+        <button
+          data-toggle="${scope}:${id}"
+          class="toggle-btn w-full flex items-center gap-4 bg-card border border-border rounded-xl px-4 py-4 text-left ${on ? 'on' : ''}"
+          aria-pressed="${on}"
+        >
+          <span class="flex-shrink-0 w-7 h-7 rounded-full border-2 ${on ? 'border-accent-bright bg-accent-bright/20' : 'border-border'} flex items-center justify-center">
+            <svg class="toggle-check w-4 h-4 text-accent-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          <span class="flex-1 min-w-0">
+            <span class="block text-[15px] font-medium text-gray-100">${esc(label)}</span>
+            ${sub ? `<span class="block text-xs text-muted mt-0.5">${esc(sub)}</span>` : ''}
+          </span>
+        </button>
+      `;
+    }
+
+    function renderAudit() {
+      const wk = weekKey();
+      const audit = getAuditRecord(wk);
+      const past = Object.keys(state.audits)
+        .filter((k) => k !== wk && (state.audits[k].boundary || state.audits[k].engine || state.audits[k].identity))
+        .sort()
+        .reverse();
+
+      return `
+        <section class="view active space-y-6 pb-4">
+          <div>
+            <h1 class="text-lg font-medium text-gray-200">Sunday audit</h1>
+            <p class="text-sm text-muted mt-1">Week of ${formatWeekLabel(wk)}</p>
+          </div>
+
+          ${!isSunday() ? `<p class="text-sm text-muted">Reflection prompts are saved per week. Edit anytime.</p>` : ''}
+
+          <div class="space-y-5">
+            ${AUDIT_PROMPTS.map((p) => `
+              <div>
+                <label class="block text-sm text-gray-300 mb-2">${esc(p.label)}</label>
+                <textarea
+                  data-audit="${p.id}"
+                  rows="3"
+                  class="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-gray-100 placeholder-gray-600 outline-none resize-none focus:border-accent/50 transition-colors"
+                  placeholder="Write here…"
+                >${esc(audit[p.id])}</textarea>
+              </div>
+            `).join('')}
+          </div>
+
+          ${past.length ? `
+            <div>
+              <h2 class="text-xs uppercase tracking-wider text-muted mb-3">Previous weeks</h2>
+              <div class="space-y-2">
+                ${past.map((k) => renderPastAudit(k, state.audits[k])).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </section>
+      `;
+    }
+
+    function formatWeekLabel(wk) {
+      const [year, w] = wk.split('-W');
+      return `W${w} ${year}`;
+    }
+
+    function renderPastAudit(wk, audit) {
+      const id = 'past-' + wk;
+      return `
+        <details class="bg-card border border-border rounded-xl overflow-hidden">
+          <summary class="px-4 py-3 text-sm text-gray-300 cursor-pointer select-none">${formatWeekLabel(wk)}</summary>
+          <div class="px-4 pb-4 space-y-3 border-t border-border/50 pt-3">
+            ${AUDIT_PROMPTS.map((p) => audit[p.id] ? `
+              <div>
+                <p class="text-xs text-muted mb-1">${esc(p.label)}</p>
+                <p class="text-sm text-gray-300 whitespace-pre-wrap">${esc(audit[p.id])}</p>
+              </div>
+            ` : '').join('')}
+          </div>
+        </details>
+      `;
+    }
+
+    function renderHistory() {
+      const streak = getStreak();
+      const longest = getLongestStreak();
+      const hasAny = Object.keys(state.days).length > 0;
+
+      return `
+        <section class="view active space-y-6 pb-4">
+          <h1 class="text-lg font-medium text-gray-200">History</h1>
+
+          ${!hasAny ? `<p class="text-sm text-muted">Your activity will appear here after your first day.</p>` : ''}
+
+          <div>
+            <h2 class="text-xs uppercase tracking-wider text-muted mb-3">Last 12 weeks</h2>
+            <div class="overflow-x-auto -mx-1 px-1 pb-1">
+              ${renderHeatMap()}
+            </div>
+            <div class="flex items-center gap-1 mt-3 text-[10px] text-muted">
+              <span>Less</span>
+              <span class="heat-cell bg-[#1a1f26]"></span>
+              <span class="heat-cell bg-accent/30"></span>
+              <span class="heat-cell bg-accent/50"></span>
+              <span class="heat-cell bg-accent/70"></span>
+              <span class="heat-cell bg-accent-bright/80"></span>
+              <span>More</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-card border border-border rounded-xl px-4 py-3">
+              <p class="text-xs text-muted">Current streak</p>
+              <p class="text-2xl font-medium text-gray-100 mt-1">${streak}</p>
+            </div>
+            <div class="bg-card border border-border rounded-xl px-4 py-3">
+              <p class="text-xs text-muted">Longest streak</p>
+              <p class="text-2xl font-medium text-gray-100 mt-1">${longest}</p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-xs uppercase tracking-wider text-muted mb-3">Last 30 days</h2>
+            <div class="space-y-2">
+              ${BEHAVIOURS.map((b) => {
+                const rate = behaviourRate(b.id);
+                return `
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-300 truncate pr-4">${esc(b.label)}</span>
+                    <span class="text-muted flex-shrink-0">${rate}%</span>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+
+          <button id="export-btn" class="w-full bg-card border border-border rounded-xl px-4 py-3 text-sm text-gray-300 hover:border-accent/40 transition-colors">
+            Export all data
+          </button>
+        </section>
+      `;
+    }
+
+    function renderHeatMap() {
+      const today = new Date();
+      const start = addDays(today, -83);
+      const startDay = start.getDay();
+
+      const weeks = [];
+      let cursor = addDays(start, -startDay);
+      while (cursor <= today) {
+        const week = [];
+        for (let d = 0; d < 7; d++) {
+          const date = addDays(cursor, d);
+          if (date > today) {
+            week.push(null);
+          } else if (date < start) {
+            week.push(null);
+          } else {
+            const rec = state.days[dateKey(date)];
+            week.push(rec ? dayCompletion(rec) : 0);
+          }
+        }
+        weeks.push(week);
+        cursor = addDays(cursor, 7);
+      }
+
+      const dayLabels = ['', 'M', '', 'W', '', 'F', ''];
+
+      return `
+        <div class="flex gap-[3px]">
+          <div class="flex flex-col gap-[3px] pt-[18px] pr-1">
+            ${dayLabels.map((l) => `<span class="heat-cell flex items-center justify-end text-[9px] text-muted leading-none" style="height:11px">${l}</span>`).join('')}
+          </div>
+          <div class="flex gap-[3px]">
+            ${weeks.map((week) => `
+              <div class="flex flex-col gap-[3px]">
+                ${week.map((pct) => pct === null
+                  ? `<span class="heat-cell"></span>`
+                  : `<span class="heat-cell ${heatLevel(pct)}" title="${Math.round(pct * 100)}%"></span>`
+                ).join('')}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function esc(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    /* ── Events ── */
+
+    function bindEvents() {
+      const anchor = document.getElementById('anchor');
+      if (anchor) {
+        anchor.addEventListener('blur', () => {
+          const day = getDayRecord();
+          day.executionAnchor = anchor.value.trim();
+          saveData();
+        });
+      }
+
+      document.querySelectorAll('[data-toggle]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const [scope, id] = btn.dataset.toggle.split(':');
+          let on;
+          if (scope === 'day') {
+            const day = getDayRecord();
+            day.behaviours[id] = !day.behaviours[id];
+            on = day.behaviours[id];
+          } else {
+            const week = getWeekRecord();
+            week[id] = !week[id];
+            on = week[id];
+          }
+          saveData();
+          btn.classList.toggle('on', on);
+          btn.setAttribute('aria-pressed', on);
+          const circle = btn.querySelector('.flex-shrink-0');
+          if (circle) {
+            circle.className = on
+              ? 'flex-shrink-0 w-7 h-7 rounded-full border-2 border-accent-bright bg-accent-bright/20 flex items-center justify-center'
+              : 'flex-shrink-0 w-7 h-7 rounded-full border-2 border-border flex items-center justify-center';
+          }
+          if (currentView === 'today' && id === 'morningPractice') {
+            const header = document.querySelector('section .flex.items-baseline');
+            if (header) {
+              const streak = getStreak();
+              header.querySelector('span').textContent = streak > 0 ? streak + ' day streak' : 'No streak';
+            }
+          }
+        });
+      });
+
+      document.querySelectorAll('[data-audit]').forEach((ta) => {
+        ta.addEventListener('blur', () => {
+          const audit = getAuditRecord();
+          audit[ta.dataset.audit] = ta.value;
+          saveData();
+        });
+      });
+
+      const exportBtn = document.getElementById('export-btn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', exportData);
+      }
+    }
+
+    function exportData() {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `behaviour-tracker-${dateKey()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function setView(view) {
+      currentView = view;
+      document.querySelectorAll('.nav-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.nav === view);
+      });
+      updateNavIndicators();
+      render();
+    }
+
+    function updateNavIndicators() {
+      const auditBtn = document.querySelector('[data-nav="audit"]');
+      if (!auditBtn) return;
+      const audit = getAuditRecord();
+      const needsAudit = isSunday() && !audit.boundary && !audit.engine && !audit.identity;
+      let dot = auditBtn.querySelector('.nav-dot');
+      if (needsAudit) {
+        if (!dot) {
+          dot = document.createElement('span');
+          dot.className = 'nav-dot inline-block w-1.5 h-1.5 rounded-full bg-accent-bright ml-1 align-middle';
+          auditBtn.appendChild(dot);
+        }
+      } else if (dot) {
+        dot.remove();
+      }
+    }
+
+    /* ── Init ── */
+
+    function init() {
+      handleRollover();
+
+      document.querySelectorAll('.nav-btn').forEach((btn) => {
+        btn.addEventListener('click', () => setView(btn.dataset.nav));
+      });
+
+      if (isSunday()) {
+        const audit = getAuditRecord();
+        const empty = !audit.boundary && !audit.engine && !audit.identity;
+        if (empty) currentView = 'audit';
+      }
+
+      setView(currentView);
+
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          handleRollover();
+          render();
+        }
+      });
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
