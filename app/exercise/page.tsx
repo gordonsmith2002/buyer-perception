@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -36,12 +36,30 @@ type Participant = {
   scores: Scores;
 };
 
+type StoredExercise = {
+  version: 1;
+  companyName: string;
+  sessionDate: string;
+  participants: Participant[];
+  buyerReality: Scores;
+};
+
+const STORAGE_KEY = "buyer-perception:exercise:v1";
+
 const defaultScores: Scores = {
   Responsiveness: 7,
   People: 7,
   Proposal: 7,
   Pricing: 7,
   Product: 7,
+};
+
+const defaultBuyerReality: Scores = {
+  Responsiveness: 5.5,
+  People: 6.5,
+  Proposal: 5.0,
+  Pricing: 5.5,
+  Product: 6.0,
 };
 
 function createParticipant(index: number): Participant {
@@ -51,6 +69,42 @@ function createParticipant(index: number): Participant {
     role: "",
     scores: { ...defaultScores },
   };
+}
+
+function isScores(value: unknown): value is Scores {
+  if (typeof value !== "object" || value === null) return false;
+  const scores = value as Record<string, unknown>;
+  return dimensions.every((dimension) => {
+    const score = scores[dimension];
+    return (
+      typeof score === "number" &&
+      Number.isFinite(score) &&
+      score >= 1 &&
+      score <= 10
+    );
+  });
+}
+
+function isStoredExercise(value: unknown): value is StoredExercise {
+  if (typeof value !== "object" || value === null) return false;
+  const exercise = value as Partial<StoredExercise>;
+  return (
+    exercise.version === 1 &&
+    typeof exercise.companyName === "string" &&
+    typeof exercise.sessionDate === "string" &&
+    Array.isArray(exercise.participants) &&
+    exercise.participants.length > 0 &&
+    exercise.participants.every(
+      (participant) =>
+        typeof participant === "object" &&
+        participant !== null &&
+        typeof participant.id === "string" &&
+        typeof participant.name === "string" &&
+        typeof participant.role === "string" &&
+        isScores(participant.scores),
+    ) &&
+    isScores(exercise.buyerReality)
+  );
 }
 
 function clampScore(value: number) {
@@ -79,13 +133,55 @@ export default function ExercisePage() {
     createParticipant(2),
     createParticipant(3),
   ]);
-  const [buyerReality, setBuyerReality] = useState<Scores>({
-    Responsiveness: 5.5,
-    People: 6.5,
-    Proposal: 5.0,
-    Pricing: 5.5,
-    Product: 6.0,
-  });
+  const [buyerReality, setBuyerReality] = useState<Scores>(defaultBuyerReality);
+  const [hasHydrated, setHasHydrated] = useState(false);
+  const [storageStatus, setStorageStatus] = useState<
+    "loading" | "saved" | "unavailable"
+  >("loading");
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        try {
+          const stored: unknown = JSON.parse(raw);
+          if (isStoredExercise(stored)) {
+            setCompanyName(stored.companyName);
+            setSessionDate(stored.sessionDate);
+            setParticipants(stored.participants);
+            setBuyerReality(stored.buyerReality);
+          } else {
+            localStorage.removeItem(STORAGE_KEY);
+          }
+        } catch {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      }
+    } catch {
+      setStorageStatus("unavailable");
+    } finally {
+      setHasHydrated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hasHydrated) return;
+
+    const exercise: StoredExercise = {
+      version: 1,
+      companyName,
+      sessionDate,
+      participants,
+      buyerReality,
+    };
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(exercise));
+      setStorageStatus("saved");
+    } catch {
+      setStorageStatus("unavailable");
+    }
+  }, [buyerReality, companyName, hasHydrated, participants, sessionDate]);
 
   const updateParticipant = (
     id: string,
@@ -162,6 +258,18 @@ export default function ExercisePage() {
             Capture how your team predicts buyers will score your performance
             across five dimensions. Then compare against actual buyer scores to
             quantify the perception gap.
+          </p>
+          <p
+            className="mt-3 text-xs text-[#9aa0ad]"
+            role="status"
+            aria-live="polite"
+          >
+            {storageStatus === "loading" &&
+              "Restoring the last session saved in this browser..."}
+            {storageStatus === "saved" &&
+              "Session changes are saved automatically in this browser."}
+            {storageStatus === "unavailable" &&
+              "Automatic saving is unavailable. Keep this tab open to avoid losing changes."}
           </p>
         </header>
 
