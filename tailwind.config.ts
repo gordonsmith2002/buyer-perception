@@ -5,10 +5,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brandDark: "#1a1a1a",
-        brandLight: "#FAFAF8",
-        accent: "#c0392b",
-        creamCard: "#f5f3ee",
+        charcoal: "#383637",
+        terracotta: "#B1694F",
+        sand: "#DFD1B7",
+        olive: "#847E42",
+        platinum: "#EFEFEF",
+        // Existing class names used across the site — mapped to Tom's palette
+        brandDark: "#383637",
+        brandLight: "#EFEFEF",
+        accent: "#B1694F",
+        creamCard: "#DFD1B7",
       },
       fontFamily: {
         serif: [
@@ -17,7 +23,7 @@ const config: Config = {
           "Georgia",
           "serif",
         ],
-        sans: ['"DM Sans"', "ui-sans-serif", "system-ui", "Arial", "sans-serif"],
+        sans: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
     },
   },
@@ -25,4 +31,3 @@ const config: Config = {
 };
 
 export default config;
-

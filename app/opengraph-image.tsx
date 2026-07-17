@@ -27,7 +27,7 @@ export default async function OgImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1a1a1a",
+          backgroundColor: "#383637",
           position: "relative",
         }}
       >
@@ -36,7 +36,7 @@ export default async function OgImage() {
             position: "absolute",
             inset: 0,
             background:
-              "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(192, 57, 43, 0.12) 0%, transparent 70%)",
+              "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(177, 105, 79, 0.14) 0%, transparent 70%)",
           }}
         />
         <div
@@ -47,7 +47,7 @@ export default async function OgImage() {
             right: 0,
             height: 3,
             background:
-              "linear-gradient(90deg, transparent 10%, #c0392b 50%, transparent 90%)",
+              "linear-gradient(90deg, transparent 10%, #B1694F 50%, transparent 90%)",
           }}
         />
         <div
@@ -62,7 +62,7 @@ export default async function OgImage() {
             style={{
               fontSize: 88,
               fontFamily: "DM Serif Display",
-              color: "#FAFAF8",
+              color: "#EFEFEF",
               letterSpacing: "-0.03em",
               lineHeight: 1,
             }}
@@ -73,7 +73,7 @@ export default async function OgImage() {
             style={{
               width: 72,
               height: 4,
-              backgroundColor: "#c0392b",
+              backgroundColor: "#B1694F",
               borderRadius: 2,
             }}
           />

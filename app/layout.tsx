@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { DM_Serif_Display, Inter } from "next/font/google";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import "./globals.css";
 
-const sans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  variable: "--font-inter",
 });
 
 const dmSerif = DM_Serif_Display({
@@ -54,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sans.className} ${dmSerif.variable} antialiased overflow-x-hidden`}>
+      <body className={`${inter.className} ${inter.variable} ${dmSerif.variable} antialiased overflow-x-hidden`}>
         <GoogleAnalytics />
         {children}
       </body>

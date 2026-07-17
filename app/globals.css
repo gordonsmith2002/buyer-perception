@@ -7,9 +7,14 @@ html {
 }
 
 :root {
-  --brand-dark: #1a1a1a;
-  --brand-light: #fafaf8;
-  --accent: #c0392b;
+  --charcoal: #383637;
+  --terracotta: #b1694f;
+  --sand: #dfd1b7;
+  --olive: #847e42;
+  --platinum: #efefef;
+  --brand-dark: var(--charcoal);
+  --brand-light: var(--platinum);
+  --accent: var(--terracotta);
 }
 
 html,
@@ -18,8 +23,9 @@ body {
 }
 
 body {
-  background: var(--brand-light);
-  color: var(--brand-dark);
+  background: var(--platinum);
+  color: var(--charcoal);
+  font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
 a {
@@ -39,4 +45,3 @@ a {
   opacity: 1;
   transform: none;
 }
-
