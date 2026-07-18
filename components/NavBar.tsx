@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BOOK_CALL_URL } from "./BookButton";
@@ -20,10 +21,18 @@ export default function NavBar() {
         <div className="flex h-14 sm:h-16 items-center justify-between gap-4">
           <Link
             href="/"
-            className="text-brandLight font-serif text-lg sm:text-xl shrink-0 z-10"
+            className="shrink-0 z-10 inline-flex items-center"
             onClick={() => setOpen(false)}
+            aria-label="Buyer Perception home"
           >
-            Buyer Perception
+            <Image
+              src="/images/logo-inverted.svg"
+              alt="Buyer Perception"
+              width={200}
+              height={59}
+              priority
+              className="h-8 sm:h-9 w-auto"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">

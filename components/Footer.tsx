@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { BOOK_CALL_URL } from "./BookButton";
 
@@ -7,8 +8,14 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="text-brandLight">
-            <div className="font-semibold text-white">Buyer Perception</div>
-            <div className="text-white/50 text-sm mt-1">
+            <Image
+              src="/images/logo-inverted.svg"
+              alt="Buyer Perception"
+              width={200}
+              height={59}
+              className="h-8 w-auto"
+            />
+            <div className="text-white/50 text-sm mt-3">
               © 2026 Buyer Perception
             </div>
           </div>
