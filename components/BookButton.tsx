@@ -16,8 +16,8 @@ export default function BookButton({
       target="_blank"
       rel="noopener noreferrer"
       className={[
-        "inline-flex items-center justify-center rounded-md border border-accent bg-accent px-5 py-3",
-        "text-white font-semibold tracking-tight hover:bg-[#b83228] hover:border-[#b83228] transition-colors",
+        "inline-flex items-center justify-center rounded-md bg-terracotta px-5 py-3",
+        "text-white font-normal tracking-tight hover:bg-[#9a5a43] transition-colors",
         className ?? "",
       ].join(" ")}
     >
