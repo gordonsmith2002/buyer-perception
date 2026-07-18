@@ -8,16 +8,25 @@ export default function EditorialStatCallout({
   source,
   children,
   delayMs = 0,
+  surface = "sand",
 }: {
   percentage: string;
   headline: string;
   source: string;
   children?: React.ReactNode;
   delayMs?: number;
+  surface?: "sand" | "platinum" | "white";
 }) {
+  const surfaceClass =
+    surface === "platinum"
+      ? "bg-platinum"
+      : surface === "white"
+        ? "bg-white"
+        : "bg-sand";
+
   return (
     <Reveal delayMs={delayMs}>
-      <div className="rounded-xl bg-sand px-6 py-8 sm:px-8 sm:py-10">
+      <div className={`rounded-xl ${surfaceClass} px-6 py-8 sm:px-8 sm:py-10`}>
         <div className="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
           <div className="shrink-0 flex flex-col items-start">
             <p

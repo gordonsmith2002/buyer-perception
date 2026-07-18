@@ -1,29 +1,31 @@
 import React from "react";
-import Reveal from "./Reveal";
+import BrandDivider from "./BrandDivider";
 import EditorialStatCallout from "./EditorialStatCallout";
+import InsightMarkDivider from "./InsightMarkDivider";
+import Reveal from "./Reveal";
 import RippleVisualization from "./RippleVisualization";
 
 export default function InvisiblePipelineSection() {
   return (
     <section
       id="invisible-pipeline"
-      className="bg-brandLight text-brandDark border-t border-black/5 scroll-mt-20"
+      className="bg-sand text-charcoal border-t border-charcoal/5 scroll-mt-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="text-xs tracking-[0.2em] uppercase text-black/55 font-semibold">
+          <div className="text-xs tracking-[0.2em] uppercase text-terracotta font-medium">
             THE INVISIBLE PIPELINE
           </div>
         </Reveal>
 
         <Reveal>
-          <h2 className="font-serif text-3xl sm:text-4xl leading-tight max-w-3xl text-[#1a1a1a]">
+          <h2 className="mt-4 font-sans text-3xl sm:text-4xl font-semibold leading-tight max-w-3xl text-charcoal">
             Every deal you lose has an afterlife. So does every customer who
             leaves.
           </h2>
         </Reveal>
         <Reveal>
-          <p className="mt-8 max-w-3xl text-base sm:text-lg text-[#555] leading-relaxed">
+          <p className="mt-8 max-w-3xl text-base sm:text-lg text-charcoal/70 leading-relaxed">
             The moment a deal closes, won or lost, the buyer does not disappear.
             They go back to their network and tell people what dealing with you
             was actually like. Some become advocates, sending you referrals and
@@ -37,6 +39,7 @@ export default function InvisiblePipelineSection() {
         <div className="mt-12 sm:mt-16 max-w-4xl">
           <EditorialStatCallout
             percentage="73%"
+            surface="white"
             headline="73% of B2B buyers say peer recommendations are the number one factor in choosing a vendor."
             source="Source: Wynter, 2024."
           >
@@ -53,10 +56,27 @@ export default function InvisiblePipelineSection() {
           </EditorialStatCallout>
         </div>
 
+        <div className="mt-14 sm:mt-16">
+          <InsightMarkDivider color="olive" className="mb-10" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-10 text-center text-sm">
+            <p className="inline-flex items-center justify-center gap-2 text-olive font-medium">
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-olive" />
+              Advocate path — building pipeline
+            </p>
+            <p className="inline-flex items-center justify-center gap-2 text-terracotta font-medium">
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-terracotta" />
+              Critic path — destroying pipeline
+            </p>
+          </div>
+        </div>
+
         <RippleVisualization />
 
-        <Reveal className="flex justify-center">
-          <p className="mt-12 sm:mt-14 max-w-3xl text-center font-semibold text-[#1a1a1a] text-lg sm:text-xl leading-snug">
+        <Reveal className="flex flex-col items-center">
+          <div className="mt-12 sm:mt-14 w-16">
+            <BrandDivider color="terracotta" variant="solid" />
+          </div>
+          <p className="mt-6 max-w-3xl text-center font-medium text-charcoal text-lg sm:text-xl leading-snug">
             Your current internal data cannot tell you which is which. We can.
           </p>
         </Reveal>

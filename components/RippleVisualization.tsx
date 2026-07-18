@@ -33,7 +33,7 @@ function FanArrows({
   variant: "advocate" | "critic";
   className?: string;
 }) {
-  const stroke = variant === "advocate" ? "#3d6b4f" : "#64748b";
+  const stroke = variant === "advocate" ? "#847E42" : "#B1694F";
   const markerId = `arrow-${variant}`;
   return (
     <svg
@@ -50,7 +50,7 @@ function FanArrows({
           refY="2.5"
           orient="auto"
         >
-          <path d="M0,0 L5,2.5 L0,5 Z" fill={stroke} fillOpacity="0.55" />
+          <path d="M0,0 L5,2.5 L0,5 Z" fill={stroke} fillOpacity="0.65" />
         </marker>
       </defs>
       <path
@@ -58,7 +58,7 @@ function FanArrows({
         fill="none"
         stroke={stroke}
         strokeWidth="1.2"
-        strokeOpacity="0.48"
+        strokeOpacity="0.55"
         markerEnd={`url(#${markerId})`}
       />
       <path
@@ -66,7 +66,7 @@ function FanArrows({
         fill="none"
         stroke={stroke}
         strokeWidth="1.2"
-        strokeOpacity="0.58"
+        strokeOpacity="0.65"
         markerEnd={`url(#${markerId})`}
       />
       <path
@@ -74,7 +74,7 @@ function FanArrows({
         fill="none"
         stroke={stroke}
         strokeWidth="1.2"
-        strokeOpacity="0.48"
+        strokeOpacity="0.55"
         markerEnd={`url(#${markerId})`}
       />
     </svg>
@@ -103,12 +103,12 @@ function PeerOutcome({
       <div
         className={[
           "flex items-center justify-center",
-          isAdv ? "text-emerald-800/75" : "text-slate-600/75",
+          isAdv ? "text-olive" : "text-terracotta",
         ].join(" ")}
       >
         <PersonNode size="sm" />
       </div>
-      <p className="mt-2 text-[11px] sm:text-xs leading-snug text-[#444]">
+      <p className="mt-2 text-[11px] sm:text-xs leading-snug text-charcoal/70">
         {caption}
       </p>
     </div>
@@ -128,14 +128,16 @@ function RipplePanel({
     <Reveal delayMs={delayMs} className="flex-1 min-w-0">
       <div
         className={[
-          "h-full border border-black/10 px-5 py-8 sm:px-7 sm:py-10",
-          isAdv ? "bg-[#eef5ef]/60" : "bg-[#f4f4f5]/80",
+          "h-full rounded-xl px-5 py-8 sm:px-7 sm:py-10 border-l-[3px]",
+          isAdv
+            ? "bg-white/70 border-l-olive"
+            : "bg-white/70 border-l-terracotta",
         ].join(" ")}
       >
         <p
           className={[
-            "text-[10px] tracking-[0.22em] uppercase font-semibold",
-            isAdv ? "text-emerald-900/70" : "text-slate-600",
+            "text-[11px] tracking-[0.18em] uppercase font-medium",
+            isAdv ? "text-olive" : "text-terracotta",
           ].join(" ")}
         >
           {title}
@@ -145,11 +147,11 @@ function RipplePanel({
           <div
             className={[
               "flex flex-col items-center shrink-0 w-[64px] sm:w-[76px]",
-              isAdv ? "text-emerald-800/85" : "text-slate-600/85",
+              isAdv ? "text-olive" : "text-terracotta",
             ].join(" ")}
           >
             <PersonNode size="lg" />
-            <p className="mt-2 text-[11px] sm:text-xs font-medium text-[#1a1a1a] text-center leading-snug">
+            <p className="mt-2 text-[11px] sm:text-xs font-medium text-charcoal text-center leading-snug">
               {nodeLabel}
             </p>
           </div>
@@ -170,7 +172,7 @@ function RipplePanel({
             <div
               className={[
                 "flex items-center gap-2",
-                isAdv ? "text-emerald-800/45" : "text-slate-500/50",
+                isAdv ? "text-olive/50" : "text-terracotta/50",
               ].join(" ")}
             >
               <svg viewBox="0 0 40 12" className="w-10 h-3" aria-hidden>
@@ -184,12 +186,11 @@ function RipplePanel({
               </svg>
               <PersonNode size="xs" className="opacity-55" />
             </div>
-            <p className="mt-2 text-[11px] sm:text-xs text-black/45 leading-relaxed italic">
+            <p className="mt-2 text-[11px] sm:text-xs text-charcoal/45 leading-relaxed italic">
               {secondaryLabel}
             </p>
           </div>
         </div>
-
       </div>
     </Reveal>
   );
@@ -197,7 +198,7 @@ function RipplePanel({
 
 export default function RippleVisualization() {
   return (
-    <div className="mt-14 sm:mt-16 flex flex-col lg:flex-row gap-6 lg:gap-8 lg:items-stretch">
+    <div className="mt-10 sm:mt-12 flex flex-col lg:flex-row gap-6 lg:gap-8 lg:items-stretch">
       <RipplePanel
         variant="advocate"
         title="Building pipeline you'll never attribute"
