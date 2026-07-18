@@ -46,7 +46,7 @@ function StackCard({ item, index }: { item: StackItem; index: number }) {
           />
         </div>
 
-        <h3 className="relative font-sans text-xl sm:text-2xl font-medium leading-tight text-charcoal">
+        <h3 className="relative font-sans text-xl sm:text-2xl font-semibold leading-tight text-charcoal">
           {item.label}
         </h3>
         <div className="relative mt-3 w-12">
@@ -78,12 +78,12 @@ export default function StackBlindSpot() {
     <section className="bg-platinum text-charcoal border-t border-charcoal/5 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="text-xs tracking-[0.2em] uppercase text-terracotta font-medium">
+          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
             THE BLIND SPOT IN YOUR TOOLS AND FRAMEWORKS
           </div>
         </Reveal>
         <Reveal>
-          <h2 className="mt-4 max-w-4xl font-sans text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold leading-tight text-charcoal">
+          <h2 className="mt-4 max-w-4xl font-editorial font-bold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-charcoal">
             You are measuring more effectively than any revenue team in history.
             There is one thing none of your tools can measure: buyer perception.
           </h2>

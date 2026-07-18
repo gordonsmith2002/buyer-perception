@@ -8,10 +8,10 @@ html {
 
 :root {
   --charcoal: #383637;
-  --terracotta: #b1694f;
-  --sand: #dfd1b7;
-  --olive: #847e42;
-  --platinum: #efefef;
+  --terracotta: #B1694F;
+  --sand: #DFD1B7;
+  --olive: #847E42;
+  --platinum: #EFEFEF;
   --brand-dark: var(--charcoal);
   --brand-light: var(--platinum);
   --accent: var(--terracotta);

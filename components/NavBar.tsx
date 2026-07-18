@@ -51,7 +51,7 @@ export default function NavBar() {
               href={BOOK_CALL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md px-5 py-2.5 bg-[#8F533C] text-white text-[15px] font-medium tracking-tight hover:bg-[#7A4633] transition-colors"
+              className="inline-flex items-center justify-center rounded-md px-5 py-2.5 bg-terracotta text-white text-[15px] font-medium tracking-tight hover:bg-[#9A5A43] transition-colors"
             >
               Book a Conversation
             </a>
@@ -62,7 +62,7 @@ export default function NavBar() {
               href={BOOK_CALL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex rounded-md bg-[#8F533C] text-white text-sm font-medium px-3.5 py-2"
+              className="inline-flex rounded-md bg-terracotta text-white text-sm font-medium px-3.5 py-2"
             >
               Book a Conversation
             </a>
@@ -105,7 +105,7 @@ export default function NavBar() {
               href={BOOK_CALL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 text-center rounded-md bg-[#8F533C] text-white text-[15px] font-medium py-3"
+              className="mt-3 text-center rounded-md bg-terracotta text-white text-[15px] font-medium py-3"
               onClick={() => setOpen(false)}
             >
               Book a Conversation

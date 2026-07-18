@@ -97,11 +97,11 @@ export default function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="bg-sand text-charcoal scroll-mt-20 border-t border-charcoal/5"
+      className="bg-sand/40 text-charcoal scroll-mt-20 border-t border-charcoal/5"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="text-xs tracking-[0.2em] uppercase text-terracotta font-medium">
+          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
             HOW IT WORKS
           </div>
         </Reveal>
@@ -123,7 +123,7 @@ export default function HowItWorksSection() {
                 <span className="mt-6 font-sans text-4xl sm:text-5xl font-semibold text-terracotta leading-none tracking-tight">
                   {step.n}
                 </span>
-                <h3 className="mt-4 font-sans text-xl sm:text-2xl font-medium text-charcoal leading-snug">
+                <h3 className="mt-4 font-sans text-xl sm:text-2xl font-semibold text-charcoal leading-snug">
                   {step.title}
                 </h3>
                 <p className="mt-4 text-sm sm:text-base leading-relaxed text-charcoal/70 flex-1">
@@ -138,7 +138,7 @@ export default function HowItWorksSection() {
           <BrandDivider color="charcoal" variant="solid" className="opacity-15 mb-14" />
 
           <Reveal>
-            <h3 className="font-sans text-2xl sm:text-3xl font-semibold text-charcoal text-center">
+            <h3 className="font-sans font-bold text-2xl sm:text-3xl text-charcoal text-center">
               What your report reveals
             </h3>
           </Reveal>
@@ -158,10 +158,10 @@ export default function HowItWorksSection() {
                 i % 3 === 0 ? "triangle" : i % 3 === 1 ? "quarter" : "circle";
               return (
                 <Reveal key={item.title} delayMs={i * 60}>
-                  <div className="relative rounded-xl bg-white/70 p-5 sm:p-6 h-full overflow-hidden">
+                  <div className="relative rounded-xl bg-sand border border-charcoal/10 shadow-sm p-5 sm:p-6 h-full overflow-hidden">
                     <div
                       aria-hidden
-                      className="pointer-events-none absolute -right-4 -bottom-6 opacity-[0.1]"
+                      className="pointer-events-none absolute -right-4 -bottom-6 opacity-[0.08]"
                     >
                       <Image
                         src={MARK_SRC[item.accent]}
@@ -185,7 +185,7 @@ export default function HowItWorksSection() {
                           variant="solid"
                         />
                       </div>
-                      <h4 className="font-sans text-lg sm:text-xl font-medium text-charcoal">
+                      <h4 className="font-sans text-lg sm:text-xl font-semibold text-charcoal">
                         {item.title}
                       </h4>
                       <p className="mt-3 text-sm text-charcoal/70 leading-relaxed">

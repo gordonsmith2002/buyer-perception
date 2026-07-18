@@ -13,13 +13,13 @@ export default function InvisiblePipelineSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="text-xs tracking-[0.2em] uppercase text-terracotta font-medium">
+          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
             THE INVISIBLE PIPELINE
           </div>
         </Reveal>
 
         <Reveal>
-          <h2 className="mt-4 font-sans text-3xl sm:text-4xl font-semibold leading-tight max-w-3xl text-charcoal">
+          <h2 className="mt-4 font-editorial font-bold text-3xl sm:text-4xl leading-tight max-w-3xl text-charcoal">
             Every deal you lose has an afterlife. So does every customer who
             leaves.
           </h2>

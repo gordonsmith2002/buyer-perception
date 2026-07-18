@@ -11,7 +11,7 @@ export default function AboutSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="text-xs tracking-[0.2em] uppercase text-white/50 font-semibold">
+          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
             ABOUT
           </div>
         </Reveal>
@@ -20,18 +20,20 @@ export default function AboutSection() {
           <Reveal className="lg:col-span-4">
             <div className="relative aspect-square max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-white/10">
               <Image
-                src="/images/gordon-headshot.png"
+                src="/images/GS-14.jpg"
                 alt="Gordon, founder of Buyer Perception"
                 fill
-                className="object-cover object-[center_15%]"
+                className="object-cover object-[center_18%]"
                 sizes="(max-width: 1024px) 100vw, 384px"
+                quality={85}
+                priority={false}
               />
             </div>
           </Reveal>
 
           <div className="lg:col-span-8 space-y-6 text-[#aaaaaa] text-base sm:text-lg leading-relaxed">
             <Reveal>
-              <h2 className="font-serif text-3xl sm:text-4xl text-white leading-tight">
+              <h2 className="font-sans font-bold text-3xl sm:text-4xl text-white leading-tight">
                 Gordon
               </h2>
             </Reveal>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Inter } from "next/font/google";
+import { Inter, Libre_Baskerville } from "next/font/google";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import "./globals.css";
 
@@ -10,11 +10,11 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const dmSerif = DM_Serif_Display({
+const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "700"],
   display: "swap",
-  variable: "--font-dm-serif",
+  variable: "--font-editorial",
 });
 
 export const metadata: Metadata = {
@@ -55,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${inter.variable} ${dmSerif.variable} antialiased overflow-x-hidden`}>
+      <body className={`${inter.className} ${inter.variable} ${libreBaskerville.variable} antialiased overflow-x-hidden`}>
         <GoogleAnalytics />
         {children}
       </body>

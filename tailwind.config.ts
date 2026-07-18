@@ -17,8 +17,17 @@ const config: Config = {
         creamCard: "#DFD1B7",
       },
       fontFamily: {
+        // Libre Baskerville — hero-level editorial headlines only
+        editorial: [
+          "var(--font-editorial)",
+          "Libre Baskerville",
+          "ui-serif",
+          "Georgia",
+          "serif",
+        ],
         serif: [
-          "var(--font-dm-serif)",
+          "var(--font-editorial)",
+          "Libre Baskerville",
           "ui-serif",
           "Georgia",
           "serif",
