@@ -33,7 +33,7 @@ export default function Hero() {
               </div>
             </Reveal>
             <Reveal>
-              <div className="text-white/50 text-xs sm:text-sm">
+              <div className="text-white/75 text-xs sm:text-sm">
                 Built on 20 years of B2B revenue leadership
               </div>
             </Reveal>

@@ -59,11 +59,11 @@ export default function InvisiblePipelineSection() {
         <div className="mt-14 sm:mt-16">
           <InsightMarkDivider color="olive" className="mb-10" />
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 sm:gap-10 text-center text-sm">
-            <p className="inline-flex items-center justify-center gap-2 text-olive font-medium">
+            <p className="inline-flex items-center justify-center gap-2 text-charcoal font-medium">
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-olive" />
               Advocate path — building pipeline
             </p>
-            <p className="inline-flex items-center justify-center gap-2 text-terracotta font-medium">
+            <p className="inline-flex items-center justify-center gap-2 text-charcoal font-medium">
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-terracotta" />
               Critic path — destroying pipeline
             </p>
