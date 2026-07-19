@@ -15,14 +15,9 @@ export default function EditorialStatCallout({
   source: string;
   children?: React.ReactNode;
   delayMs?: number;
-  surface?: "sand" | "platinum" | "white";
+  surface?: "sand" | "platinum";
 }) {
-  const surfaceClass =
-    surface === "platinum"
-      ? "bg-platinum"
-      : surface === "white"
-        ? "bg-white"
-        : "bg-sand";
+  const surfaceClass = surface === "platinum" ? "bg-platinum" : "bg-sand";
 
   return (
     <Reveal delayMs={delayMs}>

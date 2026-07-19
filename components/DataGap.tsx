@@ -45,7 +45,7 @@ function MobileRow({ row }: { row: CrmRow }) {
     <div className="rounded-xl bg-sand overflow-hidden">
       <div className="p-5 sm:p-6">
         <ColumnLabel>What your CRM says</ColumnLabel>
-        <p className="mt-3 inline-flex rounded-md border border-charcoal/15 bg-white px-3 py-2 font-mono text-sm leading-snug text-charcoal/80">
+        <p className="mt-3 inline-flex rounded-md border border-charcoal/15 bg-platinum px-3 py-2 font-mono text-sm leading-snug text-charcoal/80">
           {row.crmField}
         </p>
       </div>
@@ -80,7 +80,7 @@ function DesktopRow({ row }: { row: CrmRow }) {
     <div className="rounded-xl bg-sand overflow-hidden">
       <div className="grid grid-cols-12">
         <div className="col-span-3 bg-platinum/50 px-5 lg:px-6 py-7 min-w-0">
-          <p className="inline-flex max-w-full rounded-md border border-charcoal/15 bg-white px-3 py-2 font-mono text-sm lg:text-[0.9375rem] leading-snug text-charcoal/80 break-words">
+          <p className="inline-flex max-w-full rounded-md border border-charcoal/15 bg-platinum px-3 py-2 font-mono text-sm lg:text-[0.9375rem] leading-snug text-charcoal/80 break-words">
             {row.crmField}
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function DataGap() {
   return (
     <section
       id="problem"
-      className="bg-white text-charcoal border-t border-charcoal/5 scroll-mt-20"
+      className="bg-platinum text-charcoal border-t border-charcoal/5 scroll-mt-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>

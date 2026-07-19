@@ -9,8 +9,11 @@ export default function Hero() {
         <div className="max-w-3xl">
           <Reveal>
             <h1 className="font-editorial font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">
-              Win-loss analysis tells you why you lost the deal. We tell you
-              what that buyer is saying about you right now.
+              Win-loss analysis tells you why you lost the deal.{" "}
+              <span className="text-terracotta [text-shadow:0.45px_0_0_currentColor,-0.45px_0_0_currentColor,0_0.45px_0_currentColor]">
+                Buyer Perception
+              </span>{" "}
+              tells you what that buyer is saying about you right now.
             </h1>
           </Reveal>
 
