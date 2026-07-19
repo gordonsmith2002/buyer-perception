@@ -1,11 +1,26 @@
+import Image from "next/image";
 import React from "react";
 import BookButton from "./BookButton";
 import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
-    <section className="bg-brandDark text-brandLight">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-24 sm:py-32 lg:py-36">
+    <section className="relative bg-brandDark text-brandLight overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 flex w-full max-w-xl items-center justify-center md:justify-end md:pr-8 lg:pr-16"
+      >
+        <Image
+          src="/images/logo-mark-sand.svg"
+          alt=""
+          width={420}
+          height={700}
+          className="h-[75%] w-auto max-h-[560px] opacity-[0.07] select-none"
+          priority
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-24 sm:py-32 lg:py-36">
         <div className="max-w-3xl">
           <Reveal>
             <h1 className="font-editorial font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">

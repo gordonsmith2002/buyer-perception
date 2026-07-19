@@ -40,34 +40,42 @@ function ColumnLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
+function CrmChip({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="inline-flex max-w-full rounded border border-charcoal/15 bg-platinum px-2.5 py-1 font-mono text-xs leading-snug text-charcoal/75 break-words">
+      {children}
+    </p>
+  );
+}
+
 function MobileRow({ row }: { row: CrmRow }) {
   return (
     <div className="rounded-xl bg-sand overflow-hidden">
-      <div className="p-5 sm:p-6">
+      <div className="px-4 py-3.5">
         <ColumnLabel>What your CRM says</ColumnLabel>
-        <p className="mt-3 inline-flex rounded-md border border-charcoal/15 bg-platinum px-3 py-2 font-mono text-sm leading-snug text-charcoal/80">
-          {row.crmField}
-        </p>
+        <div className="mt-2">
+          <CrmChip>{row.crmField}</CrmChip>
+        </div>
       </div>
 
-      <div className="px-5 sm:px-6">
+      <div className="px-4">
         <BrandDivider color="terracotta" variant="solid" />
       </div>
 
-      <div className="p-5 sm:p-6 border-l-[3px] border-l-terracotta ml-0">
+      <div className="px-4 py-3.5 border-l-[3px] border-l-terracotta">
         <ColumnLabel>What the buyer actually said</ColumnLabel>
-        <p className="mt-3 font-sans text-lg leading-relaxed text-charcoal italic">
+        <p className="mt-2 font-sans text-sm sm:text-base leading-relaxed text-charcoal italic">
           &ldquo;{row.buyerTruth}&rdquo;
         </p>
       </div>
 
-      <div className="px-5 sm:px-6">
+      <div className="px-4">
         <BrandDivider color="olive" variant="dashed" />
       </div>
 
-      <div className="bg-platinum/70 p-5 sm:p-6 border-l-[3px] border-l-olive">
+      <div className="bg-platinum/70 px-4 py-3.5 border-l-[3px] border-l-olive">
         <ColumnLabel>What&apos;s happening right now</ColumnLabel>
-        <p className="mt-3 text-sm font-medium leading-relaxed text-charcoal">
+        <p className="mt-2 text-sm leading-relaxed text-charcoal">
           {row.currentReality}
         </p>
       </div>
@@ -77,23 +85,19 @@ function MobileRow({ row }: { row: CrmRow }) {
 
 function DesktopRow({ row }: { row: CrmRow }) {
   return (
-    <div className="rounded-xl bg-sand overflow-hidden">
-      <div className="grid grid-cols-12">
-        <div className="col-span-3 bg-platinum/50 px-5 lg:px-6 py-7 min-w-0">
-          <p className="inline-flex max-w-full rounded-md border border-charcoal/15 bg-platinum px-3 py-2 font-mono text-sm lg:text-[0.9375rem] leading-snug text-charcoal/80 break-words">
-            {row.crmField}
-          </p>
-        </div>
-        <div className="col-span-5 border-l-[3px] border-l-terracotta px-5 lg:px-6 py-7 min-w-0">
-          <p className="font-sans text-xl lg:text-[1.35rem] leading-relaxed text-charcoal italic">
-            &ldquo;{row.buyerTruth}&rdquo;
-          </p>
-        </div>
-        <div className="col-span-4 border-l-[3px] border-l-olive bg-platinum/60 px-5 lg:px-6 py-7 min-w-0">
-          <p className="text-sm lg:text-base font-medium leading-relaxed text-charcoal">
-            {row.currentReality}
-          </p>
-        </div>
+    <div className="grid grid-cols-12 border-t border-charcoal/10 first:border-t-0">
+      <div className="col-span-3 bg-platinum/40 px-4 lg:px-5 py-3.5 min-w-0 flex items-center">
+        <CrmChip>{row.crmField}</CrmChip>
+      </div>
+      <div className="col-span-5 border-l border-charcoal/10 px-4 lg:px-5 py-3.5 min-w-0">
+        <p className="font-sans text-sm lg:text-base leading-relaxed text-charcoal italic">
+          &ldquo;{row.buyerTruth}&rdquo;
+        </p>
+      </div>
+      <div className="col-span-4 border-l-[3px] border-l-olive bg-platinum/50 px-4 lg:px-5 py-3.5 min-w-0">
+        <p className="text-sm leading-relaxed text-charcoal">
+          {row.currentReality}
+        </p>
       </div>
     </div>
   );
@@ -133,62 +137,41 @@ export default function DataGap() {
         </Reveal>
 
         {/* Mobile: stacked cards */}
-        <div className="mt-14 space-y-10 md:hidden">
+        <div className="mt-14 space-y-4 md:hidden">
           {ROWS.map((row, index) => (
-            <Reveal key={row.crmField} delayMs={index * 80}>
-              <div className="space-y-6">
-                {index > 0 ? (
-                  <BrandDivider color="terracotta" variant="dotted" />
-                ) : null}
-                <MobileRow row={row} />
-              </div>
+            <Reveal key={row.crmField} delayMs={index * 60}>
+              <MobileRow row={row} />
             </Reveal>
           ))}
         </div>
 
-        {/* Desktop: three-column cards with breathing room */}
-        <div className="mt-14 hidden md:block space-y-8">
+        {/* Desktop: compact CRM-style report table */}
+        <div className="mt-14 hidden md:block">
           <Reveal>
-            <div className="grid grid-cols-12 gap-0 px-1 pb-2">
-              <div className="col-span-3 pr-4">
-                <h3 className="font-sans text-lg lg:text-xl font-semibold leading-tight text-charcoal">
-                  What Your CRM Says
-                </h3>
-                <div className="mt-3 w-12">
-                  <BrandDivider color="terracotta" variant="solid" />
+            <div className="overflow-hidden rounded-xl border border-charcoal/10 bg-sand">
+              <div className="grid grid-cols-12 border-b border-charcoal/10 bg-sand">
+                <div className="col-span-3 px-4 lg:px-5 py-3">
+                  <h3 className="font-sans text-sm font-semibold leading-tight text-charcoal">
+                    What Your CRM Says
+                  </h3>
+                </div>
+                <div className="col-span-5 border-l border-charcoal/10 px-4 lg:px-5 py-3">
+                  <h3 className="font-sans text-sm font-semibold leading-tight text-charcoal">
+                    What the Buyer Actually Said
+                  </h3>
+                </div>
+                <div className="col-span-4 border-l border-charcoal/10 px-4 lg:px-5 py-3">
+                  <h3 className="font-sans text-sm font-semibold leading-tight text-charcoal">
+                    What&apos;s Happening Right Now
+                  </h3>
                 </div>
               </div>
-              <div className="col-span-5 px-5 lg:px-6">
-                <h3 className="font-sans text-lg lg:text-xl font-semibold leading-tight text-charcoal">
-                  What the Buyer Actually Said
-                </h3>
-                <div className="mt-3 w-12">
-                  <BrandDivider color="terracotta" variant="solid" />
-                </div>
-              </div>
-              <div className="col-span-4 px-5 lg:px-6">
-                <h3 className="font-sans text-lg lg:text-xl font-semibold leading-tight text-charcoal">
-                  What&apos;s Happening Right Now
-                </h3>
-                <div className="mt-3 w-12">
-                  <BrandDivider color="terracotta" variant="solid" />
-                </div>
-              </div>
+
+              {ROWS.map((row) => (
+                <DesktopRow key={row.crmField} row={row} />
+              ))}
             </div>
           </Reveal>
-
-          <BrandDivider color="charcoal" variant="solid" className="opacity-20" />
-
-          {ROWS.map((row, index) => (
-            <Reveal key={row.crmField} delayMs={index * 80}>
-              <div className="space-y-8">
-                {index > 0 ? (
-                  <BrandDivider color="terracotta" variant="dashed" className="opacity-70" />
-                ) : null}
-                <DesktopRow row={row} />
-              </div>
-            </Reveal>
-          ))}
         </div>
 
         <Reveal className="flex justify-center">
