@@ -20,10 +20,10 @@ export default function AboutSection() {
           <Reveal className="lg:col-span-4">
             <div className="relative aspect-square max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-white/10">
               <Image
-                src="/images/GS-14.jpg"
+                src="/images/gordon-headshot-bw.jpg"
                 alt="Gordon, founder of Buyer Perception"
                 fill
-                className="object-cover object-[center_18%]"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 384px"
                 quality={85}
                 priority={false}
