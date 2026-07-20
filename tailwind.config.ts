@@ -5,16 +5,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: "#383637",
-        terracotta: "#B1694F",
-        sand: "#DFD1B7",
+        charcoal: "#252626",
+        terracotta: "#B94E30",
+        sand: "#E1D4C0",
         olive: "#847E42",
         platinum: "#EFEFEF",
-        // Existing class names used across the site — mapped to Tom's palette
-        brandDark: "#383637",
+        // Existing class names used across the site — mapped to brand Colour Palette
+        brandDark: "#252626",
         brandLight: "#EFEFEF",
-        accent: "#B1694F",
-        creamCard: "#DFD1B7",
+        accent: "#B94E30",
+        creamCard: "#E1D4C0",
       },
       fontFamily: {
         // Libre Baskerville — hero-level editorial headlines only

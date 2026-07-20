@@ -86,7 +86,7 @@ function DesktopTimeline() {
               <div className="relative z-10 mb-8 flex justify-center">
                 <span
                   aria-hidden
-                  className="block h-[23px] w-[23px] rounded-full border-[3px] border-[#E8DFC9] bg-terracotta"
+                  className="block h-[23px] w-[23px] rounded-full border-[3px] border-sand bg-terracotta"
                 />
               </div>
               <StageContent stage={stage} />

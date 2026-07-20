@@ -7,9 +7,9 @@ html {
 }
 
 :root {
-  --charcoal: #383637;
-  --terracotta: #B1694F;
-  --sand: #DFD1B7;
+  --charcoal: #252626;
+  --terracotta: #B94E30;
+  --sand: #E1D4C0;
   --olive: #847E42;
   --platinum: #EFEFEF;
   --brand-dark: var(--charcoal);

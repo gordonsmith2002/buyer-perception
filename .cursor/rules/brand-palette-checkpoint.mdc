@@ -9,10 +9,12 @@ alwaysApply: true
 
 Saved so we can restore the site look that was live on buyerperception.com prior to adopting the official Colour Palette sheet.
 
+**Status:** Guidelines palette is now active in CSS/Tailwind. This checkpoint remains the revert target.
+
 **Git tag:** `palette-live-pre-guidelines`  
 **Commit:** `d454d54` — *Swap the About headshot to the new black-and-white portrait.*
 
-| Token | Pre-guidelines (live) | Guidelines (target) |
+| Token | Pre-guidelines (live) | Guidelines (now active) |
 | --- | --- | --- |
 | Charcoal | `#383637` | `#252626` |
 | Terracotta | `#B1694F` | `#B94E30` |
@@ -22,8 +24,8 @@ Saved so we can restore the site look that was live on buyerperception.com prior
 
 Also related one-offs that lived with the old palette:
 
-- CTA hover: `#9A5A43`
-- How It Works timeline node ring: `#E8DFC9`
+- CTA hover (old): `#9A5A43` → now `#9A3F26`
+- How It Works timeline node ring (old): `#E8DFC9` → now `border-sand`
 
 ## Where tokens live
 
@@ -38,7 +40,13 @@ Also related one-offs that lived with the old palette:
 git checkout palette-live-pre-guidelines -- \
   tailwind.config.ts \
   app/globals.css \
-  app/opengraph-image.tsx \
+  app/opengraph-image.tsx
+```
+
+Then restore CTA hover / timeline ring from the pre-guidelines values above if those files have moved on, or check out the tagged versions:
+
+```bash
+git checkout palette-live-pre-guidelines -- \
   components/NavBar.tsx \
   components/BookButton.tsx \
   components/HowItWorksSection.tsx
