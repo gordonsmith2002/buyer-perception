@@ -1,0 +1,53 @@
+---
+description: Checkpoint of the live brand palette before Colour Palette guideline tokens; how to revert.
+alwaysApply: true
+---
+
+# Brand palette checkpoint (pre-guidelines)
+
+## Live palette before guideline switch
+
+Saved so we can restore the site look that was live on buyerperception.com prior to adopting the official Colour Palette sheet.
+
+**Git tag:** `palette-live-pre-guidelines`  
+**Commit:** `d454d54` — *Swap the About headshot to the new black-and-white portrait.*
+
+| Token | Pre-guidelines (live) | Guidelines (target) |
+| --- | --- | --- |
+| Charcoal | `#383637` | `#252626` |
+| Terracotta | `#B1694F` | `#B94E30` |
+| Sand | `#DFD1B7` | `#E1D4C0` |
+| Olive | `#847E42` | `#847E42` |
+| Platinum | `#EFEFEF` | `#EFEFEF` |
+
+Also related one-offs that lived with the old palette:
+
+- CTA hover: `#9A5A43`
+- How It Works timeline node ring: `#E8DFC9`
+
+## Where tokens live
+
+- `tailwind.config.ts` — `charcoal`, `terracotta`, `sand`, `olive`, `platinum`, `brandDark`, `brandLight`, `accent`, `creamCard`
+- `app/globals.css` — CSS variables `--charcoal`, `--terracotta`, `--sand`, `--olive`, `--platinum`
+- `app/opengraph-image.tsx` — hardcoded hex for OG art
+- Visual side-by-side: `/brand-compare` (`app/brand-compare/page.tsx`) — left column is this checkpoint
+
+## How to revert to this live version
+
+```bash
+git checkout palette-live-pre-guidelines -- \
+  tailwind.config.ts \
+  app/globals.css \
+  app/opengraph-image.tsx \
+  components/NavBar.tsx \
+  components/BookButton.tsx \
+  components/HowItWorksSection.tsx
+```
+
+Or reset the branch to the tag if a full rollback is needed (only with explicit user approval):
+
+```bash
+git switch -c restore-pre-guidelines-palette palette-live-pre-guidelines
+```
+
+Do not delete the `palette-live-pre-guidelines` tag or rewrite this checkpoint without asking the user.
