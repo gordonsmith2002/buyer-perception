@@ -1,0 +1,50 @@
+---
+description: Checkpoint of live typography before Inter-only brand guideline alignment; how to revert.
+alwaysApply: true
+---
+
+# Typography checkpoint (pre-guidelines)
+
+## Live typography before Inter-only switch
+
+**Status:** Guidelines typography is now the active target. This checkpoint is the revert source.
+
+**Git tag:** `type-live-pre-guidelines`  
+**Commit:** `4ffc920` — *Adopt the official Colour Palette guideline tokens.* (palette already applied; type still pre-guidelines at this tag)
+
+### Pre-guidelines system
+
+| Role | Pre-guidelines (live) | Guidelines (target / now) |
+| --- | --- | --- |
+| Headers | Libre Baskerville Bold via `font-editorial` on Hero, Data Gap, Invisible Pipeline, Closing CTA; Inter Bold elsewhere | Inter Bold |
+| Sub headers | Mostly Inter Semibold (`font-semibold` / 600) | Inter Medium (`font-medium` / 500) |
+| Body | Inter Regular | Inter Regular |
+| Logo | Supplied SVG/PNG artwork | Same — never live MuseoModerno |
+
+### Key files at checkpoint
+
+- `app/layout.tsx` — loads `Inter` + `Libre_Baskerville` (`--font-editorial`)
+- `tailwind.config.ts` — `editorial` / `serif` → Libre Baskerville
+- Homepage: `Hero.tsx`, `DataGap.tsx`, `InvisiblePipelineSection.tsx`, `ClosingCta.tsx` use `font-editorial`
+- Side-by-side: `/type-compare` left column preserves the checkpoint look (loads Libre Baskerville only on that route)
+
+### How to revert
+
+```bash
+git checkout type-live-pre-guidelines -- \
+  app/layout.tsx \
+  tailwind.config.ts \
+  components/Hero.tsx \
+  components/DataGap.tsx \
+  components/InvisiblePipelineSection.tsx \
+  components/ClosingCta.tsx \
+  components/HowItWorksSection.tsx \
+  components/ReportRevealsSection.tsx \
+  components/AboutSection.tsx \
+  components/EditorialStatCallout.tsx \
+  components/NavBar.tsx
+```
+
+Restore other touched weight/class files from the same tag if needed. Do not delete `type-live-pre-guidelines` without asking the user.
+
+**MuseoModerno:** wordmark development only — never a live UI font; always use supplied logo artwork.
