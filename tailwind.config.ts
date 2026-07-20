@@ -17,20 +17,20 @@ const config: Config = {
         creamCard: "#E1D4C0",
       },
       fontFamily: {
-        // Libre Baskerville — hero-level editorial headlines only
+        // Brand typography sheet: Inter only (Bold / Medium / Regular)
         editorial: [
-          "var(--font-editorial)",
-          "Libre Baskerville",
-          "ui-serif",
-          "Georgia",
-          "serif",
+          "var(--font-inter)",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
         ],
         serif: [
-          "var(--font-editorial)",
-          "Libre Baskerville",
-          "ui-serif",
-          "Georgia",
-          "serif",
+          "var(--font-inter)",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
         ],
         sans: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },

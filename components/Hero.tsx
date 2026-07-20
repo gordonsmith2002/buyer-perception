@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-24 sm:py-32 lg:py-36">
         <div className="max-w-3xl">
           <Reveal>
-            <h1 className="font-editorial font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">
+            <h1 className="font-sans font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">
               Win-loss analysis tells you why you lost the deal.{" "}
               <span className="text-terracotta [text-shadow:0.45px_0_0_currentColor,-0.45px_0_0_currentColor,0_0.45px_0_currentColor]">
                 Buyer Perception

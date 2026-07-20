@@ -82,7 +82,7 @@ function SampleSurfaces() {
             className="h-28 w-auto"
           />
         </div>
-        <p className="relative font-editorial text-xl font-bold leading-snug tracking-tight text-white sm:text-2xl">
+        <p className="relative font-sans text-xl font-bold leading-snug tracking-tight text-white sm:text-2xl">
           Win-loss tells you why you lost.{" "}
           <span className="text-[var(--bp-terracotta)]">Buyer Perception</span>{" "}
           tells you what that buyer is saying now.
@@ -104,7 +104,7 @@ function SampleSurfaces() {
         <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--bp-terracotta)]">
           The Data Gap
         </p>
-        <h3 className="mt-2 font-editorial text-lg font-bold leading-snug">
+        <h3 className="mt-2 font-sans text-lg font-bold leading-snug">
           Your CRM captures the outcome. Not the perception.
         </h3>
         <div className="mt-4 overflow-hidden rounded-lg bg-[var(--bp-sand)]">
@@ -130,7 +130,7 @@ function SampleSurfaces() {
         <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--bp-terracotta)]">
           The Invisible Pipeline
         </p>
-        <h3 className="mt-2 font-editorial text-lg font-bold leading-snug">
+        <h3 className="mt-2 font-sans text-lg font-bold leading-snug">
           Every lost buyer still talks about you.
         </h3>
         <div className="mt-4 grid grid-cols-2 gap-3">
@@ -167,7 +167,7 @@ function SampleSurfaces() {
             className="h-32 w-auto"
           />
         </div>
-        <h3 className="relative font-editorial text-xl font-bold leading-snug text-[var(--bp-sand)]">
+        <h3 className="relative font-sans text-xl font-bold leading-snug text-[var(--bp-sand)]">
           Find out what your buyers are really saying.
         </h3>
         <p className="relative mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[var(--bp-platinum)]/70">
@@ -213,7 +213,7 @@ export default function BrandComparePage() {
           <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">
             Local preview · not indexed · live homepage untouched
           </p>
-          <h1 className="mt-2 font-editorial text-2xl font-bold tracking-tight sm:text-3xl">
+          <h1 className="mt-2 font-sans text-2xl font-bold tracking-tight sm:text-3xl">
             Palette compare
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">

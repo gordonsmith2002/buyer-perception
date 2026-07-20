@@ -46,17 +46,17 @@ const STAGES: TimelineStage[] = [
 function StageContent({ stage }: { stage: TimelineStage }) {
   return (
     <div>
-      <p className="font-sans text-[11px] font-semibold tracking-[0.2em] uppercase text-terracotta">
+      <p className="font-sans text-[11px] font-medium tracking-[0.2em] uppercase text-terracotta">
         {stage.stage}
       </p>
-      <h3 className="mt-2 font-sans text-lg sm:text-xl font-semibold text-charcoal leading-snug">
+      <h3 className="mt-2 font-sans text-lg sm:text-xl font-medium text-charcoal leading-snug">
         {stage.title}
       </h3>
       <p className="mt-1.5 font-sans font-normal text-sm text-charcoal/55">
         {stage.duration}
       </p>
       {stage.badge ? (
-        <span className="mt-4 inline-flex items-center rounded-md border border-terracotta bg-terracotta px-3 py-1.5 font-sans text-xs font-semibold tracking-tight text-white">
+        <span className="mt-4 inline-flex items-center rounded-md border border-terracotta bg-terracotta px-3 py-1.5 font-sans text-xs font-medium tracking-tight text-white">
           {stage.badge}
         </span>
       ) : null}
@@ -130,7 +130,7 @@ export default function HowItWorksSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
+          <div className="font-sans text-xs font-medium tracking-[0.2em] uppercase text-terracotta">
             HOW IT WORKS
           </div>
         </Reveal>

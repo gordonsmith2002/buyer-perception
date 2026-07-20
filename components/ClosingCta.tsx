@@ -24,7 +24,7 @@ export default function ClosingCta() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28 lg:py-32 text-center">
         <Reveal>
-          <h2 className="font-editorial font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-tight text-sand max-w-4xl mx-auto">
+          <h2 className="font-sans font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-tight text-sand max-w-4xl mx-auto">
             <span>Stop letting your competitors win deals you should have won.</span>
             <span className="block mt-5">
               Stop losing customers you didn&apos;t need to lose.

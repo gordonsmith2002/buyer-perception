@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Libre_Baskerville } from "next/font/google";
 
 const checkpointEditorial = Libre_Baskerville({
@@ -10,7 +11,7 @@ const checkpointEditorial = Libre_Baskerville({
 export default function TypeCompareLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <div className={`${checkpointEditorial.variable}`}>{children}</div>

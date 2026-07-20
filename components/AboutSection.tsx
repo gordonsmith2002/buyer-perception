@@ -11,7 +11,7 @@ export default function AboutSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
+          <div className="font-sans text-xs font-medium tracking-[0.2em] uppercase text-terracotta">
             ABOUT
           </div>
         </Reveal>

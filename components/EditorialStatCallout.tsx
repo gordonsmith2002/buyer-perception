@@ -1,7 +1,7 @@
 import React from "react";
 import Reveal from "./Reveal";
 
-/** Tom's data-visualisation callout: large stat + Charcoal headline, Terracotta accent. */
+/** Brand data callout: large Inter Bold stat + Medium headline, Terracotta accent. */
 export default function EditorialStatCallout({
   percentage,
   headline,
@@ -25,7 +25,7 @@ export default function EditorialStatCallout({
         <div className="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-8">
           <div className="shrink-0 flex flex-col items-start">
             <p
-              className="font-sans text-[4.5rem] sm:text-[5.5rem] lg:text-[6.5rem] font-semibold leading-none tracking-tight text-charcoal"
+              className="font-sans text-[4.5rem] sm:text-[5.5rem] lg:text-[6.5rem] font-bold leading-none tracking-tight text-charcoal"
               aria-hidden
             >
               {percentage}
@@ -33,7 +33,7 @@ export default function EditorialStatCallout({
             <div className="mt-3 h-1 w-14 bg-terracotta" aria-hidden />
           </div>
           <div className="min-w-0 flex-1 sm:pt-2">
-            <p className="font-sans text-xl sm:text-2xl lg:text-[1.75rem] leading-snug text-charcoal">
+            <p className="font-sans text-xl sm:text-2xl lg:text-[1.75rem] font-medium leading-snug text-charcoal">
               {headline}
             </p>
             <p className="mt-4 text-xs sm:text-sm tracking-wide text-charcoal/45">

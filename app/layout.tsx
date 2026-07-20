@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Libre_Baskerville } from "next/font/google";
+import { Inter } from "next/font/google";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import "./globals.css";
 
@@ -8,13 +8,6 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-inter",
-});
-
-const libreBaskerville = Libre_Baskerville({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-  variable: "--font-editorial",
 });
 
 export const metadata: Metadata = {
@@ -55,11 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${inter.variable} ${libreBaskerville.variable} antialiased overflow-x-hidden`}>
+      <body className={`${inter.className} ${inter.variable} antialiased overflow-x-hidden`}>
         <GoogleAnalytics />
         {children}
       </body>
     </html>
   );
 }
-

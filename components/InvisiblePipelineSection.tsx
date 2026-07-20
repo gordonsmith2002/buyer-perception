@@ -23,13 +23,13 @@ export default function InvisiblePipelineSection() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
         <Reveal>
-          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
+          <div className="font-sans text-xs font-medium tracking-[0.2em] uppercase text-terracotta">
             THE INVISIBLE PIPELINE
           </div>
         </Reveal>
 
         <Reveal>
-          <h2 className="mt-4 font-editorial font-bold text-3xl sm:text-4xl leading-tight max-w-3xl text-charcoal">
+          <h2 className="mt-4 font-sans font-bold text-3xl sm:text-4xl leading-tight max-w-3xl text-charcoal">
             Every deal you lose has an afterlife. So does every customer who
             leaves.
           </h2>
@@ -58,7 +58,7 @@ export default function InvisiblePipelineSection() {
         <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-4xl">
           <Reveal>
             <div className="rounded-xl bg-platinum border-l-[3px] border-l-olive px-5 py-5 h-full">
-              <p className="font-sans text-sm font-semibold text-olive tracking-tight">
+              <p className="font-sans text-sm font-medium text-olive tracking-tight">
                 One advocate
               </p>
               <ul className="mt-3 space-y-2.5">
@@ -79,7 +79,7 @@ export default function InvisiblePipelineSection() {
           </Reveal>
           <Reveal delayMs={60}>
             <div className="rounded-xl bg-platinum border-l-[3px] border-l-terracotta px-5 py-5 h-full">
-              <p className="font-sans text-sm font-semibold text-terracotta tracking-tight">
+              <p className="font-sans text-sm font-medium text-terracotta tracking-tight">
                 One critic
               </p>
               <ul className="mt-3 space-y-2.5">
@@ -104,7 +104,7 @@ export default function InvisiblePipelineSection() {
           <div className="mt-10 sm:mt-12 w-16">
             <BrandDivider color="terracotta" variant="solid" />
           </div>
-          <p className="mt-5 max-w-3xl text-center font-semibold text-charcoal text-lg sm:text-xl leading-snug">
+          <p className="mt-5 max-w-3xl text-center font-medium text-charcoal text-lg sm:text-xl leading-snug">
             Your current internal data cannot tell you which is which. We can.
           </p>
         </Reveal>

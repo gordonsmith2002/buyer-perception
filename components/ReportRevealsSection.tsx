@@ -69,7 +69,7 @@ export default function ReportRevealsSection() {
                   <div className="mb-3 w-8">
                     <BrandDivider color="terracotta" variant="solid" />
                   </div>
-                  <h4 className="font-sans text-lg sm:text-xl font-semibold text-charcoal">
+                  <h4 className="font-sans text-lg sm:text-xl font-medium text-charcoal">
                     {item.title}
                   </h4>
                   <p className="mt-3 text-sm text-charcoal/70 leading-relaxed">

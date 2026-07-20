@@ -111,12 +111,12 @@ export default function DataGap() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta">
+          <div className="font-sans text-xs font-medium tracking-[0.2em] uppercase text-terracotta">
             YOUR DATA GAP
           </div>
         </Reveal>
         <Reveal>
-          <h2 className="mt-4 max-w-4xl font-editorial font-bold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-charcoal">
+          <h2 className="mt-4 max-w-4xl font-sans font-bold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-charcoal">
             85% of closed-lost data in your CRM is either completely wrong or
             missing vital information.
           </h2>
@@ -151,17 +151,17 @@ export default function DataGap() {
             <div className="overflow-hidden rounded-xl border border-charcoal/10 bg-sand">
               <div className="grid grid-cols-12 border-b border-charcoal/10 bg-sand">
                 <div className="col-span-3 px-4 lg:px-5 py-3">
-                  <h3 className="font-sans text-sm font-semibold leading-tight text-charcoal">
+                  <h3 className="font-sans text-sm font-medium leading-tight text-charcoal">
                     What Your CRM Says
                   </h3>
                 </div>
                 <div className="col-span-5 border-l border-charcoal/10 px-4 lg:px-5 py-3">
-                  <h3 className="font-sans text-sm font-semibold leading-tight text-charcoal">
+                  <h3 className="font-sans text-sm font-medium leading-tight text-charcoal">
                     What the Buyer Actually Said
                   </h3>
                 </div>
                 <div className="col-span-4 border-l border-charcoal/10 px-4 lg:px-5 py-3">
-                  <h3 className="font-sans text-sm font-semibold leading-tight text-charcoal">
+                  <h3 className="font-sans text-sm font-medium leading-tight text-charcoal">
                     What&apos;s Happening Right Now
                   </h3>
                 </div>
