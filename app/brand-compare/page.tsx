@@ -1,4 +1,5 @@
-import type { CSSProperties, Metadata } from "next";
+import type { CSSProperties } from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
