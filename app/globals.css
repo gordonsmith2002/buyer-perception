@@ -45,3 +45,27 @@ a {
   opacity: 1;
   transform: none;
 }
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  body {
+    height: auto;
+    background: #fff !important;
+  }
+
+  .one-pager {
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
+
