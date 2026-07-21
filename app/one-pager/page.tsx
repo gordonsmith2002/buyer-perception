@@ -54,7 +54,7 @@ export default function OnePagerPage() {
       <div className="mx-auto max-w-[210mm] print:max-w-none">
         <div className="no-print flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <p className="font-sans text-xs text-neutral-600">
-            Print preview · A4 · brand tokens from the live site
+            Preview · A4 · use Open PDF (print dialog crashes this browser)
           </p>
           <PrintButton />
         </div>
