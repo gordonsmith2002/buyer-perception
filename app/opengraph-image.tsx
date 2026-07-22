@@ -2,7 +2,8 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Buyer Perception";
+export const alt =
+  "Buyer Perception — Find out what your buyers really think about you";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -11,11 +12,12 @@ async function loadAsset(relativePath: string) {
 }
 
 export default async function OgImage() {
-  const [regularFont, semiBoldFont, markBytes] = await Promise.all([
+  const [regularFont, logoBytes, markBytes] = await Promise.all([
     loadAsset("public/fonts/Inter-Regular.ttf"),
-    loadAsset("public/fonts/Inter-SemiBold.ttf"),
+    loadAsset("public/images/logo-inverted.svg"),
     loadAsset("public/images/logo-mark-sand.svg"),
   ]);
+  const logoSrc = `data:image/svg+xml;base64,${logoBytes.toString("base64")}`;
   const markSrc = `data:image/svg+xml;base64,${markBytes.toString("base64")}`;
 
   return new ImageResponse(
@@ -69,49 +71,11 @@ export default async function OgImage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 24,
+            gap: 28,
             padding: "0 64px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 22,
-            }}
-          >
-            <img src={markSrc} width={72} height={120} alt="" />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 4,
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 64,
-                  fontWeight: 600,
-                  color: "#EFEFEF",
-                  letterSpacing: "-0.03em",
-                  lineHeight: 1.05,
-                }}
-              >
-                Buyer
-              </div>
-              <div
-                style={{
-                  fontSize: 64,
-                  fontWeight: 600,
-                  color: "#EFEFEF",
-                  letterSpacing: "-0.03em",
-                  lineHeight: 1.05,
-                }}
-              >
-                Perception
-              </div>
-            </div>
-          </div>
+          <img src={logoSrc} width={720} height={211} alt="Buyer Perception" />
           <div
             style={{
               width: 72,
@@ -143,12 +107,6 @@ export default async function OgImage() {
           data: regularFont,
           style: "normal",
           weight: 400,
-        },
-        {
-          name: "Inter",
-          data: semiBoldFont,
-          style: "normal",
-          weight: 600,
         },
       ],
     }

@@ -16,6 +16,10 @@ export const metadata: Metadata = {
     "Buyer Perception | Find out what your buyers really think about you",
   description:
     "Win-loss analysis tells you why you lost. We anonymously interview your lost prospects and churned customers to show you the pipeline they're creating or destroying right now, not what your CRM says.",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
   openGraph: {
     title:
       "Buyer Perception | Find out what your buyers really think about you",
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Buyer Perception",
+        alt: "Buyer Perception — Find out what your buyers really think about you",
       },
     ],
   },
