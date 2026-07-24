@@ -133,13 +133,6 @@ export default function HowItWorksSection() {
             HOW IT WORKS
           </div>
         </Reveal>
-        <Reveal>
-          <p className="mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-charcoal/70">
-            This isn&apos;t market research. It isn&apos;t a survey. It&apos;s a
-            structured, independent, human conversation, with the depth to turn
-            what buyers say into insight you can act on.
-          </p>
-        </Reveal>
 
         <DesktopTimeline />
         <MobileTimeline />

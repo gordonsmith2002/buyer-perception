@@ -80,9 +80,6 @@ Buyers have no incentive to tell your salespeople the truth. Honesty invites a d
 **Eyebrow**  
 HOW IT WORKS
 
-**Intro**  
-This isn't market research. It isn't a survey. It's a structured, independent, human conversation, with the depth to turn what buyers say into insight you can act on.
-
 ### Stage 1 — Lost Revenue Assessment
 
 - **Duration:** Free · 45 minutes
