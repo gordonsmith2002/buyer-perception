@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-/** Avoid window.print() — it crashes Cursor's embedded browser. */
+/** Avoid window.print(); it crashes Cursor's embedded browser. */
 export default function PrintButton() {
   return (
     <div className="flex flex-wrap items-center gap-2">
