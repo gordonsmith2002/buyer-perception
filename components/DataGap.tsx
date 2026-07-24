@@ -14,14 +14,14 @@ const ROWS: CrmRow[] = [
     buyerTruth:
       "Pricing was never the issue. My CFO overruled me, and nobody on your team ever spoke to my CFO.",
     currentReality:
-      "That champion still rates you. She has told two peers to put you on their shortlist.",
+      "Your champion still rates you. She has already told two peers to put you on their shortlist. You will never see either deal coming.",
   },
   {
     crmField: "Closed Lost: No decision",
     buyerTruth:
       "We were ready to buy, but I could not get it prioritised internally, and nobody on your side helped me build the business case, so we moved on to a new project.",
     currentReality:
-      "They still rate you highly and would re-engage if approached. Nobody followed up.",
+      "They still rate you highly and would re-engage if someone reached out. Nobody has. That deal is sitting there.",
   },
   {
     crmField: "Churned: Non-renewal",
@@ -174,11 +174,19 @@ export default function DataGap() {
           </Reveal>
         </div>
 
-        <Reveal className="flex justify-center">
+        <Reveal className="flex flex-col items-center">
           <p className="mt-14 max-w-4xl text-center text-base sm:text-lg text-charcoal/70 leading-relaxed">
             Every line in your CRM is your side of the deal. Not fabricated, not
             useless, just the seller&apos;s version. The buyer&apos;s version
             never entered the system.
+          </p>
+          <p className="mt-5 max-w-4xl text-center text-base sm:text-lg text-charcoal/70 leading-relaxed">
+            It&apos;s not carelessness, and it&apos;s not lying. Buyers have no
+            incentive to tell your salespeople the truth. Honesty invites a
+            rebuttal, a rescue attempt, and more selling. Decades of being sold
+            to have trained buyers to end conversations politely instead. So
+            they give the clean version, and the clean version is what your CRM
+            records.
           </p>
         </Reveal>
       </div>

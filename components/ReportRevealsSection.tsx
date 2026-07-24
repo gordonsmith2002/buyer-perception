@@ -1,34 +1,46 @@
 import Image from "next/image";
 import React from "react";
-import BrandDivider from "./BrandDivider";
 import Reveal from "./Reveal";
 
 const REPORT_ITEMS = [
   {
     title: "Your Buyer Perception Score",
-    desc: "A single number showing how your market actually perceives you, revealed dimension by dimension across five areas of buyer experience. Tracked over time, it becomes the leading indicator your NPS was supposed to be.",
+    desc: "A single number showing how your market actually perceives you, tracked over time. The leading indicator your NPS was supposed to be.",
   },
   {
     title: "Where the experience breaks down",
-    desc: "Stage-by-stage scoring from first impression to final decision, showing exactly where you are losing goodwill and why.",
+    desc: "Stage-by-stage scoring from first impression to final decision: where you lose goodwill, and why.",
   },
   {
     title: "Your advocate-to-critic ratio",
-    desc: "How many of your lost prospects would recommend you to a peer, and how many are actively steering people away.",
+    desc: "How many lost buyers would recommend you, and how many are steering people away.",
   },
   {
     title: "What they would tell peers",
-    desc: "In their own words. The conversations happening about you that you have never been part of.",
+    desc: "In their own words. The conversations about you that you have never been part of.",
   },
   {
     title: "How your competitors showed up",
-    desc: "Direct, experiential comparison from people who evaluated you side by side, against what your team assumed.",
+    desc: "Direct comparison from people who evaluated you side by side, against what your team assumed.",
   },
   {
     title: "What to fix first",
-    desc: "Prioritised actions ranked by revenue impact: the gaps most likely to improve your win rate, reduce churn, and protect the pipeline you have already built.",
+    desc: "Actions ranked by revenue impact: the gaps most likely to lift win rate and cut churn.",
   },
 ];
+
+function ReportMark() {
+  return (
+    <Image
+      src="/images/logo-mark-terracotta.svg"
+      alt=""
+      width={14}
+      height={24}
+      className="mt-0.5 h-5 w-auto shrink-0 opacity-80"
+      aria-hidden
+    />
+  );
+}
 
 export default function ReportRevealsSection() {
   return (
@@ -49,32 +61,40 @@ export default function ReportRevealsSection() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Mobile: compact list */}
+        <div className="mt-10 space-y-5 sm:hidden">
           {REPORT_ITEMS.map((item, i) => (
-            <Reveal key={item.title} delayMs={i * 60}>
-              <div className="relative rounded-xl bg-sand p-5 sm:p-6 h-full overflow-hidden">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -right-6 -top-8 opacity-[0.12]"
-                >
-                  <Image
-                    src="/images/logo-mark-terracotta.svg"
-                    alt=""
-                    width={120}
-                    height={200}
-                    className="h-36 w-auto rotate-12"
-                  />
-                </div>
-                <div className="relative">
-                  <div className="mb-3 w-8">
-                    <BrandDivider color="terracotta" variant="solid" />
-                  </div>
-                  <h4 className="font-sans text-lg sm:text-xl font-medium text-charcoal">
+            <Reveal key={item.title} delayMs={i * 40}>
+              <div className="flex gap-3 items-start">
+                <ReportMark />
+                <div className="min-w-0">
+                  <h4 className="font-sans text-base font-medium text-charcoal leading-snug">
                     {item.title}
                   </h4>
-                  <p className="mt-3 text-sm text-charcoal/70 leading-relaxed">
+                  <p className="mt-1 text-sm text-charcoal/70 leading-snug">
                     {item.desc}
                   </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Tablet 2-col / Desktop 3-col: tighter cards */}
+        <div className="mt-12 hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          {REPORT_ITEMS.map((item, i) => (
+            <Reveal key={item.title} delayMs={i * 50}>
+              <div className="rounded-xl bg-sand px-4 py-4 h-full">
+                <div className="flex gap-3 items-start">
+                  <ReportMark />
+                  <div className="min-w-0">
+                    <h4 className="font-sans text-base lg:text-lg font-medium text-charcoal leading-snug">
+                      {item.title}
+                    </h4>
+                    <p className="mt-1.5 text-sm text-charcoal/70 leading-snug">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             </Reveal>

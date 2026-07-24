@@ -16,7 +16,7 @@ export default function Footer() {
               className="h-8 w-auto"
             />
             <div className="text-platinum/70 text-sm mt-3">
-              © 2026 Buyer Perception
+              © 2026 Buyer Perception Ltd
             </div>
           </div>
 
