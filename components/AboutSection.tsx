@@ -58,7 +58,7 @@ export default function AboutSection() {
                 That&apos;s why I built Buyer Perception: to have the
                 conversations nobody else is having, with the people who
                 actually made the decision, and bring back the truth. Even when
-                it isn&apos;t comfortable to hear.
+                that might not be comfortable to hear.
               </p>
             </Reveal>
             <Reveal>

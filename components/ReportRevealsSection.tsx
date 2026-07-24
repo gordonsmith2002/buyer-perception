@@ -54,10 +54,8 @@ export default function ReportRevealsSection() {
         <Reveal>
           <p className="mt-6 mx-auto max-w-3xl text-center text-sm sm:text-base leading-relaxed text-charcoal/70">
             For the first time, buyer perception becomes measurable,
-            comparable, and actionable. Your leadership team&apos;s predictions
-            are revealed against buyer reality in a live session, one dimension
-            at a time. The gaps between what you believed and what your buyers
-            actually said become immediately visible.
+            comparable, and actionable. The gaps between what you believed and
+            what your buyers actually said become immediately visible.
           </p>
         </Reveal>
 

@@ -123,10 +123,9 @@ export default function DataGap() {
         </Reveal>
         <Reveal>
           <p className="mt-5 max-w-3xl text-base sm:text-lg text-charcoal/70 leading-relaxed">
-            Reps do not lie intentionally. But they enter a loss reason at the
-            moment they are least motivated to reflect on it. What goes into the
-            system is whatever the buyer politely told them on the way out,
-            which in most cases is not the real reason.
+            Reps do not lie intentionally. But what goes into the CRM is
+            whatever the buyer politely told them in order to leave the
+            conversation, which in most cases is not the real reason.
           </p>
         </Reveal>
         <Reveal>
@@ -174,19 +173,11 @@ export default function DataGap() {
           </Reveal>
         </div>
 
-        <Reveal className="flex flex-col items-center">
+        <Reveal className="flex justify-center">
           <p className="mt-14 max-w-4xl text-center text-base sm:text-lg text-charcoal/70 leading-relaxed">
-            Every line in your CRM is your side of the deal. Not fabricated, not
-            useless, just the seller&apos;s version. The buyer&apos;s version
-            never entered the system.
-          </p>
-          <p className="mt-5 max-w-4xl text-center text-base sm:text-lg text-charcoal/70 leading-relaxed">
-            It&apos;s not carelessness, and it&apos;s not lying. Buyers have no
-            incentive to tell your salespeople the truth. Honesty invites a
-            rebuttal, a rescue attempt, and more selling. Decades of being sold
-            to have trained buyers to end conversations politely instead. So
-            they give the clean version, and the clean version is what your CRM
-            records.
+            Buyers have no incentive to tell your salespeople the truth. Their
+            honesty invites a debate and more selling. Decades of being sold to
+            have trained buyers to end conversations politely instead.
           </p>
         </Reveal>
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import BrandDivider from "./BrandDivider";
 import EditorialStatCallout from "./EditorialStatCallout";
 import Reveal from "./Reveal";
 
@@ -18,8 +17,8 @@ export default function InvisiblePipelineSection() {
 
         <Reveal>
           <h2 className="mt-4 font-sans font-bold text-3xl sm:text-4xl leading-tight max-w-3xl text-charcoal">
-            Every deal you lose has an afterlife. So does every customer who
-            leaves.
+            Closed-Won / Closed Lost is not the end of the story. All
+            opportunities have a story to tell - you just don&apos;t hear them.
           </h2>
         </Reveal>
 
@@ -34,21 +33,13 @@ export default function InvisiblePipelineSection() {
 
         <Reveal>
           <p className="mt-8 sm:mt-10 max-w-3xl text-base sm:text-lg text-charcoal/70 leading-relaxed">
-            The moment a deal closes, won or lost, the buyer does not disappear.
-            They go back to their network and tell people what dealing with you
-            was actually like. Some become advocates, sending you referrals you
-            will never trace back. Others become critics, steering peers toward
-            your competitors. This is your invisible pipeline. It is running
-            right now, and you have no way to track, measure, or influence it.
-          </p>
-        </Reveal>
-
-        <Reveal className="flex flex-col items-center">
-          <div className="mt-10 sm:mt-12 w-16">
-            <BrandDivider color="terracotta" variant="solid" />
-          </div>
-          <p className="mt-5 max-w-3xl text-center font-medium text-charcoal text-lg sm:text-xl leading-snug">
-            Your current internal data cannot tell you which is which. We can.
+            The moment a deal closes, won or lost, that buyer does not
+            disappear. They go back to their network and tell people what
+            dealing with you was actually like. Some of them become advocates,
+            sending you referrals you will never correctly attribute. Others
+            become critics, steering peers toward your competitors. This is your
+            invisible pipeline. It exists right now, and you have no way to
+            track, measure, or influence it.
           </p>
         </Reveal>
       </div>
