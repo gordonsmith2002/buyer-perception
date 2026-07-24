@@ -1,4 +1,5 @@
 import React from "react";
+import BrandDivider from "./BrandDivider";
 import EditorialStatCallout from "./EditorialStatCallout";
 import Reveal from "./Reveal";
 
@@ -17,8 +18,7 @@ export default function InvisiblePipelineSection() {
 
         <Reveal>
           <h2 className="mt-4 font-sans font-bold text-3xl sm:text-4xl leading-tight max-w-3xl text-charcoal">
-            Closed-Won / Closed Lost is not the end of the story. All
-            opportunities have a story to tell - you just don&apos;t hear them.
+            The deal closes. The conversation about you doesn&apos;t.
           </h2>
         </Reveal>
 
@@ -40,6 +40,15 @@ export default function InvisiblePipelineSection() {
             become critics, steering peers toward your competitors. This is your
             invisible pipeline. It exists right now, and you have no way to
             track, measure, or influence it.
+          </p>
+        </Reveal>
+
+        <Reveal className="flex flex-col items-center">
+          <div className="mt-10 sm:mt-12 w-16">
+            <BrandDivider color="terracotta" variant="solid" />
+          </div>
+          <p className="mt-5 max-w-3xl text-center font-medium text-charcoal text-lg sm:text-xl leading-snug">
+            Your current internal data cannot tell you which is which. We can.
           </p>
         </Reveal>
       </div>

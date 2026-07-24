@@ -16,7 +16,7 @@ const STAGES: TimelineStage[] = [
     title: "Lost Revenue Assessment",
     duration: "Free · 45 minutes",
     detail:
-      "A working session with your leadership team using your own pipeline and churn data. We quantify the financial exposure from deals you could have won and customers you didn't need to lose. Your team predicts how buyers perceived them across five dimensions.",
+      "A working session with your leadership team using your own pipeline and churn data. We quantify the financial exposure from deals you could have won and customers you didn't need to lose. Your team predicts how buyers perceived them across five dimensions. These predictions become one of the most revealing parts of the final report.",
     badge: "Free. No commitment",
   },
   {
@@ -38,7 +38,7 @@ const STAGES: TimelineStage[] = [
     title: "Live Readout & Action Workshop",
     duration: "Week 8",
     detail:
-      "Your leadership team's predictions revealed against buyer reality, one dimension at a time. The gaps between what you believed and what your buyers actually said become immediately visible. Then the workshop turns findings into three to five specific commitments designed to drive revenue performance.",
+      "Your leadership team's predictions revealed against buyer reality, one dimension at a time. The gaps between what you believed and what your buyers actually said become immediately visible. Then the workshop turns findings into three to five specific commitments: changes with owners, timelines, and measurable outcomes. We see the biggest impact when the broader leadership team hears buyer feedback directly.",
   },
 ];
 

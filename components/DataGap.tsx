@@ -175,9 +175,9 @@ export default function DataGap() {
 
         <Reveal className="flex justify-center">
           <p className="mt-14 max-w-4xl text-center text-base sm:text-lg text-charcoal/70 leading-relaxed">
-            Buyers have no incentive to tell your salespeople the truth. Their
-            honesty invites a debate and more selling. Decades of being sold to
-            have trained buyers to end conversations politely instead.
+            Buyers have no incentive to tell your salespeople the truth. Honesty
+            invites a debate and more selling. Decades of being sold to have
+            trained buyers to end conversations politely instead.
           </p>
         </Reveal>
       </div>

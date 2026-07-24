@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title:
     "Buyer Perception | Find out what your buyers really think about you",
   description:
-    "Win-loss analysis tells you why you lost. We anonymously interview your lost prospects and churned customers to show you the pipeline they're creating or destroying right now, not what your CRM says.",
+    "Win-loss analysis tells you why you lost the deal. Buyer Perception tells you what that buyer is saying about you right now.",
   icons: {
     icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title:
       "Buyer Perception | Find out what your buyers really think about you",
     description:
-      "Win-loss analysis tells you why you lost. We anonymously interview your lost prospects and churned customers to show you the pipeline they're creating or destroying right now, not what your CRM says.",
+      "Win-loss analysis tells you why you lost the deal. Buyer Perception tells you what that buyer is saying about you right now.",
     url: "https://buyerperception.com",
     siteName: "Buyer Perception",
     type: "website",
@@ -40,7 +40,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Buyer Perception",
-    description: "Find out what your buyers really think about you.",
+    description:
+      "Win-loss analysis tells you why you lost the deal. Buyer Perception tells you what that buyer is saying about you right now.",
     images: ["/twitter-image"],
   },
 };
