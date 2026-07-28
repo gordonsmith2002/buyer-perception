@@ -176,8 +176,9 @@ export default function OnePagerPage() {
                 />
               </div>
               <p className="relative font-sans text-[0.88rem] font-bold leading-snug text-platinum">
-                The first conversation is a Lost Revenue Assessment: your own
-                numbers, one hour, no charge.
+                If any of this sounds familiar, we should talk. I&apos;ll give
+                you a straight answer on whether there&apos;s a problem here
+                worth solving.
               </p>
             </div>
 
