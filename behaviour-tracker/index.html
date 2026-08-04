@@ -478,7 +478,7 @@
       function getDayRecord(key) {
         key = key || dateKey();
         if (!state.days[key]) {
-          state.days[key] = { executionAnchor: '', behaviours: emptyBehaviours() };
+          state.days[key] = { executionAnchor: '', behaviours: emptyBehaviours(), calories: '', weight: '' };
         }
         return state.days[key];
       }
@@ -598,7 +598,7 @@
         var week = getWeekRecord();
         var sunday = isSunday(today);
         var streak = getStreak();
-        var hasData = Object.keys(state.days).length > 0 || day.executionAnchor;
+        var hasData = Object.keys(state.days).length > 0 || day.executionAnchor || day.calories || day.weight;
         var html = '<section class="stack">';
         html += '<div class="row">';
         html += '<h1>' + esc(formatDisplayDate(today)) + '</h1>';
@@ -611,7 +611,19 @@
         html += '<label for="anchor" class="label">Execution anchor</label>';
         html += '<input id="anchor" type="text" class="anchor-input" placeholder="What does the person who\'s already there do today?" value="' + esc(day.executionAnchor) + '" autocomplete="off" enterkeyhint="done"/>';
         html += '</div>';
-        html += '<div><h2 class="label">Daily behaviours</h2><div class="stack-sm">';
+
+        html += '<div class="grid-2" style="margin-top:1rem">';
+        html += '<div>';
+        html += '<label class="label" for="calories" style="margin-bottom:0.5rem">Calories</label>';
+        html += '<input id="calories" inputmode="numeric" type="number" step="1" class="anchor-input" placeholder="e.g. 2000" value="' + esc(day.calories) + '" enterkeyhint="done"/>';
+        html += '</div>';
+        html += '<div>';
+        html += '<label class="label" for="weight" style="margin-bottom:0.5rem">Weight</label>';
+        html += '<input id="weight" inputmode="decimal" type="number" step="0.1" class="anchor-input" placeholder="e.g. 72.4" value="' + esc(day.weight) + '" enterkeyhint="done"/>';
+        html += '</div>';
+        html += '</div>';
+
+        html += '<div><h2 class="label" style="margin-top:1.5rem">Daily behaviours</h2><div class="stack-sm">';
         for (var i = 0; i < BEHAVIOURS.length; i++) {
           var b = BEHAVIOURS[i];
           html += toggleHTML('day', b.id, b.label, b.sub, !!day.behaviours[b.id]);
@@ -735,6 +747,34 @@
           var b = BEHAVIOURS[i];
           html += '<div class="row-center"><span class="rate-label">' + esc(b.label) + '</span><span class="rate-val">' + behaviourRate(b.id) + '%</span></div>';
         }
+
+        // Simple summaries for the new numeric fields (no charts).
+        var today = new Date();
+        var lastWeight = '';
+        for (var lw = 0; lw < 365; lw++) {
+          var wRec = state.days[dateKey(addDays(today, -lw))];
+          if (wRec && wRec.weight !== null && wRec.weight !== '' && typeof wRec.weight !== 'undefined') {
+            lastWeight = wRec.weight;
+            break;
+          }
+        }
+        var sumCalories = 0;
+        var nCalories = 0;
+        for (var c = 0; c < 30; c++) {
+          var cRec = state.days[dateKey(addDays(today, -c))];
+          if (cRec && cRec.calories !== null && cRec.calories !== '' && typeof cRec.calories !== 'undefined') {
+            var n = parseFloat(cRec.calories);
+            if (!isNaN(n)) {
+              sumCalories += n;
+              nCalories++;
+            }
+          }
+        }
+        var avgCalories = nCalories ? Math.round(sumCalories / nCalories) : 0;
+
+        html += '<div class="row-center"><span class="rate-label">Average calories (30d)</span><span class="rate-val">' + avgCalories + (nCalories ? '' : '') + '</span></div>';
+        html += '<div class="row-center"><span class="rate-label">Last weight logged</span><span class="rate-val">' + (lastWeight !== '' ? esc(lastWeight) : '—') + '</span></div>';
+
         html += '</div></div>';
         html += '<button type="button" id="export-btn" class="export-btn">Export all data</button>';
         html += '</section>';
@@ -746,6 +786,22 @@
         if (anchor) {
           anchor.addEventListener('blur', function () {
             getDayRecord().executionAnchor = anchor.value.replace(/^\s+|\s+$/g, '');
+            saveData();
+          });
+        }
+
+        var calories = document.getElementById('calories');
+        if (calories) {
+          calories.addEventListener('blur', function () {
+            getDayRecord().calories = calories.value.trim();
+            saveData();
+          });
+        }
+
+        var weight = document.getElementById('weight');
+        if (weight) {
+          weight.addEventListener('blur', function () {
+            getDayRecord().weight = weight.value.trim();
             saveData();
           });
         }
