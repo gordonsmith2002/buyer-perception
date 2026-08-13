@@ -57,10 +57,21 @@ a {
     background: #fff !important;
   }
 
-  .one-pager {
+  .one-pager,
+  .a4-report {
     box-shadow: none !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+
+  .a4-report {
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .a4-report:last-child {
+    break-after: auto;
+    page-break-after: auto;
   }
 
   @page {
