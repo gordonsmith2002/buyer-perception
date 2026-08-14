@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { october2026 } from "./edition";
 import {
   ContactRow,
@@ -12,11 +11,10 @@ import {
   SectionBlock,
   Sheet,
   StatsBand,
-  ValueProps,
 } from "./ReportPrimitives";
 
 export const metadata: Metadata = {
-  title: "Anonymous 1:1 — October 2026 | Buyer Perception",
+  title: "Anonymous 1:1 · October 2026 | Buyer Perception",
   robots: { index: false, follow: false },
 };
 
@@ -65,36 +63,21 @@ export default function InterviewPage() {
 function Cover() {
   return (
     <Sheet bleed>
-      <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-[minmax(78mm,auto)_minmax(0,1fr)]">
+      <div className="grid min-h-0 flex-1 grid-cols-2 grid-rows-[minmax(72mm,auto)_minmax(0,1fr)]">
         <div className="flex items-start px-[12mm] pt-[12mm]">
           <Logo height={36} />
         </div>
 
-        <div className="flex flex-col justify-center px-[10mm] py-[12mm]" style={{ background: R.tan }}>
+        <div
+          className="row-span-2 flex items-center justify-center px-[12mm]"
+          style={{ background: R.tan }}
+        >
           <p
-            className="font-sans text-[1.55rem] font-bold leading-[1.15] tracking-tight"
-            style={{ color: R.ink }}
-          >
-            Clear <span style={{ color: R.orange }}>Insight</span>
-            <OrangePeriod />
-            <br />
-            Reducing <span style={{ color: R.orange }}>Risk</span>
-            <OrangePeriod />
-            <br />
-            Better <span style={{ color: R.orange }}>Outcomes</span>
-            <OrangePeriod />
-          </p>
-          <p
-            className="mt-5 font-sans text-[8.5px] font-medium uppercase tracking-[0.16em]"
+            className="max-w-[78mm] text-center font-sans text-[9px] font-medium uppercase leading-relaxed tracking-[0.18em]"
             style={{ color: R.ink }}
           >
             {edition.series}
           </p>
-          <span
-            className="mt-3 block h-px w-10"
-            style={{ background: R.olive }}
-            aria-hidden
-          />
         </div>
 
         <div className="relative flex flex-col px-[12mm] pb-[10mm] pt-[14mm]" style={{ background: R.ink }}>
@@ -134,22 +117,7 @@ function Cover() {
             </p>
           </div>
         </div>
-
-        <div className="relative h-full min-h-0 overflow-hidden">
-          <Image
-            src="/images/interview/cover-boardroom.png"
-            alt=""
-            fill
-            className="object-cover object-[center_20%] grayscale"
-            sizes="105mm"
-            priority
-          />
-          <div className="pointer-events-none absolute -bottom-6 -right-4 opacity-95">
-            <Mark width={118} />
-          </div>
-        </div>
       </div>
-      <ValueProps />
     </Sheet>
   );
 }
@@ -245,10 +213,14 @@ function Close() {
     <Sheet>
       <Masthead />
       <div className="relative min-h-0 flex-1">
-        <div className="pointer-events-none absolute -right-6 top-4 opacity-95">
-          <Mark width={210} />
+        <div
+          className="pointer-events-none absolute -right-2 top-8 z-0"
+          style={{ opacity: 0.12 }}
+          aria-hidden
+        >
+          <Mark width={200} />
         </div>
-        <div className="relative max-w-[118mm]">
+        <div className="relative z-10 max-w-[125mm]">
           <h1
             className="font-sans text-[2.05rem] font-bold leading-[1.12] tracking-tight"
             style={{ color: R.ink }}
@@ -264,7 +236,7 @@ function Close() {
           </p>
         </div>
 
-        <div className="relative mt-14 max-w-[110mm]">
+        <div className="relative z-10 mt-14 max-w-[110mm]">
           <p className="font-sans text-[15px] font-medium" style={{ color: R.ink }}>
             Get in touch
           </p>
@@ -290,31 +262,11 @@ function Close() {
       </div>
 
       <p
-        className="mt-8 max-w-[150mm] font-sans text-[9px] leading-snug"
+        className="relative z-10 mt-auto max-w-[150mm] pt-8 font-sans text-[9px] leading-snug"
         style={{ color: R.olive, opacity: 0.85 }}
       >
         {edition.footnote}
       </p>
-
-      <div
-        className="mt-5 flex items-end justify-between border-t pt-4"
-        style={{ borderColor: R.ink }}
-      >
-        <p
-          className="font-sans text-[13px] font-bold tracking-tight"
-          style={{ color: R.ink }}
-        >
-          Buyer Perception
-        </p>
-        <p
-          className="text-right font-sans text-[11px] font-medium leading-snug"
-          style={{ color: R.olive }}
-        >
-          Independent Insight.
-          <br />
-          Stronger Decisions.
-        </p>
-      </div>
     </Sheet>
   );
 }
