@@ -14,9 +14,11 @@ export const R = {
 export function Sheet({
   children,
   bleed = false,
+  footer = "tagline",
 }: {
   children: ReactNode;
   bleed?: boolean;
+  footer?: "tagline" | "none";
 }) {
   return (
     <article
@@ -29,7 +31,7 @@ export function Sheet({
       >
         {children}
       </div>
-      <TaglineBar />
+      {footer === "tagline" ? <TaglineBar /> : null}
     </article>
   );
 }
@@ -140,41 +142,56 @@ function Exchange({ item }: { item: QAItem }) {
   );
 }
 
-export function QuotePanel({ quote }: { quote: PullQuote }) {
+export function QuotePanel({
+  quote,
+  tone = "tan",
+}: {
+  quote: PullQuote;
+  tone?: "tan" | "orange";
+}) {
+  const bg = tone === "orange" ? R.orange : R.tan;
+  const body = tone === "orange" ? R.white : R.ink;
+  const mark = tone === "orange" ? R.white : R.orange;
+  const attr = tone === "orange" ? R.white : R.orange;
+  const role = tone === "orange" ? R.white : R.ink;
   return (
-    <aside className="relative flex h-full flex-col justify-between px-6 py-7" style={{ background: R.tan }}>
+    <aside
+      className="relative self-center px-5 py-6"
+      style={{ background: bg }}
+    >
       <span
-        className="font-sans text-[3.4rem] font-bold leading-none"
-        style={{ color: R.orange }}
+        className="font-sans text-[2.6rem] font-bold leading-none"
+        style={{ color: mark, opacity: tone === "orange" ? 0.85 : 1 }}
         aria-hidden
       >
         “
       </span>
       <p
-        className="font-sans text-[1.05rem] font-bold leading-snug"
-        style={{ color: R.ink }}
+        className="mt-1 font-sans text-[0.95rem] font-bold leading-snug"
+        style={{ color: body }}
       >
         {quote.text}
       </p>
-      <div>
-        <span
-          className="mt-5 block h-px w-10"
-          style={{ background: R.orange }}
-          aria-hidden
-        />
-        <p
-          className="mt-3 font-sans text-[12px] font-bold"
-          style={{ color: R.orange }}
-        >
-          {quote.attribution}
-        </p>
-        <p className="mt-0.5 font-sans text-[11px]" style={{ color: R.ink }}>
-          {quote.role}
-        </p>
-      </div>
       <span
-        className="absolute bottom-4 right-5 font-sans text-[3.4rem] font-bold leading-none"
-        style={{ color: R.orange }}
+        className="mt-4 block h-px w-10"
+        style={{ background: mark, opacity: tone === "orange" ? 0.7 : 1 }}
+        aria-hidden
+      />
+      <p
+        className="mt-3 font-sans text-[12px] font-bold"
+        style={{ color: attr, opacity: tone === "orange" ? 0.95 : 1 }}
+      >
+        {quote.attribution}
+      </p>
+      <p
+        className="mt-0.5 font-sans text-[11px]"
+        style={{ color: role, opacity: tone === "orange" ? 0.85 : 1 }}
+      >
+        {quote.role}
+      </p>
+      <span
+        className="absolute bottom-3 right-4 font-sans text-[2.6rem] font-bold leading-none"
+        style={{ color: mark, opacity: tone === "orange" ? 0.85 : 1 }}
         aria-hidden
       >
         ”
