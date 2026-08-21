@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BOOK_CALL_URL =
-  "https://calendly.com/gordon-buyerperception/30min";
+  "https://calendly.com/gordon-buyerperception-rmza/30min";
 
 export default function BookButton({
   children = "Book a Conversation",
