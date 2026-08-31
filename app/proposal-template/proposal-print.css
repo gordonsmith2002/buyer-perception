@@ -1,0 +1,15 @@
+@media print {
+  html,
+  body {
+    background: #fafaf8 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+}
