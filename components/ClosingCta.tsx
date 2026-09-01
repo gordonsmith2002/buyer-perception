@@ -1,9 +1,15 @@
 import Image from "next/image";
 import React from "react";
+import type { LandingCopy } from "../lib/landing-copy";
+import { genericLanding } from "../lib/landing-copy";
 import BookButton from "./BookButton";
 import Reveal from "./Reveal";
 
-export default function ClosingCta() {
+export default function ClosingCta({
+  copy = genericLanding,
+}: {
+  copy?: LandingCopy;
+}) {
   return (
     <section
       id="contact"
@@ -26,9 +32,7 @@ export default function ClosingCta() {
         <Reveal>
           <h2 className="font-sans font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-tight text-sand max-w-4xl mx-auto">
             <span>Stop letting your competitors win deals you should have won.</span>
-            <span className="block mt-5">
-              Stop losing customers you didn&apos;t need to lose.
-            </span>
+            <span className="block mt-5">{copy.closingSecondLine}</span>
           </h2>
         </Reveal>
         <Reveal>
@@ -38,7 +42,7 @@ export default function ClosingCta() {
         </Reveal>
         <div className="mt-10 flex justify-center">
           <Reveal>
-            <BookButton />
+            <BookButton href={copy.bookUrl} />
           </Reveal>
         </div>
       </div>

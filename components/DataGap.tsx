@@ -8,7 +8,7 @@ type CrmRow = {
   currentReality: string;
 };
 
-const ROWS: CrmRow[] = [
+const DEFAULT_ROWS: CrmRow[] = [
   {
     crmField: "Closed Lost: Pricing",
     buyerTruth:
@@ -103,7 +103,7 @@ function DesktopRow({ row }: { row: CrmRow }) {
   );
 }
 
-export default function DataGap() {
+export default function DataGap({ rows = DEFAULT_ROWS }: { rows?: CrmRow[] }) {
   return (
     <section
       id="problem"
@@ -137,7 +137,7 @@ export default function DataGap() {
 
         {/* Mobile: stacked cards */}
         <div className="mt-14 space-y-4 md:hidden">
-          {ROWS.map((row, index) => (
+          {rows.map((row, index) => (
             <Reveal key={row.crmField} delayMs={index * 60}>
               <MobileRow row={row} />
             </Reveal>
@@ -166,7 +166,7 @@ export default function DataGap() {
                 </div>
               </div>
 
-              {ROWS.map((row) => (
+              {rows.map((row) => (
                 <DesktopRow key={row.crmField} row={row} />
               ))}
             </div>

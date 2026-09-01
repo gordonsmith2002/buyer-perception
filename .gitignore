@@ -13,6 +13,7 @@ out
 .DS_Store
 *.tsbuildinfo
 .next
+.python-libs
 
 # Local brand handover (large source files — web assets live in public/images)
 /brand/

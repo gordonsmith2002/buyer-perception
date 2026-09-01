@@ -3,16 +3,21 @@ import React from "react";
 export const BOOK_CALL_URL =
   "https://calendly.com/gordon-buyerperception-rmza/30min";
 
+export const GENERIC_BOOK_CALL_URL =
+  "https://calendly.com/gordon-buyerperception/30min";
+
 export default function BookButton({
   children = "Book a Conversation",
   className,
+  href = BOOK_CALL_URL,
 }: {
   children?: React.ReactNode;
   className?: string;
+  href?: string;
 }) {
   return (
     <a
-      href={BOOK_CALL_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={[

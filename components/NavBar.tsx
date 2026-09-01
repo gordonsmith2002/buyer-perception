@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { BOOK_CALL_URL } from "./BookButton";
+import { usePathname } from "next/navigation";
+import { BOOK_CALL_URL, GENERIC_BOOK_CALL_URL } from "./BookButton";
 
 const LINKS = [
   { href: "#problem", label: "Your Data Gap" },
@@ -14,13 +15,17 @@ const LINKS = [
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isTa = pathname === "/ta";
+  const homeHref = isTa ? "/ta" : "/";
+  const bookUrl = isTa ? BOOK_CALL_URL : GENERIC_BOOK_CALL_URL;
 
   return (
     <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-white/95 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex min-h-20 items-center justify-between gap-6 py-4 sm:py-5">
           <Link
-            href="/"
+            href={homeHref}
             className="shrink-0 inline-flex items-center"
             onClick={() => setOpen(false)}
             aria-label="Buyer Perception home"
@@ -48,7 +53,7 @@ export default function NavBar() {
               ))}
             </nav>
             <a
-              href={BOOK_CALL_URL}
+              href={bookUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md px-5 py-2.5 bg-terracotta text-white text-[15px] font-medium tracking-tight hover:bg-[#9A3F26] transition-colors"
@@ -59,7 +64,7 @@ export default function NavBar() {
 
           <div className="flex md:hidden items-center gap-3">
             <a
-              href={BOOK_CALL_URL}
+              href={bookUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex rounded-md bg-terracotta text-white text-sm font-medium px-3.5 py-2"
@@ -102,7 +107,7 @@ export default function NavBar() {
               </a>
             ))}
             <a
-              href={BOOK_CALL_URL}
+              href={bookUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 text-center rounded-md bg-terracotta text-white text-[15px] font-medium py-3"

@@ -1,9 +1,15 @@
 import React from "react";
 import Image from "next/image";
+import type { LandingCopy } from "../lib/landing-copy";
+import { genericLanding } from "../lib/landing-copy";
 import BookButton from "./BookButton";
 import Reveal from "./Reveal";
 
-export default function AboutSection() {
+export default function AboutSection({
+  copy = genericLanding,
+}: {
+  copy?: LandingCopy;
+}) {
   return (
     <section
       id="about"
@@ -38,28 +44,13 @@ export default function AboutSection() {
               </h2>
             </Reveal>
             <Reveal>
-              <p>
-                As VP Sales and Customer Success at three VC-backed companies,
-                I&apos;ve led teams through growth, retention challenges, GTM
-                resets, and multiple acquisitions.
-              </p>
+              <p>{copy.about.p1}</p>
             </Reveal>
             <Reveal>
-              <p>
-                I&apos;ve sat where you sit: forecasting from closed-lost
-                reasons I suspected were fiction, and building strategy on
-                feedback from the customers most likely to say something
-                positive. The buyers who could actually help us improve were the
-                ones nobody was talking to.
-              </p>
+              <p>{copy.about.p2}</p>
             </Reveal>
             <Reveal>
-              <p>
-                That&apos;s why I built Buyer Perception: to have the
-                conversations nobody else is having, with the people who
-                actually made the decision, and bring back the truth. Even when
-                that might not be comfortable to hear.
-              </p>
+              <p>{copy.about.p3}</p>
             </Reveal>
             <Reveal>
               <p className="text-white/90">
@@ -74,7 +65,7 @@ export default function AboutSection() {
                 >
                   gordon@buyerperception.com
                 </a>
-                <BookButton />
+                <BookButton href={copy.bookUrl} />
               </div>
             </Reveal>
           </div>

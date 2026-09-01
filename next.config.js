@@ -20,6 +20,7 @@ const nextConfig = {
       },
       { source: "/about", destination: "/#about", permanent: false },
       { source: "/contact", destination: "/#contact", permanent: false },
+      { source: "/b2b", destination: "/", permanent: false },
     ];
   },
 };

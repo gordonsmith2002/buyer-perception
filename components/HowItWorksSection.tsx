@@ -1,14 +1,9 @@
 import React from "react";
 import Reveal from "./Reveal";
 
-type TimelineStage = {
-  stage: string;
-  title: string;
-  duration: string;
-  detail: string;
-  badge?: string;
-  note?: string;
-};
+import type { HowItWorksStage } from "../lib/landing-copy";
+
+type TimelineStage = HowItWorksStage;
 
 const STAGES: TimelineStage[] = [
   {
@@ -16,7 +11,7 @@ const STAGES: TimelineStage[] = [
     title: "Lost Revenue Assessment",
     duration: "Free · 45 minutes",
     detail:
-      "A working session with your leadership team using your own pipeline and churn data. We quantify the financial exposure from deals you could have won and customers you didn't need to lose. Your team predicts how buyers perceived them across five dimensions. These predictions become one of the most revealing parts of the final report.",
+      "A working session with your leadership team using your own pipeline and churn data. We quantify the financial exposure from deals you could have won and customers you didn't need to lose. Your team predicts how buyers perceived them across five dimensions.",
     badge: "Free. No commitment",
   },
   {
@@ -35,7 +30,7 @@ const STAGES: TimelineStage[] = [
   },
   {
     stage: "STAGE 4",
-    title: "Live Readout & Action Workshop",
+    title: "Action Workshop",
     duration: "Week 8",
     detail:
       "Your leadership team's predictions revealed against buyer reality, one dimension at a time. The gaps between what you believed and what your buyers actually said become immediately visible. Then the workshop turns findings into three to five specific commitments: changes with owners, timelines, and measurable outcomes. We see the biggest impact when the broader leadership team hears buyer feedback directly.",
@@ -71,7 +66,7 @@ function StageContent({ stage }: { stage: TimelineStage }) {
   );
 }
 
-function DesktopTimeline() {
+function DesktopTimeline({ stages }: { stages: TimelineStage[] }) {
   return (
     <div className="hidden lg:block mt-16">
       <div className="relative grid grid-cols-4 gap-8 xl:gap-10">
@@ -79,7 +74,7 @@ function DesktopTimeline() {
           aria-hidden
           className="absolute top-[11px] left-[calc(12.5%-4px)] right-[calc(12.5%-4px)] h-px bg-charcoal/20"
         />
-        {STAGES.map((stage, i) => (
+        {stages.map((stage, i) => (
           <Reveal key={stage.stage} delayMs={i * 80}>
             <div className="relative flex flex-col items-stretch">
               <div className="relative z-10 mb-8 flex justify-center">
@@ -97,7 +92,7 @@ function DesktopTimeline() {
   );
 }
 
-function MobileTimeline() {
+function MobileTimeline({ stages }: { stages: TimelineStage[] }) {
   return (
     <div className="lg:hidden mt-14 relative pl-8">
       <div
@@ -105,7 +100,7 @@ function MobileTimeline() {
         className="absolute left-[9px] top-2 bottom-2 w-px bg-charcoal/20"
       />
       <div className="space-y-12">
-        {STAGES.map((stage, i) => (
+        {stages.map((stage, i) => (
           <Reveal key={stage.stage} delayMs={i * 60}>
             <div className="relative">
               <span
@@ -121,7 +116,11 @@ function MobileTimeline() {
   );
 }
 
-export default function HowItWorksSection() {
+export default function HowItWorksSection({
+  stages = STAGES,
+}: {
+  stages?: TimelineStage[];
+}) {
   return (
     <section
       id="how-it-works"
@@ -134,8 +133,8 @@ export default function HowItWorksSection() {
           </div>
         </Reveal>
 
-        <DesktopTimeline />
-        <MobileTimeline />
+        <DesktopTimeline stages={stages} />
+        <MobileTimeline stages={stages} />
       </div>
     </section>
   );

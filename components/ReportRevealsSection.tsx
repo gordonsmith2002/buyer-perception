@@ -4,28 +4,28 @@ import Reveal from "./Reveal";
 
 const REPORT_ITEMS = [
   {
-    title: "Your Buyer Perception Score",
-    desc: "A single number showing how your market actually perceives you, tracked over time. The leading indicator your NPS was supposed to be.",
+    title: "Why you really lost those deals",
+    desc: "Your team logged a reason. The buyer has a different one. We show you both, side by side, across every deal we investigate. The gaps between what you believed and what actually happened become immediately visible.",
   },
   {
     title: "Where the experience breaks down",
-    desc: "Stage-by-stage scoring from first impression to final decision: where you lose goodwill, and why.",
+    desc: "Stage-by-stage scoring from first impression to final decision. Where you're building trust, where you're losing it, and exactly when buyers start looking at alternatives.",
   },
   {
-    title: "Your advocate-to-critic ratio",
-    desc: "How many lost buyers would recommend you, and how many are steering people away.",
+    title: "Which customers are already at risk",
+    desc: "Not every closed-won is a success. We identify which recently signed customers are already underwhelmed and where the post-sale experience is creating churn risk before renewal conversations even start.",
   },
   {
-    title: "What they would tell peers",
-    desc: "In their own words. The conversations about you that you have never been part of.",
+    title: "What buyers are telling their peers about you",
+    desc: "Some of your lost deals are recommending you. Some of your won deals are warning people off. Your advocate-to-critic ratio tells you which is happening more, and what they're actually saying.",
   },
   {
     title: "How your competitors showed up",
-    desc: "Direct comparison from people who evaluated you side by side, against what your team assumed.",
+    desc: "Direct comparison from people who evaluated you side by side. Not your competitive intel deck. Not G2. What buyers actually experienced when they compared you, in their own words.",
   },
   {
     title: "What to fix first",
-    desc: "Actions ranked by revenue impact: the gaps most likely to lift win rate and cut churn.",
+    desc: "Every finding is ranked by revenue impact. The three to five changes most likely to improve your win rate, reduce churn, and protect the pipeline you've already built.",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function ReportRevealsSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 lg:py-28">
         <Reveal>
           <h3 className="font-sans font-bold text-2xl sm:text-3xl text-charcoal text-center">
-            What your report reveals
+            What your report will reveal
           </h3>
         </Reveal>
         <Reveal>

@@ -1,9 +1,15 @@
 import Image from "next/image";
 import React from "react";
+import type { LandingCopy } from "../lib/landing-copy";
+import { genericLanding } from "../lib/landing-copy";
 import BookButton from "./BookButton";
 import Reveal from "./Reveal";
 
-export default function Hero() {
+export default function Hero({
+  copy = genericLanding,
+}: {
+  copy?: LandingCopy;
+}) {
   return (
     <section className="relative bg-brandDark text-brandLight overflow-hidden">
       <div
@@ -24,26 +30,23 @@ export default function Hero() {
         <div className="max-w-3xl">
           <Reveal>
             <h1 className="font-sans font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">
-              Win-loss analysis tells you why you lost the deal.{" "}
+              {copy.hero.headlineBefore}{" "}
               <span className="text-terracotta [text-shadow:0.45px_0_0_currentColor,-0.45px_0_0_currentColor,0_0.45px_0_currentColor]">
                 Buyer Perception
               </span>{" "}
-              tells you what that buyer is saying about you right now.
+              {copy.hero.headlineAfter}
             </h1>
           </Reveal>
 
           <Reveal>
             <p className="mt-7 max-w-2xl border-l border-terracotta/70 pl-4 font-sans font-normal text-base sm:text-lg leading-relaxed text-white/85">
-              Not what your CRM says. Not what your team tells you. Anonymous
-              interviews with your lost prospects and churned customers to find
-              out what you did well, what you could have done differently, and
-              what to fix first.
+              {copy.hero.subhead}
             </p>
           </Reveal>
 
           <div className="mt-10 flex flex-col items-start gap-3">
             <Reveal>
-              <BookButton />
+              <BookButton href={copy.bookUrl} />
             </Reveal>
             <Reveal>
               <div className="text-white/70 text-sm">
@@ -52,7 +55,7 @@ export default function Hero() {
             </Reveal>
             <Reveal>
               <div className="text-white/75 text-xs sm:text-sm">
-                Built on 20 years of B2B revenue leadership
+                {copy.hero.tagline}
               </div>
             </Reveal>
           </div>
