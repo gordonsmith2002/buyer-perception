@@ -15,7 +15,7 @@ import {
 } from "../interview/ReportPrimitives";
 
 export const metadata: Metadata = {
-  title: "Anonymous 1:1 · Edition 002 · October 2026 | Buyer Perception",
+  title: "Anonymous 1:1 · Edition 002 · September 2026 | Buyer Perception",
   robots: { index: false, follow: false },
 };
 

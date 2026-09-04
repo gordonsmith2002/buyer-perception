@@ -2,14 +2,14 @@ import type { PullQuote, Section, Stat } from "./edition";
 
 export const edition002 = {
   slug: "002",
-  series: "Buyer Perception · Anonymous 1:1 Edition · October 2026",
-  dateLabel: "October 2026",
+  series: "Buyer Perception · Anonymous 1:1 Edition · September 2026",
+  dateLabel: "September 2026",
   reportTitle: "Anonymous Buyer Interview",
   coverMeta: [
     { label: "Title", value: "Senior TA Leader" },
     { label: "Industry", value: "VC-backed tech company" },
     { label: "Company Size", value: "500" },
-    { label: "Date of Interview", value: "October 2026" },
+    { label: "Date of Interview", value: "September 2026" },
   ],
   tags: ["Churn", "Demos", "Cold Outreach", "Sales Process"],
   coverLines: [
