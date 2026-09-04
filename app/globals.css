@@ -48,6 +48,14 @@ a {
   transform: none;
 }
 
+@media (max-width: 767px) {
+  .a4-report {
+    height: auto !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+}
+
 @media print {
   .no-print {
     display: none !important;

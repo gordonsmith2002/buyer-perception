@@ -22,14 +22,14 @@ export const metadata: Metadata = {
 export default function Interview002Page() {
   return (
     <div className="min-h-screen bg-neutral-200 print:min-h-0 print:bg-white">
-      <div className="mx-auto max-w-[210mm] print:max-w-none">
+      <div className="mx-auto w-full min-w-0 max-w-[210mm] print:max-w-none">
         <div className="no-print flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <p className="font-sans text-xs text-neutral-600">
             Preview · Anonymous 1:1 · Edition 002
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 pb-10 print:gap-0 print:pb-0">
+        <div className="flex flex-col gap-4 pb-8 md:gap-6 md:pb-10 print:gap-0 print:pb-0">
           <Cover />
           <SpreadOne />
           <SpreadTwo />
@@ -43,20 +43,20 @@ export default function Interview002Page() {
 function Cover() {
   return (
     <Sheet bleed footer="none">
-      <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col">
         <header
-          className="flex shrink-0 items-center px-[12mm] py-[9mm]"
+          className="flex shrink-0 items-center px-5 py-6 md:px-[12mm] md:py-[9mm] print:px-[12mm] print:py-[9mm]"
           style={{ background: R.white }}
         >
           <Logo height={36} />
         </header>
 
         <div
-          className="relative flex min-h-0 flex-1 flex-col overflow-hidden px-[14mm] pb-[16mm] pt-[18mm]"
+          className="relative flex min-h-0 min-w-0 flex-1 flex-col overflow-visible px-5 pb-8 pt-8 md:overflow-hidden md:px-[14mm] md:pb-[16mm] md:pt-[18mm] print:overflow-hidden print:px-[14mm] print:pb-[16mm] print:pt-[18mm]"
           style={{ background: R.ink }}
         >
           <div
-            className="pointer-events-none absolute -right-6 bottom-[-18mm] z-0"
+            className="pointer-events-none absolute -right-6 bottom-[-18mm] z-0 hidden md:block print:block"
             style={{ opacity: 0.16 }}
             aria-hidden
           >
@@ -65,7 +65,7 @@ function Cover() {
 
           <div className="relative z-10 max-w-[165mm]">
             <p
-              className="font-sans text-[2.55rem] font-bold leading-[1.08] tracking-tight"
+              className="font-sans text-[1.6rem] font-bold leading-[1.1] tracking-tight break-words md:text-[2.55rem] md:leading-[1.08]"
               style={{ color: R.footer }}
             >
               {edition.reportTitle}
@@ -74,7 +74,7 @@ function Cover() {
               {edition.coverMeta.map((row) => (
                 <div
                   key={row.label}
-                  className="flex flex-wrap items-baseline gap-x-2.5 font-sans text-[1.15rem] leading-snug"
+                  className="flex flex-wrap items-baseline gap-x-2.5 font-sans text-base leading-snug md:text-[1.15rem]"
                 >
                   <dt className="font-medium" style={{ color: R.orange }}>
                     {row.label}:
@@ -100,7 +100,7 @@ function Cover() {
               {edition.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center rounded-sm border px-2.5 py-1 font-sans text-[9px] font-medium uppercase tracking-[0.14em]"
+                  className="inline-flex max-w-full items-center rounded-sm border px-2 py-1 font-sans text-[8px] font-medium uppercase tracking-[0.12em] md:px-2.5 md:text-[9px] md:tracking-[0.14em]"
                   style={{
                     borderColor: R.orange,
                     color: R.footer,
@@ -114,7 +114,7 @@ function Cover() {
 
           <blockquote className="relative z-10 m-0 mt-[12mm] max-w-[155mm]">
             <h1
-              className="font-sans text-[1.55rem] font-bold leading-[1.12] tracking-tight"
+              className="font-sans text-[1.2rem] font-bold leading-[1.2] tracking-tight break-words md:text-[1.55rem] md:leading-[1.12]"
               style={{ color: R.footer }}
             >
               <span style={{ color: R.orange }} aria-hidden>
@@ -151,14 +151,14 @@ function Cover() {
         </div>
 
         <div
-          className="shrink-0 px-[14mm] py-[8mm]"
+          className="shrink-0 px-5 py-5 md:px-[14mm] md:py-[8mm] print:px-[14mm] print:py-[8mm]"
           style={{ background: R.footer }}
         >
           <div className="space-y-1.5">
             {edition.coverLines.map((line) => (
               <p
                 key={line.punch}
-                className="font-sans text-[1.05rem] font-bold leading-snug tracking-tight"
+                className="font-sans text-[0.95rem] font-bold leading-snug tracking-tight break-words md:text-[1.05rem]"
                 style={{ color: R.ink }}
               >
                 {line.rest}
@@ -181,7 +181,7 @@ function SpreadOne() {
         <HighlightPanel>
           <SectionBlock section={edition.churnSection} />
         </HighlightPanel>
-        <div className="mt-5 grid min-h-0 flex-1 grid-cols-[1.15fr_0.85fr] items-start gap-7">
+        <div className="mt-5 grid min-h-0 flex-1 grid-cols-1 items-start gap-6 md:grid-cols-[1.15fr_0.85fr] md:gap-7 print:grid-cols-[1.15fr_0.85fr] print:gap-7">
           <SectionBlock section={edition.demosSection} />
           <QuotePanel quote={edition.page2Quote} />
         </div>
@@ -196,7 +196,7 @@ function SpreadTwo() {
     <Sheet footer="none">
       <div className="flex min-h-0 flex-1 flex-col">
         <Masthead page="03" />
-        <div className="grid min-h-0 flex-1 grid-cols-2 items-start gap-x-8 gap-y-5">
+        <div className="grid min-h-0 flex-1 grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-5 print:grid-cols-2 print:gap-x-8 print:gap-y-5">
           <div className="space-y-5">
             <SectionBlock section={edition.advocateSection} />
             <SectionBlock section={cold} />
@@ -220,14 +220,14 @@ function Close() {
         <Masthead />
         <div className="relative min-h-0 flex-1">
           <div
-            className="pointer-events-none absolute -right-6 top-4 opacity-95"
+            className="pointer-events-none absolute -right-6 top-4 hidden opacity-95 md:block print:block"
             aria-hidden
           >
             <Mark width={210} />
           </div>
           <div className="relative max-w-[128mm]">
             <h1
-              className="font-sans text-[2.05rem] font-bold leading-[1.12] tracking-tight"
+              className="font-sans text-[1.55rem] font-bold leading-[1.12] tracking-tight md:text-[2.05rem]"
               style={{ color: R.ink }}
             >
               {edition.closeHeadline}

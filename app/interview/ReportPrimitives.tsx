@@ -22,11 +22,11 @@ export function Sheet({
 }) {
   return (
     <article
-      className="a4-report relative mx-auto flex h-[297mm] w-full flex-col overflow-hidden bg-white shadow-sm print:h-[297mm] print:w-[210mm] print:shadow-none"
+      className="a4-report relative mx-auto flex h-auto w-full min-w-0 max-w-full flex-col overflow-visible bg-white shadow-sm md:h-[297mm] md:overflow-hidden print:h-[297mm] print:w-[210mm] print:max-w-[210mm] print:overflow-hidden print:shadow-none"
     >
       <div
         className={`flex min-h-0 flex-1 flex-col ${
-          bleed ? "" : "px-[16mm] pt-[12mm]"
+          bleed ? "" : "px-5 pb-6 pt-6 md:px-[16mm] md:pb-0 md:pt-[12mm] print:px-[16mm] print:pb-0 print:pt-[12mm]"
         }`}
       >
         {children}
@@ -104,7 +104,7 @@ export function SectionBlock({ section }: { section: Section }) {
   return (
     <section className="min-w-0">
       <h2
-        className="font-sans text-[18px] font-bold leading-snug"
+        className="font-sans text-[1.05rem] font-bold leading-snug break-words md:text-[18px]"
         style={{ color: R.ink }}
       >
         “{section.heading}”
@@ -159,7 +159,7 @@ export function QuotePanel({
   const role = tone === "orange" ? R.white : R.ink;
   return (
     <aside
-      className="relative self-center break-inside-avoid px-5 py-6"
+      className="relative w-full self-center break-inside-avoid px-5 py-6"
       style={{ background: bg }}
     >
       <span
@@ -215,13 +215,10 @@ export function StatsBand({
   const desc = R.white;
   return (
     <div
-      className="relative -mx-[16mm] mt-auto px-[16mm] py-4"
+      className="relative -mx-5 mt-auto px-5 py-4 md:-mx-[16mm] md:px-[16mm] print:-mx-[16mm] print:px-[16mm]"
       style={{ background: bg }}
     >
-      <div
-        className="grid gap-5"
-        style={{ gridTemplateColumns: `repeat(${stats.length}, minmax(0, 1fr))` }}
-      >
+      <div className="grid grid-cols-2 gap-x-4 gap-y-5 md:grid-cols-4 md:gap-5 print:grid-cols-4 print:gap-5">
         {stats.map((stat) => (
           <div key={stat.figure}>
             <p
@@ -375,7 +372,7 @@ export function ContactRow({
   children: ReactNode;
 }) {
   return (
-    <p className="flex items-center gap-2.5 font-sans text-[12px]" style={{ color: R.ink }}>
+    <p className="flex min-w-0 items-center gap-2.5 font-sans text-[12px]" style={{ color: R.ink }}>
       <span
         className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
         style={{ background: R.orange }}
@@ -396,7 +393,7 @@ export function ContactRow({
           </svg>
         )}
       </span>
-      {children}
+      <span className="min-w-0 break-words">{children}</span>
     </p>
   );
 }

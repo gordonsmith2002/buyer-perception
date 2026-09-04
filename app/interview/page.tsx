@@ -209,7 +209,7 @@ function SpreadOne() {
   return (
     <Sheet>
       <Masthead page="02" />
-      <div className="grid min-h-0 flex-1 grid-cols-[1.7fr_0.75fr] items-center gap-7">
+      <div className="grid min-h-0 flex-1 grid-cols-1 items-center gap-6 md:grid-cols-[1.7fr_0.75fr] md:gap-7 print:grid-cols-[1.7fr_0.75fr] print:gap-7">
         <div>
           <div className="space-y-2.5">
             {edition.intro.map((p, i) => (
@@ -255,7 +255,7 @@ function SpreadTwo() {
   return (
     <Sheet>
       <Masthead page="03" />
-      <div className="grid min-h-0 flex-1 grid-cols-2 gap-x-8">
+      <div className="grid min-h-0 flex-1 grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-8 print:grid-cols-2 print:gap-x-8">
         <div className="flex min-h-0 flex-col">
           <SectionBlock section={clients} />
           <div className="my-auto py-5">
@@ -284,7 +284,7 @@ function SpreadThree() {
         >
           <Mark width={180} />
         </div>
-        <div className="relative z-10 grid min-h-0 flex-1 grid-cols-2 content-start gap-x-8 gap-y-5">
+        <div className="relative z-10 grid min-h-0 flex-1 grid-cols-1 content-start gap-x-8 gap-y-5 md:grid-cols-2 print:grid-cols-2">
           {edition.page4Sections.map((section) => (
             <SectionBlock key={section.heading} section={section} />
           ))}
