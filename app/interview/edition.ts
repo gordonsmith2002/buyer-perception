@@ -6,6 +6,7 @@ export type QAItem = {
 export type Section = {
   heading: string;
   items: QAItem[];
+  soWhat?: string;
 };
 
 export type Stat = {
