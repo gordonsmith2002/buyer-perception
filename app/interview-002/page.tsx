@@ -267,13 +267,13 @@ function Close() {
             />
             <div className="space-y-2.5">
               <ContactRow icon="mail">
-                <a href="mailto:gordon@buyerperception.co.uk">
-                  gordon@buyerperception.co.uk
+                <a href="mailto:gordon@buyerperception.com">
+                  gordon@buyerperception.com
                 </a>
               </ContactRow>
               <ContactRow icon="web">
-                <a href="https://www.buyerperception.co.uk">
-                  www.buyerperception.co.uk
+                <a href="https://buyerperception.com">
+                  www.buyerperception.com
                 </a>
               </ContactRow>
               <ContactRow icon="phone">
