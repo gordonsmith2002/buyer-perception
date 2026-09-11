@@ -68,7 +68,8 @@ a {
   }
 
   .one-pager,
-  .a4-report {
+  .a4-report,
+  .anon-edition {
     box-shadow: none !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -82,6 +83,22 @@ a {
   .a4-report:last-child {
     break-after: auto;
     page-break-after: auto;
+  }
+
+  .anon-edition-chrome {
+    display: none !important;
+  }
+
+  .anon-edition a[class*="cta"],
+  .anon-edition button {
+    display: none !important;
+  }
+
+  .anon-edition-pullquote,
+  .anon-edition-contact,
+  .anon-edition-footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   @page {

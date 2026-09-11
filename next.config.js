@@ -23,6 +23,14 @@ const nextConfig = {
       { source: "/b2b", destination: "/", permanent: false },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/interview-:edition(\\d{3})",
+        destination: "/editions/:edition",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
