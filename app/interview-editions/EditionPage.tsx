@@ -114,9 +114,7 @@ export function EditionCover({ edition }: { edition: AnonymousEdition }) {
               { label: "Buyer Persona", value: edition.buyerPersona },
               { label: "Employer", value: edition.employer },
               { label: "Company Size", value: edition.companySize },
-            ]
-              .filter((row) => Boolean(row.value))
-              .map((row) => (
+            ].map((row) => (
               <div
                 key={row.label}
                 className="flex flex-wrap items-baseline gap-x-2.5 font-sans text-base leading-snug md:text-[1.15rem]"
@@ -261,7 +259,7 @@ function SectionStack({
         <div key={section.heading} className="space-y-5">
           <InterviewSection section={section} />
           {quotesForSection(edition, section.heading).map((item) => (
-            <PullQuote key={item.quote} quote={item.quote} attribution={item.attribution} />
+            <PullQuote key={item.quote} quote={item.quote} attribution={edition.buyerPersona} />
           ))}
         </div>
       ))}
@@ -423,11 +421,6 @@ export function EditionPage({ edition }: { edition: AnonymousEdition }) {
   return (
     <div className="anon-edition min-h-screen bg-neutral-200 print:min-h-0 print:bg-white">
       <div className="mx-auto w-full min-w-0 max-w-[210mm] print:max-w-none">
-        <div className="anon-edition-chrome no-print flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
-          <p className="font-sans text-xs text-neutral-600">
-            Anonymous 1:1 · Edition {padEdition(edition.edition)}
-          </p>
-        </div>
         <div className="flex flex-col gap-4 pb-8 md:gap-6 md:pb-10 print:gap-0 print:pb-0">
           <EditionCover edition={edition} />
           {first ? <SpreadOne edition={edition} first={first} second={second} /> : null}

@@ -1,4 +1,4 @@
-import type { Stage, Technology, Topic } from "./lists";
+import type { CompanySize, Stage, Technology, Topic } from "./lists";
 
 export type Exchange = {
   question: string;
@@ -13,7 +13,6 @@ export type InterviewSection = {
 export type PullQuote = {
   quote: string;
   placeAfterSection: string;
-  attribution?: string;
 };
 
 export type InterviewStat = {
@@ -26,8 +25,8 @@ export type AnonymousEdition = {
   date: string;
   hookQuote: string;
   buyerPersona: string;
-  employer?: string;
-  companySize?: string;
+  employer: string;
+  companySize: CompanySize;
   technologies: Technology[];
   topics: Topic[];
   stage: Stage[];

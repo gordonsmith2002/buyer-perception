@@ -1,4 +1,4 @@
-import { STAGES, TECHNOLOGIES, TOPICS } from "./lists";
+import { COMPANY_SIZES, STAGES, TECHNOLOGIES, TOPICS } from "./lists";
 import type { AnonymousEdition } from "./types";
 
 const TITLE_CASE_MIN_WORDS = 3;
@@ -33,27 +33,6 @@ function sectionContainsQuote(answer: string, quote: string): boolean {
   if (haystack.includes(needle)) return true;
   const firstClause = needle.split(/[.!?]/)[0]?.trim();
   return Boolean(firstClause && firstClause.length >= 24 && haystack.includes(firstClause));
-}
-
-const TYPOGRAPHIC_DASH = /[—–]/;
-
-function editionCopy(edition: AnonymousEdition): string[] {
-  return [
-    edition.hookQuote,
-    edition.buyerPersona,
-    edition.employer,
-    edition.companySize,
-    edition.framing,
-    ...edition.technologies,
-    ...edition.topics,
-    ...edition.stage,
-    ...edition.sections.flatMap((section) => [
-      section.heading,
-      ...section.exchanges.flatMap((exchange) => [exchange.question, exchange.answer]),
-    ]),
-    ...edition.pullQuotes.flatMap((item) => [item.quote, item.placeAfterSection, item.attribution]),
-    ...edition.stats.flatMap((stat) => [stat.value, stat.context]),
-  ].filter((value): value is string => Boolean(value));
 }
 
 function sourceSectionHeading(edition: AnonymousEdition, quote: string): string | null {
@@ -106,11 +85,16 @@ export function validateEdition(edition: AnonymousEdition): void {
     }
   }
 
-  for (const text of editionCopy(edition)) {
-    if (TYPOGRAPHIC_DASH.test(text)) {
-      errors.push(`${prefix}: em dashes and en dashes are not allowed.`);
-      break;
-    }
+  if (!edition.buyerPersona.trim()) {
+    errors.push(`${prefix}: Buyer Persona is required.`);
+  }
+  if (!edition.employer.trim()) {
+    errors.push(`${prefix}: Employer is required.`);
+  }
+  if (!COMPANY_SIZES.includes(edition.companySize)) {
+    errors.push(
+      `${prefix}: company size "${edition.companySize}" is not in the controlled list (${COMPANY_SIZES.join(" · ")}).`,
+    );
   }
 
   for (const section of edition.sections) {

@@ -6,7 +6,7 @@ export const edition002: AnonymousEdition = {
   hookQuote: "Help me spend my money on you. Don't just try and flog me shit",
   buyerPersona: "Senior TA Leader",
   employer: "VC-backed tech company",
-  companySize: "500",
+  companySize: "501 - 1,000",
   technologies: ["ATS"],
   topics: ["Churn", "Demos", "Cold outreach", "Sales process", "Business case & ROI"],
   stage: ["Churn", "Selection"],

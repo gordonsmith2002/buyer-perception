@@ -28,7 +28,7 @@ export const edition001: AnonymousEdition = {
           question:
             "You buy TA technology for a global enterprise. When was the last time a vendor got a meeting with you completely cold?",
           answer:
-            "At least a couple of years ago and that's only because they had an interesting pitch - they knew a huge amount about my business and my challenges. They knew what my challenges were, in what market and at what level. So there was credibility coming through the call, rather than a completely sales-oriented approach where someone's just trying their luck.",
+            "At least a couple of years ago and that's only because they had an interesting pitch — they knew a huge amount about my business and my challenges. They knew what my challenges were, in what market and at what level. So there was credibility coming through the call, rather than a completely sales-oriented approach where someone's just trying their luck.",
         },
         {
           question: "Two years is a long time.",
@@ -49,7 +49,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "So the shortlist is built before the vendor even knows they're being evaluated?",
           answer:
-            "Yes. Before a vendor gets a call from me, quite a lot has already happened that they don't see, I will have had multiple conversations with people I trust to build my shortlist - then I’ll bring in the wider buying team.",
+            "Yes. Before a vendor gets a call from me, quite a lot has already happened that they don't see, I will have had multiple conversations with people I trust to build my shortlist — then I’ll bring in the wider buying team.",
         },
         {
           question: "What does the buying team typically look like at your organisation?",
@@ -79,7 +79,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "What do you actually want from the person across the table?",
           answer:
-            "I like working with product consultants rather than salespeople. They can tell me stories. What worked, what didn't with other customers. That's what's key for me, rather than selling the product and then hoping for the best.\n\nAnd it's fine to say, \"I'm not sure - I need to check and come back.\" That's so much better than trying to bluff your way through. Because I can tell. And once I feel that's happening, their credibility is completely gone.",
+            "I like working with product consultants rather than salespeople. They can tell me stories. What worked, what didn't with other customers. That's what's key for me, rather than selling the product and then hoping for the best.\n\nAnd it's fine to say, \"I'm not sure — I need to check and come back.\" That's so much better than trying to bluff your way through. Because I can tell. And once I feel that's happening, their credibility is completely gone.",
         },
       ],
     },
@@ -127,7 +127,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "Four years of relationship before a purchase. Most CRMs would have written you off.",
           answer:
-            "Exactly. And that's the thing - I haven't been a buyer for four years. But the relationship never stopped. And now it's real.",
+            "Exactly. And that's the thing — I haven't been a buyer for four years. But the relationship never stopped. And now it's real.",
         },
         {
           question:
@@ -154,7 +154,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "Is it usually one story, or a pattern?",
           answer:
-            "With certain vendors, you hear the same story over and over again - horror shows. So you revalidate what you're hearing. With some, it's a quick yes or no. And if they've messed up once with me directly, I would not use them again.",
+            "With certain vendors, you hear the same story over and over again — horror shows. So you revalidate what you're hearing. With some, it's a quick yes or no. And if they've messed up once with me directly, I would not use them again.",
         },
       ],
     },
@@ -178,12 +178,10 @@ export const edition001: AnonymousEdition = {
     {
       quote: "I like working with product consultants rather than salespeople.",
       placeAfterSection: "I chose the weaker product, because the team was better.",
-      attribution: RESPONDENT,
     },
     {
       quote: "If what you're selling is already on my ATS's roadmap, you can't sell that product in.",
       placeAfterSection: "Tell me what you can afford, and how we can support you.",
-      attribution: RESPONDENT,
     },
   ],
   stats: [

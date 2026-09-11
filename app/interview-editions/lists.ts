@@ -42,6 +42,15 @@ export const STAGES = [
   "Churn",
 ] as const;
 
+export const COMPANY_SIZES = [
+  "<500",
+  "501 - 1,000",
+  "1,001 - 5,000",
+  "5,001 - 10,000",
+  "10,000+",
+] as const;
+
 export type Technology = (typeof TECHNOLOGIES)[number];
 export type Topic = (typeof TOPICS)[number];
 export type Stage = (typeof STAGES)[number];
+export type CompanySize = (typeof COMPANY_SIZES)[number];
