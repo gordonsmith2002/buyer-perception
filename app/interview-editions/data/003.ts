@@ -1,12 +1,14 @@
 import type { AnonymousEdition } from "../types";
 
-const RESPONDENT = "Senior TA Leader, high-growth technology";
+const RESPONDENT = "Director of Talent Acquisition";
 
 export const edition003: AnonymousEdition = {
   edition: 3,
   date: "September 2026",
   hookQuote: "Show me a clear return on investment, time or money. That is golden.",
   buyerPersona: RESPONDENT,
+  employer: "Global Software Company",
+  companySize: "5,000",
   technologies: ["ATS", "Sourcing", "Assessment"],
   topics: [
     "Business case & ROI",
