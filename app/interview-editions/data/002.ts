@@ -123,9 +123,5 @@ export const edition002: AnonymousEdition = {
       value: "2",
       context: "major vendor selection processes in the last twelve months alone.",
     },
-    {
-      value: "45 min",
-      context: 'demos that try to show every feature. "The whole way demos are done needs to change."',
-    },
   ],
 };

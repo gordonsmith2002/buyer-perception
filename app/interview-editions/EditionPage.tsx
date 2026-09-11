@@ -258,7 +258,13 @@ export function StatsBlock({ edition }: { edition: AnonymousEdition }) {
       >
         From this interview
       </h2>
-      <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-5 md:grid-cols-4 md:gap-5 print:grid-cols-4 print:gap-5">
+      <div
+        className={`mt-3 grid grid-cols-2 gap-x-4 gap-y-5 md:gap-5 print:gap-5 ${
+          edition.stats.length === 3
+            ? "md:grid-cols-3 print:grid-cols-3"
+            : "md:grid-cols-4 print:grid-cols-4"
+        }`}
+      >
         {edition.stats.map((stat) => (
           <div key={stat.value} className="min-w-0">
             <p

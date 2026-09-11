@@ -65,8 +65,8 @@ export function validateEdition(edition: AnonymousEdition): void {
     errors.push(`${prefix}: pullQuotes must be 2 or fewer (found ${edition.pullQuotes.length}).`);
   }
 
-  if (edition.stats.length !== 4) {
-    errors.push(`${prefix}: stats must contain exactly 4 items (found ${edition.stats.length}).`);
+  if (edition.stats.length < 3 || edition.stats.length > 4) {
+    errors.push(`${prefix}: stats must contain 3 or 4 items (found ${edition.stats.length}).`);
   }
 
   for (const value of edition.technologies) {
