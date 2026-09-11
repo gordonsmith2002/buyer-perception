@@ -25,7 +25,7 @@ export default function Interview002Page() {
       <div className="mx-auto w-full min-w-0 max-w-[210mm] print:max-w-none">
         <div className="no-print flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <p className="font-sans text-xs text-neutral-600">
-            Preview · Anonymous 1:1 · Edition 002
+            Anonymous 1:1 · Edition 002
           </p>
         </div>
 
@@ -175,9 +175,26 @@ function Cover() {
 
 function SpreadOne() {
   return (
-    <Sheet footer="none">
+    <Sheet footer="none" tall>
       <div className="flex min-h-0 flex-1 flex-col">
-        <Masthead page="02" />
+        <Masthead />
+        <div className="mb-4 space-y-3">
+          <h2
+            className="min-w-0 break-words font-sans text-[1.35rem] font-bold leading-[1.2] tracking-tight md:text-[28px] md:leading-[1.18]"
+            style={{ color: R.ink }}
+          >
+            {edition.page2ContextHeading}
+          </h2>
+          {edition.intro.map((p) => (
+            <p
+              key={p.slice(0, 40)}
+              className="min-w-0 break-words font-sans text-[12px] font-normal leading-[1.5] md:text-[13px]"
+              style={{ color: R.olive }}
+            >
+              {p}
+            </p>
+          ))}
+        </div>
         <HighlightPanel>
           <SectionBlock section={edition.churnSection} />
         </HighlightPanel>
@@ -195,7 +212,7 @@ function SpreadTwo() {
   return (
     <Sheet footer="none">
       <div className="flex min-h-0 flex-1 flex-col">
-        <Masthead page="03" />
+        <Masthead />
         <div className="grid min-h-0 flex-1 grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-5 print:grid-cols-2 print:gap-x-8 print:gap-y-5">
           <div className="space-y-5">
             <SectionBlock section={edition.advocateSection} />
@@ -227,20 +244,14 @@ function Close() {
           </div>
           <div className="relative max-w-[128mm]">
             <h1
-              className="font-sans text-[1.55rem] font-bold leading-[1.12] tracking-tight md:text-[2.05rem]"
+              className="font-sans text-[1.55rem] font-bold leading-[1.12] tracking-tight break-words md:text-[2.05rem]"
               style={{ color: R.ink }}
             >
               {edition.closeHeadline}
               <OrangePeriod />
             </h1>
             <p
-              className="mt-5 font-sans text-[13px] font-normal leading-[1.5]"
-              style={{ color: R.olive }}
-            >
-              {edition.closeSupport}
-            </p>
-            <p
-              className="mt-5 font-sans text-[12px] font-normal leading-[1.5]"
+              className="mt-5 font-sans text-[12px] font-normal leading-[1.5] md:text-[13px]"
               style={{ color: R.ink }}
             >
               {edition.closeCta}
@@ -267,13 +278,13 @@ function Close() {
             />
             <div className="space-y-2.5">
               <ContactRow icon="mail">
-                <a href="mailto:gordon@buyerperception.co.uk">
-                  gordon@buyerperception.co.uk
+                <a href="mailto:gordon@buyerperception.com">
+                  gordon@buyerperception.com
                 </a>
               </ContactRow>
               <ContactRow icon="web">
-                <a href="https://www.buyerperception.co.uk">
-                  www.buyerperception.co.uk
+                <a href="https://www.buyerperception.com">
+                  www.buyerperception.com
                 </a>
               </ContactRow>
               <ContactRow icon="phone">

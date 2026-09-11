@@ -22,10 +22,10 @@ export const edition002 = {
     name: "Gordon Smith",
     role: "Founder, Buyer Perception",
   },
+  page2ContextHeading:
+    "This buyer stayed with a vendor because of a CSM who showed up once a quarter and made it count every time. They left because another vendor didn't show up at all. The gap between the two wasn't product. It was presence. None of that showed up in a renewal forecast or usage report.",
   intro: [
-    "Every vendor has a churn they can't explain. A customer who seemed fine, and then wasn't.",
-    "This conversation is with a senior talent acquisition leader at a global technology company. They buy, evaluate, and benchmark TA platforms against the art of the possible, and they've just been through two major vendor selection processes in the last twelve months.",
-    "What made this conversation different was the contrast. The same buyer, two completely different vendor experiences: one that drove them away, and one that made them an advocate. The gap between the two is where most revenue gets lost.",
+    "This report was created from an independent, anonymised interview with a senior TA leader. It was not part of a paid client engagement. Buyer Perception actively recruits B2B buyers to participate in these conversations because the market needs an honest picture of how technology actually gets bought.",
   ],
   churnSection: {
     heading: "The arrogance of the renewals manager was something else.",
@@ -133,12 +133,12 @@ export const edition002 = {
   page2Quote: {
     text: "They think we want a million features. We don't. What we want is greater simplicity.",
     attribution: "Senior TA Leader",
-    role: "Global Technology Company",
+    role: "VC-backed tech company",
   } satisfies PullQuote,
   page3Quote: {
     text: "Help me spend my money on you. Don't just try and flog me shit.",
     attribution: "Senior TA Leader",
-    role: "Global Technology Company",
+    role: "VC-backed tech company",
   } satisfies PullQuote,
   page2Stats: [
     {
@@ -160,7 +160,7 @@ export const edition002 = {
   ] satisfies Stat[],
   closeHeadline: "What Are Your Buyers Saying When You're Not in the Room",
   closeSupport:
-    "This buyer stayed because of a CSM who showed up once a quarter and made it count. They left because another vendor didn't show up at all. The gap between the two wasn't product. It was presence. None of that showed up in a renewal forecast. None of it showed up in a usage report.",
+    "This buyer stayed with a vendor because of a CSM who showed up once a quarter and made it count every time. They left because another vendor didn't show up at all. The gap between the two wasn't product. It was presence. None of that showed up in a renewal forecast or usage report.",
   closeCta:
     "Buyer Perception conducts anonymous, in-depth interviews with TA and HR leaders who buy, evaluate, and influence purchasing decisions in your market.",
   closeCtaBold:

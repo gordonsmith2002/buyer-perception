@@ -15,14 +15,20 @@ export function Sheet({
   children,
   bleed = false,
   footer = "tagline",
+  tall = false,
 }: {
   children: ReactNode;
   bleed?: boolean;
   footer?: "tagline" | "none";
+  tall?: boolean;
 }) {
   return (
     <article
-      className="a4-report relative mx-auto flex h-auto w-full min-w-0 max-w-full flex-col overflow-visible bg-white shadow-sm md:h-[297mm] md:overflow-hidden print:h-[297mm] print:w-[210mm] print:max-w-[210mm] print:overflow-hidden print:shadow-none"
+      className={`a4-report relative mx-auto flex h-auto w-full min-w-0 max-w-full flex-col overflow-visible bg-white shadow-sm print:w-[210mm] print:max-w-[210mm] print:shadow-none ${
+        tall
+          ? "md:min-h-[297mm] print:h-auto print:overflow-visible"
+          : "md:h-[297mm] md:overflow-hidden print:h-[297mm] print:overflow-hidden"
+      }`}
     >
       <div
         className={`flex min-h-0 flex-1 flex-col ${
@@ -170,7 +176,7 @@ export function QuotePanel({
         “
       </span>
       <p
-        className="mt-1 font-sans text-[0.95rem] font-bold leading-snug"
+        className="mt-1 break-words font-sans text-[0.95rem] font-bold leading-snug"
         style={{ color: body }}
       >
         {quote.text}
@@ -265,7 +271,7 @@ export function PageKicker({ children }: { children: ReactNode }) {
 export function HighlightPanel({ children }: { children: ReactNode }) {
   return (
     <div
-      className="break-inside-avoid px-5 py-5"
+      className="min-w-0 break-inside-avoid px-4 py-4 md:px-5 md:py-5"
       style={{ background: R.tan }}
     >
       {children}
