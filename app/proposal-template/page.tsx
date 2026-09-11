@@ -96,7 +96,7 @@ const PROPOSAL_DATA = {
         "Buyer Perception Report delivered. 60-minute strategic debrief with your leadership team.",
     },
   ],
-  calendlyUrl: "https://calendly.com/gordon-buyerperception/30min",
+  calendlyUrl: "https://calendly.com/gordon-buyerperception-rmza/intro",
   email: "gordon@buyerperception.com",
 };
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GENERIC_BOOK_CALL_URL } from "../BookButton";
+import { INSIGHTS_BOOK_CALL_URL } from "../BookButton";
 
 export default function InsightsFooter() {
   return (
@@ -29,7 +29,7 @@ export default function InsightsFooter() {
               gordon@buyerperception.com
             </a>
             <a
-              href={GENERIC_BOOK_CALL_URL}
+              href={INSIGHTS_BOOK_CALL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[color:var(--text-insights)]/80 hover:text-[color:var(--text-insights)] transition-colors"

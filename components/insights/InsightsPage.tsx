@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BookButton, { GENERIC_BOOK_CALL_URL } from "../BookButton";
+import BookButton, { INSIGHTS_BOOK_CALL_URL } from "../BookButton";
 import Reveal from "../Reveal";
 
 const STATS = [
@@ -102,7 +102,7 @@ function Hero() {
           </Reveal>
           <div className="mt-10">
             <Reveal>
-              <BookButton href={GENERIC_BOOK_CALL_URL}>
+              <BookButton href={INSIGHTS_BOOK_CALL_URL}>
                 Share Your Perspective
               </BookButton>
             </Reveal>
@@ -306,7 +306,7 @@ function About() {
                 >
                   gordon@buyerperception.com
                 </a>
-                <BookButton href={GENERIC_BOOK_CALL_URL}>
+                <BookButton href={INSIGHTS_BOOK_CALL_URL}>
                   Book a Conversation
                 </BookButton>
               </div>

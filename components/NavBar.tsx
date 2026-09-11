@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import { BOOK_CALL_URL, GENERIC_BOOK_CALL_URL } from "./BookButton";
+import { BOOK_CALL_URL } from "./BookButton";
 
 const LINKS = [
   { href: "#problem", label: "Your Data Gap" },
@@ -18,7 +18,7 @@ export default function NavBar() {
   const pathname = usePathname();
   const isTa = pathname === "/ta";
   const homeHref = isTa ? "/ta" : "/";
-  const bookUrl = isTa ? BOOK_CALL_URL : GENERIC_BOOK_CALL_URL;
+  const bookUrl = BOOK_CALL_URL;
 
   return (
     <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-white/95 backdrop-blur-md">

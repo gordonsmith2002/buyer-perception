@@ -32,7 +32,7 @@ export type LandingCopy = {
 };
 
 export const GENERIC_BOOK_URL =
-  "https://calendly.com/gordon-buyerperception/30min";
+  "https://calendly.com/gordon-buyerperception-rmza/intro";
 
 export const genericLanding: LandingCopy = {
   bookUrl: GENERIC_BOOK_URL,
@@ -76,7 +76,7 @@ export const genericLanding: LandingCopy = {
 };
 
 export const taLanding: LandingCopy = {
-  bookUrl: "https://calendly.com/gordon-buyerperception-rmza/30min",
+  bookUrl: "https://calendly.com/gordon-buyerperception-rmza/intro",
   hero: {
     headlineBefore:
       "Win-loss analysis tells you why you lost the deal.",

@@ -1,9 +1,11 @@
 import React from "react";
 
 export const BOOK_CALL_URL =
-  "https://calendly.com/gordon-buyerperception-rmza/30min";
+  "https://calendly.com/gordon-buyerperception-rmza/intro";
 
-export const GENERIC_BOOK_CALL_URL =
+export const GENERIC_BOOK_CALL_URL = BOOK_CALL_URL;
+
+export const INSIGHTS_BOOK_CALL_URL =
   "https://calendly.com/gordon-buyerperception/30min";
 
 export default function BookButton({

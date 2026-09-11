@@ -1,15 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
-import { usePathname } from "next/navigation";
-import { BOOK_CALL_URL, GENERIC_BOOK_CALL_URL } from "./BookButton";
+import { BOOK_CALL_URL } from "./BookButton";
 
 export default function Footer() {
-  const pathname = usePathname();
-  const bookUrl =
-    pathname === "/ta" ? BOOK_CALL_URL : GENERIC_BOOK_CALL_URL;
-
   return (
     <footer className="bg-charcoal border-t border-platinum/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-12">
@@ -35,7 +28,7 @@ export default function Footer() {
               gordon@buyerperception.com
             </a>
             <a
-              href={bookUrl}
+              href={BOOK_CALL_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-platinum/80 hover:text-platinum transition-colors"

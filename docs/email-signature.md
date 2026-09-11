@@ -29,4 +29,4 @@ Uses charcoal `#252626` and terracotta `#B94E30`, table layout, Arial stack (Gma
 - gordon@buyerperception.com
 - +44 7493 328672
 - https://buyerperception.com
-- https://calendly.com/gordon-buyerperception/30min
+- https://calendly.com/gordon-buyerperception-rmza/intro
