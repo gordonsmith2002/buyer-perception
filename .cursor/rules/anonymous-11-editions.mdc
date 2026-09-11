@@ -1,0 +1,31 @@
+---
+description: How to add a new Anonymous 1:1 edition — data slot-in only, no new page.
+globs: app/interview-editions/**/*,app/editions/**/*
+alwaysApply: false
+---
+
+# Anonymous 1:1 editions
+
+`/interview-002` is the live pattern. Future editions are a **data file**, not a new page.
+
+## Add edition 00N
+
+1. Copy `app/interview-editions/data/002.ts` → `data/00N.ts`.
+2. Fill an `AnonymousEdition` in `types.ts`. Keep interview answers verbatim.
+3. Register it in `app/interview-editions/registry.ts`.
+4. `/interview-00N` is already routed (`next.config.js` rewrite → `/editions/00N`). Do not add `app/interview-00N/page.tsx`.
+
+Build-time checks run from `validate.ts` on import. Fix those errors before shipping.
+
+## Content rules
+
+- Cover order: eyebrow → logo → hook quote → Buyer Persona / Employer / Company Size → facets → Prepared by.
+- Section headings are **sentence-case verbatim quotes**, not Title Case.
+- Hook quote: cover + body only. Never also a pull quote.
+- At most 2 pull quotes. Place each after a **different** section than the one it was said in. No job titles.
+- 4–8 sections. Answer words ≤ 2,000. Stats: 3 or 4, labelled “From this interview”.
+- Technologies / Topics / Stage must come from `lists.ts`. Add to the list if a real value is missing.
+- Framing is a paragraph, not a heading. No recommendations or action points.
+- Contact is `.com` only (`gordon@buyerperception.com`).
+- Leave `/interview` (Edition 001) and the brand palette / type system alone.
+- Keep `INDEX_ANONYMOUS_EDITIONS = false` unless Gordon asks to index.
