@@ -126,6 +126,13 @@ export function validateEdition(edition: AnonymousEdition): void {
     }
 
     const headings = edition.sections.map((section) => section.heading);
+    if (
+      headings.some(
+        (heading) => normalize(heading).replace(/[.?!]+$/, "") === normalize(item.quote).replace(/[.?!]+$/, ""),
+      )
+    ) {
+      errors.push(`${prefix}: pull quote must not duplicate a section heading.`);
+    }
     if (!headings.includes(item.placeAfterSection)) {
       errors.push(
         `${prefix}: pull quote placeAfterSection "${item.placeAfterSection}" does not match a section heading.`,

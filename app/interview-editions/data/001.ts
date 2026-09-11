@@ -1,6 +1,6 @@
 import type { AnonymousEdition } from "../types";
 
-const RESPONDENT = "Senior TA Leader, global enterprise";
+const RESPONDENT = "Global Head of Talent Acquisition";
 
 export const edition001: AnonymousEdition = {
   edition: 1,
@@ -59,7 +59,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "You mentioned back-channel references. Walk me through how that works.",
           answer:
-            "Say a vendor has case studies on their website. I'll look at those companies to find a mutual connection and reach out to them directly. Unofficial. Not through the vendor.\n\nOn that call I'll say: \"We're looking at this capability. Do you think they're good? What about these nuances? If I throw this specific problem at them, what are your thoughts?\" And they kind of tell you the good, the bad, and the ugly. I don’t expect anyone to be perfect",
+            "Say a vendor has case studies on their website. I'll look at those companies to find a mutual connection and reach out to them directly. Unofficial. Not through the vendor.\n\nOn that call I'll say: \"We're looking at this capability. Do you think they're good? What about these nuances? If I throw this specific problem at them, what are your thoughts?\" And they kind of tell you the good, the bad, and the ugly. I don’t expect anyone to be perfect.",
         },
         {
           question: "Does the vendor know that conversation happened?",
@@ -79,7 +79,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "What do you actually want from the person across the table?",
           answer:
-            "I like working with product consultants rather than salespeople. They can tell me stories. What worked, what didn't with other customers. That's what's key for me, rather than selling the product and then hoping for the best.\n\nAnd it's fine to say, \"I'm not sure I need to check and come back.\" That's so much better than trying to bluff your way through. Because I can tell. And once I feel that's happening, their credibility is completely gone.",
+            "I like working with product consultants rather than salespeople. They can tell me stories. What worked, what didn't with other customers. That's what's key for me, rather than selling the product and then hoping for the best.\n\nAnd it's fine to say, \"I'm not sure - I need to check and come back.\" That's so much better than trying to bluff your way through. Because I can tell. And once I feel that's happening, their credibility is completely gone.",
         },
       ],
     },
@@ -127,7 +127,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "Four years of relationship before a purchase. Most CRMs would have written you off.",
           answer:
-            "Exactly. And that's the thing I haven't been a buyer for four years. But the relationship never stopped. And now it's real.",
+            "Exactly. And that's the thing - I haven't been a buyer for four years. But the relationship never stopped. And now it's real.",
         },
         {
           question:
@@ -164,7 +164,7 @@ export const edition001: AnonymousEdition = {
         {
           question: "Is there a question you wish vendors would ask you, but don't?",
           answer:
-            "One vendor I know, they've worked with me differently. They know I am open to working wth the, but rather than just quote me a price they have said: \"Tell me what you can do, what you can afford, what you need, and how we can support you.\" They're working backwards from my problem.\n\nI prefer when someone asks me: what are your challenges? What are the challenges with your finance team? What are the challenges with your boss? How can I make your life easier? And let's find a way to work together on that.",
+            "One vendor I know, they've worked with me differently. They know I am open to working with them, but rather than just quote me a price they have said: \"Tell me what you can do, what you can afford, what you need, and how we can support you.\" They're working backwards from my problem.\n\nI prefer when someone asks me: what are your challenges? What are the challenges with your finance team? What are the challenges with your boss? How can I make your life easier? And let's find a way to work together on that.",
         },
         {
           question: "Is that a new expectation, or has it always been the case?",
@@ -181,7 +181,7 @@ export const edition001: AnonymousEdition = {
       attribution: RESPONDENT,
     },
     {
-      quote: "What you sold me six months ago, I don't need any more.",
+      quote: "If what you're selling is already on my ATS's roadmap, you can't sell that product in.",
       placeAfterSection: "Tell me what you can afford, and how we can support you.",
       attribution: RESPONDENT,
     },

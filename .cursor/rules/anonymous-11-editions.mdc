@@ -21,10 +21,11 @@ Build-time checks run from `validate.ts` on import. Fix those errors before ship
 
 - Cover order: eyebrow → logo → hook quote → Buyer Persona / Employer / Company Size → facets → Prepared by.
 - Section headings are **sentence-case verbatim quotes**, not Title Case.
-- Hook quote: cover + body only. Never also a pull quote.
-- At most 2 pull quotes. Place each after a **different** section than the one it was said in. No job titles.
+- Hook quote: cover + body only. Never also a pull quote or a section heading.
+- At most 2 pull quotes. Place each after a **different** section than the one it was said in. A pull quote must not duplicate a section heading.
+- If a pull quote has an attribution, use the same job title as the cover Buyer Persona.
 - 4-8 sections. Answer words ≤ 2,000. Stats: 3 or 4, labelled “From this interview”.
-- Never use em dashes (—) or en dashes (–) in edition copy. Use a comma, full stop, or hyphen.
+- Never use em dashes (—) or en dashes (–) in edition copy. A normal hyphen (-) is fine.
 - Technologies / Topics / Stage must come from `lists.ts`. Add to the list if a real value is missing.
 - Framing is a paragraph, not a heading. No recommendations or action points.
 - Contact is `.com` only (`gordon@buyerperception.com`).
