@@ -1,5 +1,5 @@
 ---
-description: How to add a new Anonymous 1:1 edition — data slot-in only, no new page.
+description: How to add a new Anonymous 1:1 edition. Data slot-in only, no new page.
 globs: app/interview-editions/**/*,app/editions/**/*
 alwaysApply: false
 ---
@@ -23,9 +23,11 @@ Build-time checks run from `validate.ts` on import. Fix those errors before ship
 - Section headings are **sentence-case verbatim quotes**, not Title Case.
 - Hook quote: cover + body only. Never also a pull quote.
 - At most 2 pull quotes. Place each after a **different** section than the one it was said in. No job titles.
-- 4–8 sections. Answer words ≤ 2,000. Stats: 3 or 4, labelled “From this interview”.
+- 4-8 sections. Answer words ≤ 2,000. Stats: 3 or 4, labelled “From this interview”.
+- Never use em dashes (—) or en dashes (–) in edition copy. Use a comma, full stop, or hyphen.
 - Technologies / Topics / Stage must come from `lists.ts`. Add to the list if a real value is missing.
 - Framing is a paragraph, not a heading. No recommendations or action points.
 - Contact is `.com` only (`gordon@buyerperception.com`).
-- Leave `/interview` (Edition 001) and the brand palette / type system alone.
+- `/interview` is the original Edition 001 page. Leave it alone. Templated editions live at `/interview-00N`.
+- Leave the brand palette / type system alone.
 - Keep `INDEX_ANONYMOUS_EDITIONS = false` unless Gordon asks to index.

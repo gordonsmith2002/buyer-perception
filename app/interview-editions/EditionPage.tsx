@@ -98,7 +98,9 @@ export function EditionCover({ edition }: { edition: AnonymousEdition }) {
               { label: "Buyer Persona", value: edition.buyerPersona },
               { label: "Employer", value: edition.employer },
               { label: "Company Size", value: edition.companySize },
-            ].map((row) => (
+            ]
+              .filter((row) => Boolean(row.value))
+              .map((row) => (
               <div
                 key={row.label}
                 className="flex flex-wrap items-baseline gap-x-2.5 font-sans text-base leading-snug md:text-[1.15rem]"
@@ -207,7 +209,7 @@ export function InterviewSection({ section }: { section: SectionData }) {
   );
 }
 
-export function PullQuote({ quote }: { quote: string }) {
+export function PullQuote({ quote, attribution }: { quote: string; attribution?: string }) {
   return (
     <figure
       className="anon-edition-pullquote relative w-full self-center break-inside-avoid px-5 py-6"
@@ -221,6 +223,11 @@ export function PullQuote({ quote }: { quote: string }) {
           “{quote}”
         </p>
       </blockquote>
+      {attribution ? (
+        <figcaption className="mt-3 font-sans text-[12px] font-bold" style={{ color: R.orange }}>
+          {attribution}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
@@ -238,7 +245,7 @@ function SectionStack({
         <div key={section.heading} className="space-y-5">
           <InterviewSection section={section} />
           {quotesForSection(edition, section.heading).map((item) => (
-            <PullQuote key={item.quote} quote={item.quote} />
+            <PullQuote key={item.quote} quote={item.quote} attribution={item.attribution} />
           ))}
         </div>
       ))}
@@ -327,7 +334,7 @@ function SpreadTwo({
   const left = sections.slice(0, split);
   const right = sections.slice(split);
   return (
-    <Sheet footer="none">
+    <Sheet footer="none" tall>
       <div className="flex min-h-0 flex-1 flex-col">
         <Masthead />
         <div className="grid min-h-0 flex-1 grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-5 print:grid-cols-2 print:gap-x-8 print:gap-y-5">

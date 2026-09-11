@@ -1,9 +1,10 @@
+import { edition001 } from "./data/001";
 import { edition002 } from "./data/002";
 import type { AnonymousEdition } from "./types";
 import { padEdition } from "./config";
 import { validateEdition } from "./validate";
 
-const editions: AnonymousEdition[] = [edition002];
+const editions: AnonymousEdition[] = [edition001, edition002];
 
 for (const edition of editions) {
   validateEdition(edition);

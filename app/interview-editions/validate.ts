@@ -35,6 +35,27 @@ function sectionContainsQuote(answer: string, quote: string): boolean {
   return Boolean(firstClause && firstClause.length >= 24 && haystack.includes(firstClause));
 }
 
+const TYPOGRAPHIC_DASH = /[—–]/;
+
+function editionCopy(edition: AnonymousEdition): string[] {
+  return [
+    edition.hookQuote,
+    edition.buyerPersona,
+    edition.employer,
+    edition.companySize,
+    edition.framing,
+    ...edition.technologies,
+    ...edition.topics,
+    ...edition.stage,
+    ...edition.sections.flatMap((section) => [
+      section.heading,
+      ...section.exchanges.flatMap((exchange) => [exchange.question, exchange.answer]),
+    ]),
+    ...edition.pullQuotes.flatMap((item) => [item.quote, item.placeAfterSection, item.attribution]),
+    ...edition.stats.flatMap((stat) => [stat.value, stat.context]),
+  ].filter((value): value is string => Boolean(value));
+}
+
 function sourceSectionHeading(edition: AnonymousEdition, quote: string): string | null {
   for (const section of edition.sections) {
     const answers = section.exchanges.map((item) => item.answer).join("\n");
@@ -82,6 +103,13 @@ export function validateEdition(edition: AnonymousEdition): void {
   for (const value of edition.stage) {
     if (!STAGES.includes(value)) {
       errors.push(`${prefix}: stage "${value}" is not in the controlled list.`);
+    }
+  }
+
+  for (const text of editionCopy(edition)) {
+    if (TYPOGRAPHIC_DASH.test(text)) {
+      errors.push(`${prefix}: em dashes and en dashes are not allowed.`);
+      break;
     }
   }
 
