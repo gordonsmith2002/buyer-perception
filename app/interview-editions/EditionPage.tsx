@@ -49,7 +49,20 @@ function FacetPills({
   );
 }
 
+function hookQuoteClass(quote: string) {
+  const length = quote.length;
+  if (length > 110) {
+    return "min-w-0 break-words font-sans text-[1.7rem] font-bold leading-[1.12] tracking-tight md:text-[2.65rem] md:leading-[1.08]";
+  }
+  if (length > 85) {
+    return "min-w-0 break-words font-sans text-[2rem] font-bold leading-[1.1] tracking-tight md:text-[3.35rem] md:leading-[1.06]";
+  }
+  return "min-w-0 break-words font-sans text-[2.35rem] font-bold leading-[1.08] tracking-tight md:text-[4.15rem] md:leading-[1.04]";
+}
+
 export function EditionCover({ edition }: { edition: AnonymousEdition }) {
+  const longHook = edition.hookQuote.length > 85;
+
   return (
     <Sheet bleed footer="none">
       <div className="flex min-h-0 min-w-0 flex-1 flex-col">
@@ -78,11 +91,14 @@ export function EditionCover({ edition }: { edition: AnonymousEdition }) {
             <Mark className="brightness-0 invert" width={280} />
           </div>
 
-          <blockquote className="relative z-10 m-0 flex max-w-[176mm] items-center md:h-[74mm] md:min-h-[74mm]">
-            <h1
-              className="min-w-0 break-words font-sans text-[2.35rem] font-bold leading-[1.08] tracking-tight md:text-[4.15rem] md:leading-[1.04]"
-              style={{ color: R.footer }}
-            >
+          <blockquote
+            className={
+              longHook
+                ? "relative z-10 m-0 flex max-w-[176mm] shrink-0 items-start"
+                : "relative z-10 m-0 flex max-w-[176mm] items-center md:h-[74mm] md:min-h-[74mm]"
+            }
+          >
+            <h1 className={hookQuoteClass(edition.hookQuote)} style={{ color: R.footer }}>
               <span style={{ color: R.orange }} aria-hidden>
                 “
               </span>
