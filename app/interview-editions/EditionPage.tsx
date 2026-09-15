@@ -259,7 +259,7 @@ function SectionStack({
         <div key={section.heading} className="space-y-5">
           <InterviewSection section={section} />
           {quotesForSection(edition, section.heading).map((item) => (
-            <PullQuote key={item.quote} quote={item.quote} attribution={edition.buyerPersona} />
+            <PullQuote key={item.quote} quote={item.quote} />
           ))}
         </div>
       ))}

@@ -24,7 +24,6 @@ export const FOOTER_NOTE =
 
 export const DISCLOSURE_COPY = [
   "This report was created from an independent, anonymised interview. It was not part of a paid client engagement. Buyer Perception actively recruits B2B buyers to participate in these conversations because the market needs an honest picture of how technology actually gets bought.",
-  "Participants may withdraw at any point before publication.",
 ] as const;
 
 export function padEdition(edition: number): string {

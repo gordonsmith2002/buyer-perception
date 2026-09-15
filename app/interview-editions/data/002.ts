@@ -5,7 +5,7 @@ export const edition002: AnonymousEdition = {
   date: "September 2026",
   hookQuote: "Help me spend my money on you. Don't just try and flog me shit",
   buyerPersona: "Senior TA Leader",
-  employer: "VC-backed tech company",
+  employer: "PE backed Tech company",
   companySize: "501 - 1,000",
   technologies: ["ATS"],
   topics: ["Churn", "Demos", "Cold outreach", "Sales process", "Business case & ROI"],

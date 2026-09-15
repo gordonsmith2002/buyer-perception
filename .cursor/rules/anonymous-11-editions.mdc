@@ -24,11 +24,12 @@ Build-time checks run from `validate.ts` on import. Fix those errors before ship
 - Section headings are **sentence-case verbatim quotes**, not Title Case.
 - Hook quote: cover + body only. Never also a pull quote or a section heading.
 - At most 2 pull quotes. Place each after a **different** section than the one it was said in. A pull quote must not duplicate a section heading.
-- Pull-quote attribution is rendered from Buyer Persona. Do not store a separate attribution string.
+- Pull quotes have no job-title byline. There is one contributor per edition.
 - 4-8 sections. Answer words ≤ 2,000. Stats: 3 or 4, labelled “From this interview”.
 - Use em dashes (—) for clause breaks. Do not substitute a spaced hyphen.
 - Technologies / Topics / Stage / Company Size must come from `lists.ts`. Add to the list if a real value is missing.
 - Framing is a paragraph, not a heading. No recommendations or action points.
+- Do not include “Participants may withdraw at any point before publication.” anywhere.
 - Contact is `.com` only (`gordon@buyerperception.com`).
 - `/interview` is the original Edition 001 page. Leave it alone. Templated editions live at `/interview-00N`.
 - Leave the brand palette / type system alone.
