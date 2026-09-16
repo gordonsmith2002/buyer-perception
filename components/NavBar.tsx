@@ -19,6 +19,8 @@ export default function NavBar() {
   const isTa = pathname === "/ta";
   const homeHref = isTa ? "/ta" : "/";
   const bookUrl = BOOK_CALL_URL;
+  const sectionHref = (hash: string) =>
+    pathname === "/" || pathname === "/ta" ? hash : `/${hash}`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-white/95 backdrop-blur-md">
@@ -45,7 +47,7 @@ export default function NavBar() {
               {LINKS.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={sectionHref(item.href)}
                   className="font-sans font-normal text-[15px] text-charcoal/80 hover:text-charcoal transition-colors"
                 >
                   {item.label}
@@ -99,7 +101,7 @@ export default function NavBar() {
             {LINKS.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
+                href={sectionHref(item.href)}
                 className="px-1 py-3 font-sans font-normal text-[15px] text-charcoal/80 hover:text-charcoal"
                 onClick={() => setOpen(false)}
               >

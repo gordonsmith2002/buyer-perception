@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { BOOK_CALL_URL } from "./BookButton";
+import LegalFooterNote from "./LegalFooterNote";
 
 export default function Footer() {
   return (
@@ -37,6 +38,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
+        <LegalFooterNote onDark />
       </div>
     </footer>
   );

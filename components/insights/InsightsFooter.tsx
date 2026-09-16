@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { INSIGHTS_BOOK_CALL_URL } from "../BookButton";
+import LegalFooterNote from "../LegalFooterNote";
 
 export default function InsightsFooter() {
   return (
@@ -38,6 +39,7 @@ export default function InsightsFooter() {
             </a>
           </div>
         </div>
+        <LegalFooterNote />
       </div>
     </footer>
   );

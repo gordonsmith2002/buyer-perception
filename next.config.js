@@ -31,6 +31,9 @@ const nextConfig = {
       },
     ];
   },
+  outputFileTracingIncludes: {
+    "/legal/privacy": ["./content/legal/privacy-policy.md"],
+  },
 };
 
 module.exports = nextConfig;
