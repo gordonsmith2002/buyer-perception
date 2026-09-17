@@ -33,6 +33,7 @@ const nextConfig = {
   },
   outputFileTracingIncludes: {
     "/legal/privacy": ["./content/legal/privacy-policy.md"],
+    "/legal/terms-v1": ["./content/legal/terms-v1.md"],
   },
 };
 

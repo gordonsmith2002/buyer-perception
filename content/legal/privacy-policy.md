@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 version: "1.0"
-effective: "16 September 2026"
+effective: "17 September 2026"
 slug: /legal/privacy
 ---
 
@@ -23,7 +23,7 @@ It is written in sections so you can go straight to the one that applies to you:
 
 Buyer Perception Ltd is a company registered in England and Wales (company number 17336914), with its registered office at 5th Floor, 167–169 Great Portland Street, London W1W 5PF. We are registered with the Information Commissioner's Office (registration reference ZC201277).
 
-For most of the data described here we are the controller. When we interview a client's former prospects or customers as part of a paid engagement, we act as a processor on that client's behalf for the engagement itself, and as a controller only for the anonymised, aggregated research described in section 2.
+For most of the data described here we are the controller. When we interview a client's former prospects or customers as part of a paid engagement, we act as a processor on that client's behalf for the engagement itself, except for the short set of standard benchmark questions we ask at the end of every interview, for which we are the controller (see section 2).
 
 Data protection contact: privacy@buyerperception.com
 
@@ -44,7 +44,7 @@ Your name, work contact details, job title and employer; a written transcript of
 
 - To run the interview and deliver the findings — our legitimate interest in conducting research (or, in a client engagement, the client's legitimate interest in understanding its buyers, with us acting on its instructions).
 - To transcribe the conversation — your consent, which we ask for at the start of the call. You can say no and still take part; we will take notes instead.
-- To build our anonymised benchmark — our legitimate interest in publishing research about how software is bought. Only aggregated findings that cannot identify you or your employer are used this way.
+- To build our anonymised benchmark — our legitimate interest in publishing research about how software is bought. Every interview ends with a few standard questions about how people buy software in general, which you can skip. Your answers are combined with other interviews, and only aggregated results that cannot identify you or your employer are published. In a client engagement, only these answers are used this way; nothing else you say goes into our research.
 
 ### Our confidentiality rules
 
@@ -117,9 +117,9 @@ Some of our providers are based in, or process data in, the United States. Where
 
 | Data | Kept for |
 | --- | --- |
-| Identifiable interview transcripts | Up to 12 months |
-| Client-engagement contact lists and identifiable transcripts | Deleted or returned within 30 days of the final readout |
-| Pseudonymised transcripts | Up to 3 years |
+| Research interview transcripts that name you | Up to 12 months |
+| Research interview transcripts with names removed | Up to 3 years |
+| Client-engagement contact lists and all client-engagement transcripts | Deleted or returned within 30 days of delivering our findings |
 | Anonymised, aggregated research | Indefinitely (it cannot identify anyone) |
 | Prospect and marketing contacts | 24 months from our last contact, or until you object |
 | Client contract and billing records | Length of contract plus 6 years |

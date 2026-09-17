@@ -24,12 +24,20 @@ export default function LegalFooterNote({
         </p>
         <p>VAT no. GB 525 7393 72</p>
       </div>
-      <Link
-        href="/legal/privacy"
-        className="mt-2 inline-block font-sans text-[12px] text-terracotta hover:underline sm:text-[13px]"
-      >
-        Privacy
-      </Link>
+      <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+        <Link
+          href="/legal/privacy"
+          className="font-sans text-[12px] text-terracotta hover:underline sm:text-[13px]"
+        >
+          Privacy
+        </Link>
+        <Link
+          href="/legal/terms-v1"
+          className="font-sans text-[12px] text-terracotta hover:underline sm:text-[13px]"
+        >
+          Terms
+        </Link>
+      </p>
     </div>
   );
 }

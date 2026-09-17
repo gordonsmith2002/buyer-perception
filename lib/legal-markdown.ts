@@ -38,7 +38,8 @@ type MdHeading = {
 };
 
 const HEADING_ID = /\s*\{#([^}]+)\}\s*$/;
-const LINKABLE = /(privacy@buyerperception\.com|ico\.org\.uk)/g;
+const LINKABLE =
+  /(privacy@buyerperception\.com|ico\.org\.uk|buyerperception\.com\/legal\/privacy)/g;
 
 function remarkHeadingAnchors() {
   return (tree: Node) => {
@@ -71,13 +72,19 @@ function classList(value: unknown): string[] {
   return [];
 }
 
+function isHeading(node: HastNode) {
+  return node.type === "element" && /^h[1-6]$/.test(node.tagName ?? "");
+}
+
 function rehypeMarkContentsList() {
   return (tree: HastNode) => {
     const children = tree.children ?? [];
+    const firstHeading = children.findIndex(isHeading);
     const index = children.findIndex(
       (node) => node.type === "element" && node.tagName === "ul",
     );
     if (index === -1) return;
+    if (firstHeading !== -1 && index > firstHeading) return;
     const list = children[index];
     list.properties = {
       ...list.properties,
@@ -147,6 +154,8 @@ function rehypeAutolinkLegal() {
         }
         if (match.includes("@")) {
           pieces.push(linkNode(`mailto:${match}`, match, "legal-email"));
+        } else if (match.startsWith("buyerperception.com/")) {
+          pieces.push(linkNode(`/${match.replace("buyerperception.com/", "")}`, match));
         } else {
           pieces.push(linkNode(`https://${match}`, match));
         }
@@ -161,8 +170,8 @@ function rehypeAutolinkLegal() {
   };
 }
 
-export function loadPrivacyPolicy(): LegalDocument {
-  const filePath = path.join(process.cwd(), "content/legal/privacy-policy.md");
+export function loadLegalDocument(relativePath: string): LegalDocument {
+  const filePath = path.join(process.cwd(), relativePath);
   const raw = fs.readFileSync(filePath, "utf8");
   const parsed = matter(raw);
   const data = parsed.data as LegalFrontMatter;
@@ -179,7 +188,7 @@ export function loadPrivacyPolicy(): LegalDocument {
     .toString();
 
   if (html.includes("[DATE]") || html.includes("{#") || html.includes("[If analytics")) {
-    throw new Error("Privacy policy HTML still contains placeholders or heading-id markup.");
+    throw new Error("Legal HTML still contains placeholders or heading-id markup.");
   }
 
   return {
@@ -189,4 +198,12 @@ export function loadPrivacyPolicy(): LegalDocument {
     slug: data.slug,
     html,
   };
+}
+
+export function loadPrivacyPolicy(): LegalDocument {
+  return loadLegalDocument("content/legal/privacy-policy.md");
+}
+
+export function loadTerms(): LegalDocument {
+  return loadLegalDocument("content/legal/terms-v1.md");
 }
