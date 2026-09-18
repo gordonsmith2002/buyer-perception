@@ -80,6 +80,11 @@ a {
   padding: 0;
 }
 
+.legal-contents-nav ol.legal-contents {
+  list-style: decimal;
+  padding-left: 1.35rem;
+}
+
 .legal-contents li {
   margin: 0;
   padding: 0.22rem 0;
@@ -87,6 +92,12 @@ a {
 
 .legal-body ul:not(.legal-contents) {
   list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0 0 1.15em;
+}
+
+.legal-body ol:not(.legal-contents) {
+  list-style: decimal;
   padding-left: 1.2rem;
   margin: 0 0 1.15em;
 }
@@ -118,6 +129,10 @@ a {
   color: rgb(37 38 38 / 0.7);
   padding: 0.65rem 0.85rem 0.65rem 0;
   border-bottom: 1px solid var(--platinum);
+}
+
+.legal-body thead:not(:has(th:not(:empty))) {
+  display: none;
 }
 
 .legal-body td {

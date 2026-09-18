@@ -81,7 +81,9 @@ function rehypeMarkContentsList() {
     const children = tree.children ?? [];
     const firstHeading = children.findIndex(isHeading);
     const index = children.findIndex(
-      (node) => node.type === "element" && node.tagName === "ul",
+      (node) =>
+        node.type === "element" &&
+        (node.tagName === "ul" || node.tagName === "ol"),
     );
     if (index === -1) return;
     if (firstHeading !== -1 && index > firstHeading) return;
