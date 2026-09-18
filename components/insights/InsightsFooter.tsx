@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { INSIGHTS_BOOK_CALL_URL } from "../BookButton";
+import CalendlyLink from "../CalendlyLink";
 import LegalFooterNote from "../LegalFooterNote";
 
 export default function InsightsFooter() {
@@ -29,14 +30,12 @@ export default function InsightsFooter() {
             >
               gordon@buyerperception.com
             </a>
-            <a
+            <CalendlyLink
               href={INSIGHTS_BOOK_CALL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-[color:var(--text-insights)]/80 hover:text-[color:var(--text-insights)] transition-colors"
             >
               Book a Conversation
-            </a>
+            </CalendlyLink>
           </div>
         </div>
         <LegalFooterNote />

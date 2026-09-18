@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { INSIGHTS_BOOK_CALL_URL } from "../BookButton";
+import CalendlyLink from "../CalendlyLink";
 
 export default function InsightsHeader() {
   return (
@@ -17,14 +18,12 @@ export default function InsightsHeader() {
             />
           </span>
 
-          <a
+          <CalendlyLink
             href={INSIGHTS_BOOK_CALL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-md px-3.5 py-2 sm:px-5 sm:py-2.5 bg-terracotta text-white text-sm sm:text-[15px] font-medium tracking-tight hover:bg-[#9A3F26] transition-colors"
           >
             Book a Conversation
-          </a>
+          </CalendlyLink>
         </div>
       </div>
     </header>

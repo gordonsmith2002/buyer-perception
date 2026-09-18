@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { BOOK_CALL_URL } from "./BookButton";
+import CalendlyLink from "./CalendlyLink";
 import LegalFooterNote from "./LegalFooterNote";
 
 export default function Footer() {
@@ -28,14 +29,12 @@ export default function Footer() {
             >
               gordon@buyerperception.com
             </a>
-            <a
+            <CalendlyLink
               href={BOOK_CALL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-platinum/80 hover:text-platinum transition-colors"
             >
               Book a Conversation
-            </a>
+            </CalendlyLink>
           </div>
         </div>
         <LegalFooterNote onDark />

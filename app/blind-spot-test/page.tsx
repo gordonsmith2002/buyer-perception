@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import { DM_Sans, Playfair_Display } from "next/font/google";
+import CalendlyLink from "../../components/CalendlyLink";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -241,14 +242,12 @@ export default function BlindSpotTestPage() {
               </div>
 
               <div className="mt-9 flex flex-col items-center gap-4">
-                <a
+                <CalendlyLink
                   href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noreferrer"
                   className="inline-flex rounded-md border border-[#c0392b] bg-[#c0392b] px-7 py-3.5 text-sm font-semibold tracking-tight text-white transition-colors hover:border-[#b83228] hover:bg-[#b83228] sm:text-base"
                 >
                   Book a Call →
-                </a>
+                </CalendlyLink>
                 <p className="text-sm text-[#8f93a0]">
                   If your buyers don&apos;t engage, you don&apos;t pay.
                 </p>

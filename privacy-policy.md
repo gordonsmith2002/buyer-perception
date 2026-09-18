@@ -96,7 +96,7 @@ From you directly, from introductions, from events, and from professional source
 
 When you download a guide or report, we collect your name, work email, company and role, and use them to send you what you asked for and occasional related research. Every email includes an unsubscribe link.
 
-Our website host collects standard technical data (such as IP address and browser type) to keep the site secure and working. [If analytics are enabled: We use analytics cookies only with your consent, which you can change at any time via the cookie banner.]
+Our website host collects standard technical data (such as IP address and browser type) to keep the site secure and working. We count visits with Vercel Web Analytics, which does not set cookies. You can object at any time with the toggle at the end of this page.
 
 ---
 

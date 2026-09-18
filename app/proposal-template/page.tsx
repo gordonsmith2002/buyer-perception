@@ -1,6 +1,7 @@
 "use client";
 
 import { DM_Sans, Playfair_Display } from "next/font/google";
+import CalendlyLink from "../../components/CalendlyLink";
 
 /*
  * BUYER PERCEPTION | PROPOSAL TEMPLATE
@@ -419,14 +420,12 @@ export default function ProposalTemplatePage() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
+            <CalendlyLink
               href={PROPOSAL_DATA.calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
               className="inline-flex min-w-[190px] justify-center rounded-md border border-[#c0392b] bg-[#c0392b] px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-[#b83228] hover:bg-[#b83228]"
             >
               Book a Call →
-            </a>
+            </CalendlyLink>
             <a
               href={`mailto:${PROPOSAL_DATA.email}`}
               className="inline-flex min-w-[190px] justify-center rounded-md border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 transition-colors hover:border-white/35 hover:bg-white/10"

@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import { BOOK_CALL_URL } from "./BookButton";
+import CalendlyLink from "./CalendlyLink";
 
 const LINKS = [
   { href: "#problem", label: "Your Data Gap" },
@@ -54,25 +55,21 @@ export default function NavBar() {
                 </a>
               ))}
             </nav>
-            <a
+            <CalendlyLink
               href={bookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md px-5 py-2.5 bg-terracotta text-white text-[15px] font-medium tracking-tight hover:bg-[#9A3F26] transition-colors"
             >
               Book a Conversation
-            </a>
+            </CalendlyLink>
           </div>
 
           <div className="flex md:hidden items-center gap-3">
-            <a
+            <CalendlyLink
               href={bookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex rounded-md bg-terracotta text-white text-sm font-medium px-3.5 py-2"
             >
               Book a Conversation
-            </a>
+            </CalendlyLink>
             <button
               type="button"
               className="p-2 rounded-md text-charcoal hover:bg-charcoal/5"
@@ -108,15 +105,13 @@ export default function NavBar() {
                 {item.label}
               </a>
             ))}
-            <a
+            <CalendlyLink
               href={bookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-3 text-center rounded-md bg-terracotta text-white text-[15px] font-medium py-3"
               onClick={() => setOpen(false)}
             >
               Book a Conversation
-            </a>
+            </CalendlyLink>
           </div>
         ) : null}
       </div>

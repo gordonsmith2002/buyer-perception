@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AnalyticsOptOut from "../../../../components/AnalyticsOptOut";
 import { loadPrivacyPolicy } from "../../../../lib/legal-markdown";
 
 const DESCRIPTION =
@@ -39,6 +40,7 @@ export default function PrivacyPolicyPage() {
           className="legal-body"
           dangerouslySetInnerHTML={{ __html: policy.html }}
         />
+        <AnalyticsOptOut />
       </div>
     </article>
   );
