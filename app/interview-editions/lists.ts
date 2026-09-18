@@ -1,6 +1,8 @@
 export const TECHNOLOGIES = [
   "ATS",
   "Assessment",
+  "Assessments",
+  "TA Platforms",
   "Sourcing",
   "Talent Intelligence",
   "Talent CRM / pooling",
@@ -24,6 +26,8 @@ export const TOPICS = [
   "Proposal",
   "Procurement",
   "Implementation",
+  "Internal Sell",
+  "Evaluation Criteria",
   "Onboarding",
   "Customer success",
   "Renewal",
