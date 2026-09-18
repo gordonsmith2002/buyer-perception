@@ -21,6 +21,7 @@ export const TECHNOLOGIES = [
 export const TOPICS = [
   "Cold outreach",
   "Demos",
+  "Demo",
   "Discovery",
   "Pricing & negotiation",
   "Proposal",

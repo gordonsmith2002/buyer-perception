@@ -358,9 +358,15 @@ function SpreadOne({
           <DisclosureBlock />
         </div>
         {highlightFirst ? <HighlightPanel>{firstSection}</HighlightPanel> : firstSection}
+        {quotesForSection(edition, first.heading).map((item) => (
+          <PullQuote key={item.quote} quote={item.quote} attribution={item.attribution} />
+        ))}
         {second ? (
-          <div className="mt-5">
+          <div className="mt-5 space-y-5">
             <InterviewSection section={second} />
+            {quotesForSection(edition, second.heading).map((item) => (
+              <PullQuote key={item.quote} quote={item.quote} attribution={item.attribution} />
+            ))}
           </div>
         ) : null}
       </div>
