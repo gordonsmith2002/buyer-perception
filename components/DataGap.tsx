@@ -117,8 +117,8 @@ export default function DataGap({ rows = DEFAULT_ROWS }: { rows?: CrmRow[] }) {
         </Reveal>
         <Reveal>
           <h2 className="mt-4 max-w-4xl font-sans font-bold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-charcoal">
-            85% of closed-lost data in your CRM is either completely wrong or
-            missing vital information.
+            Your CRM records what your buyer was willing to say to the person
+            who was selling to them. That is not the same as what happened.
           </h2>
         </Reveal>
         <Reveal>
@@ -126,12 +126,6 @@ export default function DataGap({ rows = DEFAULT_ROWS }: { rows?: CrmRow[] }) {
             Reps do not lie intentionally. But what goes into the CRM is
             whatever the buyer politely told them in order to leave the
             conversation, which in most cases is not the real reason.
-          </p>
-        </Reveal>
-        <Reveal>
-          <p className="mt-3 text-xs sm:text-sm text-charcoal/45">
-            Source: independent win-loss research across 1,000+ closed-lost
-            opportunities.
           </p>
         </Reveal>
 

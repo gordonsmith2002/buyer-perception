@@ -30,11 +30,17 @@ export default function Hero({
         <div className="max-w-3xl">
           <Reveal>
             <h1 className="font-sans font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-white">
-              {copy.hero.headlineBefore}{" "}
-              <span className="text-terracotta [text-shadow:0.45px_0_0_currentColor,-0.45px_0_0_currentColor,0_0.45px_0_currentColor]">
-                Buyer Perception
-              </span>{" "}
-              {copy.hero.headlineAfter}
+              {copy.hero.headlineAfter ? (
+                <>
+                  {copy.hero.headlineBefore}{" "}
+                  <span className="text-terracotta [text-shadow:0.45px_0_0_currentColor,-0.45px_0_0_currentColor,0_0.45px_0_currentColor]">
+                    Buyer Perception
+                  </span>{" "}
+                  {copy.hero.headlineAfter}
+                </>
+              ) : (
+                copy.hero.headlineBefore
+              )}
             </h1>
           </Reveal>
 

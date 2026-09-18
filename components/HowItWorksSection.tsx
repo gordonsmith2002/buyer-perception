@@ -8,7 +8,7 @@ type TimelineStage = HowItWorksStage;
 const STAGES: TimelineStage[] = [
   {
     stage: "STAGE 1",
-    title: "Lost Revenue Assessment",
+    title: "Revenue Exposure Session",
     duration: "Free · 45 minutes",
     detail:
       "A working session with your leadership team using your own pipeline and churn data. We quantify the financial exposure from deals you could have won and customers you didn't need to lose. Your team predicts how buyers perceived them across five dimensions.",
@@ -17,23 +17,20 @@ const STAGES: TimelineStage[] = [
   {
     stage: "STAGE 2",
     title: "Anonymous Buyer Interviews",
-    duration: "Weeks 1–4",
     detail:
-      "8–12 structured conversations with your lost prospects and churned customers, carried out by an experienced B2B revenue leader. Independent. Anonymous. No one knows who said what. Buyers talk to us because they have nothing to lose and no reason to perform.",
+      "Structured conversations with your lost prospects and churned customers, carried out personally by an experienced B2B revenue leader. Independent. Anonymous. Nobody finds out who said what, including you.\n\nWe keep interviewing until the picture stops changing, rather than to a quota. Your order form sets the minimum we guarantee.\n\nBuyers talk to us because they have nothing to lose and no reason to perform.",
   },
   {
     stage: "STAGE 3",
     title: "Buyer Perception Report",
-    duration: "Weeks 5–7",
     detail:
-      "Everything synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and pipeline impact. Not a transcript dump. Not AI-generated analysis. Findings built from human conversations, organised by what matters most to your revenue.",
+      "Everything synthesised into a strategic report covering five dimensions of buyer experience, competitive intelligence, and pipeline impact. Not a transcript dump. Every finding comes from a human conversation and is written by the person who ran it. AI assists with pattern-finding across transcripts that have had names removed. It never writes the analysis and it never speaks to a buyer. Findings built from human conversations, organised by what matters most to your revenue.",
   },
   {
     stage: "STAGE 4",
-    title: "Action Workshop",
-    duration: "Week 8",
+    title: "Action workshop (optional extra)",
     detail:
-      "Your leadership team's predictions revealed against buyer reality, one dimension at a time. The gaps between what you believed and what your buyers actually said become immediately visible. Then the workshop turns findings into three to five specific commitments: changes with owners, timelines, and measurable outcomes. We see the biggest impact when the broader leadership team hears buyer feedback directly.",
+      "Your leadership team's predictions revealed against buyer reality, one dimension at a time. The gaps between what you believed and what your buyers actually said become immediately visible. Then the workshop turns findings into three to five specific commitments: changes with owners, timelines, and measurable outcomes. We see the biggest impact when the broader leadership team hears buyer feedback directly.\n\nPriced separately. Included only if selected on your order form.",
   },
 ];
 
@@ -46,17 +43,26 @@ function StageContent({ stage }: { stage: TimelineStage }) {
       <h3 className="mt-2 font-sans text-lg sm:text-xl font-medium text-charcoal leading-snug">
         {stage.title}
       </h3>
-      <p className="mt-1.5 font-sans font-normal text-sm text-charcoal/55">
-        {stage.duration}
-      </p>
+      {stage.duration ? (
+        <p className="mt-1.5 font-sans font-normal text-sm text-charcoal/55">
+          {stage.duration}
+        </p>
+      ) : null}
       {stage.badge ? (
         <span className="mt-4 inline-flex items-center rounded-md border border-terracotta bg-terracotta px-3 py-1.5 font-sans text-xs font-medium tracking-tight text-white">
           {stage.badge}
         </span>
       ) : null}
-      <p className="mt-4 text-sm sm:text-[0.9375rem] leading-relaxed text-charcoal/70">
-        {stage.detail}
-      </p>
+      <div className="mt-4 space-y-4">
+        {stage.detail.split("\n\n").map((paragraph) => (
+          <p
+            key={paragraph}
+            className="text-sm sm:text-[0.9375rem] leading-relaxed text-charcoal/70"
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
       {stage.note ? (
         <p className="mt-3 text-xs sm:text-sm text-charcoal/50 italic">
           {stage.note}
@@ -135,6 +141,11 @@ export default function HowItWorksSection({
 
         <DesktopTimeline stages={stages} />
         <MobileTimeline stages={stages} />
+        <p className="mt-10 max-w-3xl text-sm sm:text-[0.9375rem] leading-relaxed text-charcoal/55">
+          Fieldwork closes within five weeks of launch. Findings are delivered
+          within ten working days of it closing. Exact dates are set out in
+          your order form.
+        </p>
       </div>
     </section>
   );

@@ -31,6 +31,18 @@ const nextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: "/partners",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
+        source: "/partners/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+    ];
+  },
   outputFileTracingIncludes: {
     "/legal/privacy": ["./content/legal/privacy-policy.md"],
     "/legal/terms-v1": ["./content/legal/terms-v1.md"],

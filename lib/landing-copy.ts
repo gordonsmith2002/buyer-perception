@@ -7,7 +7,7 @@ export type DataGapRow = {
 export type HowItWorksStage = {
   stage: string;
   title: string;
-  duration: string;
+  duration?: string;
   detail: string;
   badge?: string;
   note?: string;
@@ -17,7 +17,7 @@ export type LandingCopy = {
   bookUrl: string;
   hero: {
     headlineBefore: string;
-    headlineAfter: string;
+    headlineAfter?: string;
     subhead: string;
     tagline: string;
   };
@@ -37,11 +37,9 @@ export const GENERIC_BOOK_URL =
 export const genericLanding: LandingCopy = {
   bookUrl: GENERIC_BOOK_URL,
   hero: {
-    headlineBefore:
-      "Win-loss analysis tells you why you lost the deal.",
-    headlineAfter: "tells you what that buyer is saying about you right now.",
+    headlineBefore: "Win-loss analysis, done properly.",
     subhead:
-      "Not what your CRM says. Not what your team tells you. Anonymous interviews with your lost prospects and churned customers to find out what you did well, what you could have done differently, and what to fix first.",
+      "Your buyers had no incentive to tell your salespeople the truth. Honesty just invites a debate and more selling. They have no reason to lie to us: we interview your lost prospects and churned customers anonymously, and no name ever reaches\u00a0you.",
     tagline: "Built on 20 years of B2B revenue leadership",
   },
   dataGapRows: [
@@ -118,9 +116,9 @@ export const taLanding: LandingCopy = {
 };
 
 export const genericLandingMeta = {
-  title: "Buyer Perception | Find out what your buyers really think about you",
+  title: "Buyer Perception | Win-loss analysis, done properly.",
   description:
-    "Win-loss analysis tells you why you lost the deal. Buyer Perception tells you what that buyer is saying about you right now.",
+    "Your buyers had no incentive to tell your salespeople the truth. Honesty just invites a debate and more selling. They have no reason to lie to us: we interview your lost prospects and churned customers anonymously, and no name ever reaches you.",
 };
 
 export const taLandingMeta = {

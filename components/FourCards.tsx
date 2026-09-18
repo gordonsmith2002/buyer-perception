@@ -62,9 +62,8 @@ export default function FourCards() {
           >
             <p>
               CRM loss reasons are chosen by the person who lost the deal.
-              Research shows 85% of closed-lost data doesn&apos;t match what
-              buyers actually report. You&apos;re making strategic decisions on
-              data that&apos;s structurally unreliable.
+              You&apos;re making strategic decisions on data that&apos;s
+              structurally unreliable.
             </p>
           </FeatureCard>
 
