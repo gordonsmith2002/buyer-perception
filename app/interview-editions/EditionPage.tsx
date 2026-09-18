@@ -1,4 +1,4 @@
-import { ContactRow, HighlightPanel, Logo, Mark, Masthead, R, Sheet } from "../interview/ReportPrimitives";
+import { ContactRow, HighlightPanel, Logo, Mark, Masthead, PageKicker, R, Sheet } from "../interview/ReportPrimitives";
 import {
   CONTACT,
   DISCLOSURE_COPY,
@@ -109,6 +109,15 @@ export function EditionCover({ edition }: { edition: AnonymousEdition }) {
             </h1>
           </blockquote>
 
+          {edition.subtitle ? (
+            <p
+              className="relative z-10 mt-5 max-w-[160mm] font-sans text-[15px] font-medium leading-snug md:text-[17px]"
+              style={{ color: R.footer, opacity: 0.78 }}
+            >
+              {edition.subtitle}
+            </p>
+          ) : null}
+
           <dl className="relative z-10 mt-6 space-y-1.5">
             {[
               { label: "Buyer Persona", value: edition.buyerPersona },
@@ -155,14 +164,27 @@ export function EditionCover({ edition }: { edition: AnonymousEdition }) {
   );
 }
 
-export function FramingBlock({ children }: { children: string }) {
+export function FramingBlock({ children, byline }: { children: string; byline?: string }) {
   return (
-    <p
-      className="min-w-0 break-words font-sans text-[1.05rem] font-normal leading-[1.4] tracking-tight md:text-[1.15rem] md:leading-[1.35]"
-      style={{ color: R.ink }}
-    >
-      {children}
-    </p>
+    <div className="space-y-3">
+      {children.split("\n\n").map((paragraph) => (
+        <p
+          key={paragraph.slice(0, 48)}
+          className="min-w-0 break-words font-sans text-[1.05rem] font-normal leading-[1.4] tracking-tight md:text-[1.15rem] md:leading-[1.35]"
+          style={{ color: R.ink }}
+        >
+          {paragraph}
+        </p>
+      ))}
+      {byline ? (
+        <p
+          className="font-sans text-[13px] font-medium leading-snug md:text-[14px]"
+          style={{ color: R.orange }}
+        >
+          {byline}
+        </p>
+      ) : null}
+    </div>
   );
 }
 
@@ -255,14 +277,21 @@ function SectionStack({
 }) {
   return (
     <div className="space-y-5">
-      {sections.map((section) => (
-        <div key={section.heading} className="space-y-5">
-          <InterviewSection section={section} />
-          {quotesForSection(edition, section.heading).map((item) => (
-            <PullQuote key={item.quote} quote={item.quote} />
-          ))}
-        </div>
-      ))}
+      {sections.map((section) => {
+        const body = <InterviewSection section={section} />;
+        return (
+          <div key={section.heading} className="space-y-5">
+            {edition.highlightHeading === section.heading ? (
+              <HighlightPanel background="#E8DFD0">{body}</HighlightPanel>
+            ) : (
+              body
+            )}
+            {quotesForSection(edition, section.heading).map((item) => (
+              <PullQuote key={item.quote} quote={item.quote} attribution={item.attribution} />
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -316,17 +345,19 @@ function SpreadOne({
   first: SectionData;
   second?: SectionData;
 }) {
+  const highlightFirst =
+    !edition.highlightHeading || edition.highlightHeading === first.heading;
+  const firstSection = <InterviewSection section={first} />;
+
   return (
     <Sheet footer="none" tall>
       <div className="flex min-h-0 flex-1 flex-col">
         <Masthead />
         <div className="mb-4 space-y-3">
-          <FramingBlock>{edition.framing}</FramingBlock>
+          <FramingBlock byline={edition.framingByline}>{edition.framing}</FramingBlock>
           <DisclosureBlock />
         </div>
-        <HighlightPanel>
-          <InterviewSection section={first} />
-        </HighlightPanel>
+        {highlightFirst ? <HighlightPanel>{firstSection}</HighlightPanel> : firstSection}
         {second ? (
           <div className="mt-5">
             <InterviewSection section={second} />
@@ -351,6 +382,9 @@ function SpreadTwo({
     <Sheet footer="none" tall>
       <div className="flex min-h-0 flex-1 flex-col">
         <Masthead />
+        {edition.pageKicker ? (
+          <PageKicker color="#8B8455">{edition.pageKicker}</PageKicker>
+        ) : null}
         <div className="grid min-h-0 flex-1 grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-5 print:grid-cols-2 print:gap-x-8 print:gap-y-5">
           <SectionStack edition={edition} sections={left} />
           <SectionStack edition={edition} sections={right} />

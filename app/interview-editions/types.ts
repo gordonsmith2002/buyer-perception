@@ -13,6 +13,7 @@ export type InterviewSection = {
 export type PullQuote = {
   quote: string;
   placeAfterSection: string;
+  attribution?: string;
 };
 
 export type InterviewStat = {
@@ -24,6 +25,7 @@ export type AnonymousEdition = {
   edition: number;
   date: string;
   hookQuote: string;
+  subtitle?: string;
   buyerPersona: string;
   employer: string;
   companySize: CompanySize;
@@ -31,6 +33,9 @@ export type AnonymousEdition = {
   topics: Topic[];
   stage: Stage[];
   framing: string;
+  framingByline?: string;
+  highlightHeading?: string;
+  pageKicker?: string;
   sections: InterviewSection[];
   pullQuotes: PullQuote[];
   stats: InterviewStat[];

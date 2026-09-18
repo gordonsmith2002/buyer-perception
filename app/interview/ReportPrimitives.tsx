@@ -257,22 +257,34 @@ export function SoWhat({ children }: { children: ReactNode }) {
   );
 }
 
-export function PageKicker({ children }: { children: ReactNode }) {
+export function PageKicker({
+  children,
+  color = R.olive,
+}: {
+  children: ReactNode;
+  color?: string;
+}) {
   return (
     <p
       className="mb-5 max-w-[168mm] font-sans text-[13px] italic leading-relaxed"
-      style={{ color: R.olive }}
+      style={{ color }}
     >
       {children}
     </p>
   );
 }
 
-export function HighlightPanel({ children }: { children: ReactNode }) {
+export function HighlightPanel({
+  children,
+  background = R.tan,
+}: {
+  children: ReactNode;
+  background?: string;
+}) {
   return (
     <div
       className="min-w-0 break-inside-avoid px-4 py-4 md:px-5 md:py-5"
-      style={{ background: R.tan }}
+      style={{ background }}
     >
       {children}
     </div>
